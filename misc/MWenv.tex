@@ -1,0 +1,87 @@
+\pagenumbering{gobble}
+\begin{table}[h]
+\Large\centering
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Typing… & \multicolumn{2}{l}{Gets…} & i.e. & On keyboard: & Alt. \\ \midrule
+\texttt{££} & \textit{Ẏ} & Ẏ & Capital Y with dot & \texttt{\textsc{Shift+3}} & \texttt{\textbackslash Y} \\
+\texttt{£} & \textit{ẏ} & ẏ & Small y with dot & \texttt{\textsc{Shift+3}} & \texttt{\textbackslash y} \\
+\texttt{¦} & \textit{ſ} & ſ & Long s & \texttt{\textsc{Alt+`}} & \texttt{\textbackslash ls} \\
+\texttt{¬¬} & \textit{Ꝛ} & Ꝛ & Capital R rotunda & \texttt{\textsc{Shift+`}} & \texttt{\textbackslash RR} \\
+\texttt{¬} & \textit{ꝛ} & ꝛ & Small r rotunda & \texttt{\textsc{Shift+`}} & \texttt{\textbackslash rr} \\
+\texttt{€€} & \textit{Ỽ} & Ỽ & Capital Middle Welsh V & \texttt{\textsc{Alt+4}} & \texttt{\textbackslash W} \\
+\texttt{€} & \textit{ỽ} & ỽ & Small Middle Welsh v & \texttt{\textsc{Alt+4}} & \texttt{\textbackslash w} \\
+\texttt{**} & \textit{Ỻ} & Ỻ & Capital Middle Welsh LL & \texttt{\textsc{Shift+8}} & \texttt{\textbackslash Ll} \\
+\texttt{*} & \textit{ỻ} & ỻ & Small Middle Welsh ll & \texttt{\textsc{Shift+8}} & \texttt{\textbackslash wl} \\ \bottomrule
+\end{tabular}
+\caption{Possible keys as arguments of \texttt{\textbackslash MW} and \texttt{\textbackslash mwletters}.}
+\end{table}
+
+
+\begin{figure}[h]
+\begin{minipage}{0.45\textwidth}
+\footnotesize\texttt{**ech llefdir er£f gardith tith ragon tec ware rac gododin £¦tre anhon. r£ duc diw£ll o win beb£ll ar lle¦ t£m£r t£mo¬ t£me¦t£l. tra merin lle¦t£r. tra merin llu. llu meithl£on. kein gad¬awt rw£d rac riallu o dind£w£t en d£uuw£t £n d£ouu.£¦gw£t rug£n rac doleu trin tal vriw vu.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\MW{**ech llefdir er£f gardith tith ragon tec ware rac gododin £¦tre anhon. r£ duc diw£ll o win beb£ll ar lle¦ t£m£r t£mo¬ t£me¦t£l. tra merin lle¦t£r. tra merin llu. llu meithl£on. kein gad¬awt rw£d rac riallu o dind£w£t en d£uuw£t £n d£ouu.£¦gw£t rug£n rac doleu trin tal vriw vu.}
+\end{minipage}
+\caption{Input and resulting text from the Book of Aneirin, p.~23 ll.~15--20}
+\end{figure}
+
+\MW{Dy¦gogan myrdin kyferu\d{e}yd hyn. \newline
+yn aber perydon meiryon mechteyrn. \newline
+a chyny bei vn reith lleith ag€ynyn. \newline
+o vn ewylli¦ b¬yt yd ym€¬thuynnyn. \newline
+Meiryon eu tretheu dychynnullyn. \newline
+Ygketoed kymry nat oed atelhyn. \newline
+y¦¦yd €¬ dylyeda€c alefeir hyn. \newline
+ny diffei atalei ygkeithiwet. \newline
+Mab meir ma€r a eir p¬yt na thardet. \newline
+rac pennaeth ¦ae¦¦on ac eu hoffed. \newline
+Pell b€ynt kychmyn y€¬theyrn g€yned. \newline
+ef gyrha€t allmyn y alltuded. \newline
+ny¦ arhaed€y neb ny¦ dioes dayar. \newline
+ny wydynt py treiglynt ym pop aber. \newline
+pan p¬yna¦¦ant danet tr€y fflet called. \newline
+gan ho¬s a hegy¦ oed yng eu ry¦¦ed.}
+
+Dyſgogan myrdin kyferu\d{e}yd hyn. \newline
+yn aber perydon meiryon mechteyrn. \newline
+a chyny bei vn reith lleith agỽynyn. \newline
+o vn ewylliſ bꝛyt yd ymỽꝛthuynnyn. \newline
+Meiryon eu tretheu dychynnullyn. \newline
+Ygketoed kymry nat oed atelhyn. \newline
+yſſyd ỽꝛ dylyedaỽc alefeir hyn. \newline
+ny diffei atalei ygkeithiwet. \newline
+Mab meir maỽr a eir pꝛyt na thardet. \newline
+rac pennaeth ſaeſſon ac eu hoffed. \newline
+Pell bỽynt kychmyn yỽꝛtheyrn gỽyned. \newline
+ef gyrhaỽt allmyn y alltuded. \newline
+nyſ arhaedỽy neb nyſ dioes dayar. \newline
+ny wydynt py treiglynt ym pop aber. \newline
+pan pꝛynaſſant danet trỽy fflet called. \newline
+gan hoꝛs a hegyſ oed yng eu ryſſed.
+
+
+\begin{figure}
+    \centering
+    \begin{verbatim}
+    \usepackage{xstring}
+    \newcommand{\mwletters}[1]{{%
+      \noexpandarg % suppress expansions made by xstring
+      \StrSubstitute{#1}{££}{\.{Y}}[\x]% first step
+      \expandafter\StrSubstitute\expandafter{\x}{£}{\.{y}}[\x]%
+      \expandafter\StrSubstitute\expandafter{\x}{¦}{ſ}[\x]%
+      \expandafter\StrSubstitute\expandafter{\x}{¬¬}{Ꝛ}[\x]%
+      \expandafter\StrSubstitute\expandafter{\x}{¬}{ꝛ}[\x]%
+      \expandafter\StrSubstitute\expandafter{\x}{€€}{Ỽ}[\x]%   
+      \expandafter\StrSubstitute\expandafter{\x}{€}{ỽ}[\x]%
+      \expandafter\StrSubstitute\expandafter{\x}{**}{Ỻ}[\x]%   
+      \expandafter\StrSubstitute\expandafter{\x}{*}{ỻ}[\x]%  
+      \x}}
+    \newcommand{\MW}[1]{\mw{\mwletters{#1}}}
+    \end{verbatim}
+    \caption{Add the following lines of code to the document to make this work.}
+    \label{fig:my_label}
+\end{figure}

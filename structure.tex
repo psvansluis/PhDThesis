@@ -1,0 +1,38 @@
+\begin{spacing}{1}
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+\end{spacing}
+
+\mainmatter
+\include{1fm/introduction}
+
+\part{Phonology and Phonetics}
+\include{2phon/oldwelsh}
+\include{2phon/cynghanedd}
+
+\part{Orthography}
+\include{3orth/overview}
+\include{3orth/issues}
+\include{3orth/hengerdd}
+\include{3orth/scribex86}
+\include{3orth/chirk}
+\include{3orth/postverbal}
+\include{3orth/brut}
+
+\begin{spacing}{1}
+\backmatter
+\printglossary
+\printglossary[%
+    type=lang,%
+    style=mcolindex,%
+    nonumberlist=true,%
+    nogroupskip=true]
+\printglossary[type=\acronymtype]
+\printbibliography
+\end{spacing}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

@@ -1,0 +1,183 @@
+\documentclass[a4paper,12pt,twoside,openany,hidelinks]{memoir}
+\chapterstyle{thatcher}
+\setsecnumdepth{subsection}
+\renewcommand\labelenumi{(\theenumi)}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfgantt}
+\usepackage{rotating}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+    \setmainlanguage[variant=british]{english}
+    \setotherlanguage{welsh}
+    \setotherlanguage{french}
+    \setotherlanguage{latin}
+    \setotherlanguage[variant=ancient]{greek}
+    \setotherlanguage{irish}
+    \setotherlanguage{breton}
+    \input{fixwelsh}
+
+\setmainfont[
+            RawFeature={+mgrk;+liga;+clig;+ccmp;+tlig;+rlig;+calt;+kern;+onum;+ss01;+falt},
+            BoldFont=Junicode-Bold.ttf,
+            ItalicFont=Junicode-Italic.ttf,
+            BoldItalicFont=Junicode-BoldItalic.ttf,
+            ]{Junicode.ttf}
+\usepackage{biolinum}
+\setmonofont{FantasqueSansMono-Regular.ttf}[%
+            Scale=MatchLowercase,
+            BoldFont=FantasqueSansMono-Bold.ttf,
+            ItalicFont=FantasqueSansMono-Italic.ttf,
+            BoldItalicFont=FantasqueSansMono-BoldItalic.ttf]
+
+\usepackage{ellipsis}
+\usepackage[config=mt-Junicode]{microtype}
+\usepackage{xspace}
+
+\usepackage[
+            language=british,
+            backend=biber,
+            style=authoryear,
+            isbn=false,
+            doi=false,
+            ]{biblatex}
+            \addbibresource{latbib.bib}
+            \renewcommand{\bibnamedash}{\rule[.5ex]{1.5em}{.1ex}\space}
+            \AtEveryBibitem{\clearlist{language}}
+            
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+\usepackage{booktabs}
+
+
+\usepackage{csquotes}
+
+\usepackage{hyphenat}
+\AtBeginDocument{\lefthyphenmin=4\righthyphenmin=4}
+\hyphenpenalty=1300
+
+\usepackage{float}
+\usepackage[section]{placeins} %Prevents floats from crossing section boundaries
+\usepackage{calc}
+\usepackage{etoolbox}
+
+\usepackage[color=orange!40!white!40!yellow!20,linecolor=gray,textsize=footnotesize]{todonotes}
+\usepackage[normalem]{ulem} %underlining
+\usepackage{graphicx} % For images
+\graphicspath{ {images/} }
+% \usepackage{fancyhdr} %%Not necessarily with memoir
+\pagestyle{headings}
+\nouppercaseheads
+% \makeevenfoot{plain}{}{\makebox[2em][c]{\thepage}}{}\makeoddfoot{plain}{}{\makebox[2em][c]{\thepage}}{} %%FOR Silly fleurons
+
+\ifdraftdoc
+\makeevenfoot{plain}{}{\thepage}{{\texttt{\tiny Draft: \today}}}
+\makeoddfoot{plain}{{\texttt{\tiny Draft: \today}}}{\thepage}{}
+\makeevenfoot{headings}{}{}{{\texttt{\tiny Draft: \today}}}
+\makeoddfoot{headings}{{\texttt{\tiny Draft: \today}}}{}{}
+\fi
+
+\DisemulatePackage{setspace}%Use when class=memoir
+\usepackage{setspace}
+% \setstretch{1.33} %Enable to receive one-one-thirds spacing
+% \setstretch{1.5} %Enable to receive one-half spacing
+% \setstretch{1.667} %Enable to receive one-two-thirds spacing
+\newcommand{\onesp}[1]{\begin{spacing}{1}#1\end{spacing}}
+
+
+
+%% NO DOT: vs
+\makeatletter
+\newcommand*{\ie}{\@ifnextchar{.}{i.e}{i.e.\@\xspace}}
+\newcommand*{\eg}{\@ifnextchar{.}{e.g}{e.g.\@\xspace}}
+\newcommand*{\etc}{\@ifnextchar{.}{etc}{etc.\@\xspace}}
+\makeatother
+
+\input{langcom}
+
+
+\newcommand{\al}[1]{\uline{#1}}
+
+\newcommand{\oes}{\mw{oes}}
+\newcommand{\ei}{\mw{\mbox{-ei}}}
+
+\newcommand{\y}{ẏ}
+\newcommand{\Y}{Ẏ} 
+\newcommand{\gd}{g̊}
+\newcommand{\gwd}{g̊\textsuperscript{w}}
+\newcommand{\bd}{b̥}
+\newcommand{\dd}{d̥}
+\newcommand{\cw}{w̯}
+\newcommand{\cu}{u̯}
+\newcommand{\ci}{i̯}
+\newcommand{\rh}{r̥}
+\newcommand{\Rh}{R̥}
+\newcommand{\w}{ỽ}
+\newcommand{\W}{Ỽ}
+\newcommand{\wl}{ỻ}
+\newcommand{\Ll}{Ỻ}
+\newcommand{\rr}{ꝛ}
+\newcommand{\RR}{Ꝛ}
+\newcommand{\ls}{ſ}
+\newcommand{\zero}{∅}
+%Ỻ ỻ Ỽ ỽ Ẏ ẏ
+
+\newcommand{\lT}{\gls{l}\gls{T}}
+\newcommand{\xD}{\gls{x}\gls{D}}
+\newcommand{\xT}{\gls{x}\gls{T}}
+\newcommand{\lD}{\gls{l}\gls{D}}
+
+
+\newcounter{equationsave}
+
+\newcommand{\mwcc}[4][]{\begin{mwl}\mwc[#1]{#2}{#3}{#4}\end{mwl}}
+
+\newcommand{\mwc}[4][]{%
+    \ifstrempty{#1}{\item{\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+    {\item{\label{#1}\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+    }
+
+\newenvironment{mwl}{%
+    \begin{spacing}{1}%
+    \begin{list}{(\theequation)}{%
+        \setcounter{equationsave}{\arabic{equation}}%
+        \usecounter{equation}%
+        \setcounter{equation}{\arabic{equationsave}}%
+        \setlength{\labelsep}{\parindent+\marginparsep}%
+        \setlength{\leftmargin}{\parindent}%
+        \setlength\labelwidth{3em}%
+    }\small}%
+    {\end{list}\end{spacing}}
+
+
+
+\newcommand{\tqt}[3]{\begin{displayquote}{\small\onesp{#1~\autocite[#3]{#2}}}\end{displayquote}}%quote, reference, page
+
+
+\newenvironment{mylongtable}[1]%
+    {\begin{spacing}{1}\begin{longtable}[c]{#1}}%
+    {\end{longtable}\end{spacing}}%
+
+
+
+\title{Lenited voiceless stops in Middle Welsh: phonology and orthography}
+\author{Paulus van Sluis}
+\date{\today}
+
+% \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
+
+\input{gloss}
+\begin{document}
+\maketitle
+
+\input{structure}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

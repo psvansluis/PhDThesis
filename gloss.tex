@@ -1,0 +1,126 @@
+\usepackage[%
+            xindy,
+            toc,
+            acronym]{glossaries}
+\usepackage{glossary-mcols}
+\newglossary*{lang}{Language abbreviations}
+\setglossarypreamble[\acronymtype]{Note: acronyms denoting a language are sorted under `Language abbreviations'.}
+
+\setacronymstyle{short-long}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+
+%% TERMS
+
+\newglossaryentry{provcon}
+{
+    name=provecting consonant,
+    description={A \gls{D}\mw{, h, or rh} that follows a \gls{D}, thereby provecting it to \gls{T}. It has two sub-types: \gls{doubcon} and \gls{aspcon}}
+}
+
+\newglossaryentry{doubcon}
+{
+    name=doubling consonant,
+    description={A \gls{D} that follows a \gls{D}, thereby provecting it to \gls{T}}
+}
+
+\newglossaryentry{aspcon}
+{
+    name=aspirating consonant,
+    description={A \mw{h} or \mw{rh} that follows a \gls{D}, thereby provecting it to \gls{T}}
+}
+
+\newglossaryentry{provconclus}
+{
+    name=provecting consonant cluster,
+    description={A cluster of \gls{D} followed by \gls{D}\mw{, h,} or \mw{rh} that forms a single \gls{T} for alliterative purposes. It has two sub-types: \gls{doubconclus} and \gls{aspconclus}}
+}
+
+\newglossaryentry{doubconclus}
+{
+    name=doubling consonant cluster,
+    description={A cluster of \gls{D} followed by another \gls{D} that forms a single \gls{T} for alliterative purposes}
+}
+
+\newglossaryentry{aspconclus}
+{
+    name=aspirating consonant cluster,
+    description={A cluster of \gls{D} followed by \mw{h} or \mw{rh} that forms a single \gls{T} for alliterative purposes}
+}
+
+\newglossaryentry{cyfl}
+{
+    name=\mw{cyf\-lythyr\-iaeth},
+    description={The alliteration of radical and mutated forms of a single \gls{archphon}},
+    sort={cyflythyriaeth}
+}
+
+\newglossaryentry{archphon}
+{
+    name=archi\-phoneme,
+    description={A group of phonemes that share the same unmutated phoneme. For example, the phonemes /t, d, θ, n̥/ all belong to the archiphoneme /t/}
+}
+
+\newglossaryentry{D}{name=D,description={A voiced stop, i.e.\ \mw{b, d, g}},sort={D}}
+\newglossaryentry{T}{name=T,description={A voiceless stop, i.e.\ \mw{p, t, k}},sort={T}}
+\newglossaryentry{l}{name=\textsuperscript{l},description={Indicates that the following consonant is lenited},sort={l}}
+\newglossaryentry{x}{name=\textsuperscript{x},description={Indicates that the following consonant is not lenited},sort={x}}
+\newglossaryentry{C}{name=C,description={Any consonant},sort={C}}
+\newglossaryentry{V}{name=V,description={Any vowel},sort={V}}
+
+
+%% ACRONYMS
+
+%%Languages
+\makeatletter
+\newacronym[type=lang]{lat}{Lat.\@\xspace}{Latin}
+\newacronym[type=lang]{vlat}{VLat.\@\xspace}{Vulgar Latin}
+\newacronym[type=lang]{gr}{Gr.\@\xspace}{Greek}
+\newacronym[type=lang]{mow}{MoW}{Modern Welsh}
+\newacronym[type=lang]{mob}{MoB}{Modern Breton}
+\newacronym[type=lang]{mb}{MB}{Middle Breton}
+\newacronym[type=lang]{ob}{OB}{Old Breton}
+\newacronym[type=lang]{ow}{OW}{Old Welsh}
+\newacronym[type=lang]{oir}{OIr.\@\xspace}{Old Irish}
+\newacronym[type=lang]{mir}{MIr.\@\xspace}{Middle Irish}
+\newacronym[type=lang]{mw}{MW}{Middle Welsh}
+\newacronym[type=lang]{pbr}{PBr.\@\xspace}{Proto-Brittonic}
+\newacronym[type=lang]{pc}{PC}{Proto-Celtic}
+\newacronym[type=lang]{pie}{PIE}{Proto-Indo-European}
+\newacronym[type=lang]{pi}{PIr.\@\xspace}{Primitive Irish}
+\makeatother
+
+%%Manuscripts
+\newacronym[description={\acrshort{nlw} Peniarth MS 1 (The Black Book of Carmarthen)}]{bbc}{BBC}{Black Book of Carmarthen}
+\newacronym[description={\acrshort{nlw} Peniarth MS 29 (The Black Book of Chirk)}]{bbch}{BBCh}{Black Book of Chirk}
+\newacronym{bl}{BL}{British Library, London}
+\newacronym[description={\acrshort{nlw} Peniarth MS 2 (The Book of Taliesin)}]{bt}{BT}{Book of Taliesin}
+\newacronym[description={\acrshort{nlw} Peniarth MSS 4 \&\ 5 (The White Book of Rhydderch)}]{wbr}{WBR}{White Book of Rhydderch}
+\newacronym{nlw}{NLW}{National Library of Wales, Aberystwyth}
+\newacronym[description={\acrshort{nlw} MS 6680B (The Hendregadredd Manuscript)}]{h}{H}{Hendregadredd Manuscript}
+\newacronym[description={\textit{De Mensuribis et Ponderibus}, Oxford, Bodleian Library, Auctarium F.~4.~32}]{mp}{MP}{\textit{De Mensuribis et Ponderibus}}
+\newacronym[description={\acrshort{nlw} Llanstephan MS 1}]{ll1}{Llan.\@\xspace}{Llanstephan MS 1}
+\newacronym[description={\acrshort{nlw} Peniarth MS 44}]{p44}{Pen.\ 44}{Peniarth MS 44}
+
+%%Other
+\newacronym{cbt}{CBT}{\mw{Cyfres Beirdd y Tywysogion}}
+\newacronym{gpc}{GPC}{\mw{Geiriadur Prifysgol Cymru}}
+
+\newacronym[description={\cite{andrews_gwaith_1996} \citetitle{andrews_gwaith_1996}}]{CBTVII}{CBT~VII}{\gls{cbt} Vol.\ VII}
+\newacronym[description={\cite{costigan_gwaith_1995-1} \citetitle{costigan_gwaith_1995-1}}]{CBTVI}{CBT~VI}{\gls{cbt} Vol.\ VI}
+\newacronym[description={\cite{jones_gwaith_1991-1} \citetitle{jones_gwaith_1991-1}}]{CBTV}{CBT~V}{\gls{cbt} Vol.\ V}
+\newacronym[description={\cite{jones_gwaith_1995-1} \citetitle{jones_gwaith_1995-1}}]{CBTIV}{CBT~IV}{\gls{cbt} Vol.\ IV}
+\newacronym[description={\cite{jones_gwaith_1991} \citetitle{jones_gwaith_1991}}]{CBTIII}{CBT~III}{\gls{cbt} Vol.\ III}
+\newacronym[description={\cite{bramley_gwaith_1994} \citetitle{bramley_gwaith_1994}}]{CBTII}{CBT~II}{\gls{cbt} Vol.\ II}
+\newacronym[description={\cite{williams_gwaith_1994} \citetitle{williams_gwaith_1994}}]{CBTI}{CBT~I}{\gls{cbt} Vol.\ I}
+
+\newacronym{ppd}{PPD}{\mw{Pwyll Pendeuic Dyuet}}
+\newacronym{bul}{BUL}{\mw{Branwen Uerch Lyr}}
+\newacronym{mul}{MUL}{\mw{Manawydan Uab Llyr}}
+\newacronym{mum}{MUM}{\mw{Math Uab Mathonwy}}
+\newacronym{co}{CO}{\mw{Culhwch ac Olwen}}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

@@ -1,0 +1,117 @@
+%% COMMANDS FOR CITING LINGUISTIC GLOSSES: 
+%% COMMANDS PREFIXED WITH g GIVE THE LANGUAGE NAME ABBREVIATION; 
+%% OPTIONAL ARGUMENTS MAY BE USED FOR TRANSLATIONS
+% \newcommand{\mw}[1]{\textwelsh{\textit{#1}}} %% OLD \mw command
+
+\newcommand{\mb}[2][]{%  %%Middle Breton
+    \ifstrempty{#1}{\textbreton{\textit{#2}}}%
+    {\textbreton{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmb}[2][]{%
+    \ifstrempty{#1}{\gls{mb}~\textbreton{\textit{#2}}}%
+    {\gls{mb}~\textbreton{\textit{#2}} `#1'}%
+    }
+\newcommand{\mob}[2][]{%  %%Modern Breton
+    \ifstrempty{#1}{\textbreton{\textit{#2}}}%
+    {\textbreton{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmob}[2][]{%
+    \ifstrempty{#1}{\gls{mob}~\textbreton{\textit{#2}}}%
+    {\gls{mob}~\textbreton{\textit{#2}} `#1'}%
+    }
+    \newcommand{\ob}[2][]{%  %%Old Breton
+    \ifstrempty{#1}{\textbreton{\textit{#2}}}%
+    {\textbreton{\textit{#2}} `#1'}%
+    }
+\newcommand{\gob}[2][]{%
+    \ifstrempty{#1}{\gls{ob}~\textbreton{\textit{#2}}}%
+    {\gls{ob}~\textbreton{\textit{#2}} `#1'}%
+    }
+\newcommand{\mw}[2][]{%  %%Middle Welsh
+    \ifstrempty{#1}{\textwelsh{\textit{#2}}}%
+    {\textwelsh{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmw}[2][]{%
+    \ifstrempty{#1}{\gls{mw}~\textwelsh{\textit{#2}}}%
+    {\gls{mw}~\textwelsh{\textit{#2}} `#1'}%
+    }
+\newcommand{\ow}[2][]{%  %%Old Welsh
+    \ifstrempty{#1}{\textwelsh{\textit{#2}}}%
+    {\textwelsh{\textit{#2}} `#1'}%
+    }    
+\newcommand{\gow}[2][]{%
+    \ifstrempty{#1}{\gls{ow}~\textwelsh{\textit{#2}}}%
+    {\gls{ow}~\textwelsh{\textit{#2}} `#1'}%
+    }
+\newcommand{\mow}[2][]{%  %%Modern Welsh
+    \ifstrempty{#1}{\textwelsh{\textit{#2}}}%
+    {\textwelsh{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmow}[2][]{%
+    \ifstrempty{#1}{\gls{mow}~\textwelsh{\textit{#2}}}%
+    {\gls{mow}~\textwelsh{\textit{#2}} `#1'}%
+    }
+\newcommand{\oi}[2][]{% %%Old Irish
+    \ifstrempty{#1}{\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
+    {\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    }
+\newcommand{\goi}[2][]{%
+    \ifstrempty{#1}{\gls{oir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
+    {\gls{oir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    }
+\newcommand{\mi}[2][]{% %%Middle Irish
+    \ifstrempty{#1}{\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
+    {\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    }
+\newcommand{\gmi}[2][]{%
+    \ifstrempty{#1}{\gls{mir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
+    {\gls{mir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    }
+\newcommand{\lat}[2][]{% %%Latin
+    \ifstrempty{#1}{\textlatin{\textit{#2}}}%
+    {\textlatin{\textit{#2}} `#1'}%
+    }
+\newcommand{\glat}[2][]{%
+    \ifstrempty{#1}{\gls{lat}~\textlatin{\textit{#2}}}%
+    {\gls{vlat}~\textlatin{\textit{#2}} `#1'}%
+    }
+\newcommand{\vlat}[2][]{% %%Vulgar Latin
+    \ifstrempty{#1}{\textlatin{\textit{#2}}}%
+    {\textlatin{\textit{#2}} `#1'}%
+    }
+\newcommand{\gvlat}[2][]{%
+    \ifstrempty{#1}{\gls{vlat}~\textlatin{\textit{#2}}}%
+    {\gls{vlat}~\textlatin{\textit{#2}} `#1'}%
+    }
+\newcommand{\gr}[2][]{% %%Greek
+    \ifstrempty{#1}{\textgreek{\textit{\addfontfeature{RawFeature={-mgrk}}#2}}}%
+    {\textgreek{\textit{\addfontfeature{RawFeature={-mgrk}}#2}} `#1'}%
+    }
+\newcommand{\ggr}[2][]{%
+    \ifstrempty{#1}{\gls{gr}~\textlatin{\textit{\addfontfeature{RawFeature={-mgrk}}#2}}}%
+    {\gls{gr}~\textlatin{\textit{\addfontfeature{RawFeature={-mgrk}}#2}} `#1'}%
+    }
+\newcommand{\pbr}[2][]{% %%Proto-Brittonic
+    \ifstrempty{#1}{\textit{#2}}%
+    {\textit{#2} `#1'}%
+    }
+\newcommand{\gpbr}[2][]{%
+    \ifstrempty{#1}{\gls{pbr}~\textit{#2}}%
+    {\gls{pbr}~\textit{#2} `#1'}%
+    }
+\newcommand{\pc}[2][]{% %%Proto-Brittonic
+    \ifstrempty{#1}{\textit{#2}}%
+    {\textit{#2} `#1'}%
+    }
+\newcommand{\gpc}[2][]{%
+    \ifstrempty{#1}{\gls{pc}~\textit{#2}}%
+    {\gls{pc}~\textit{#2} `#1'}%
+    }
+\newcommand{\pie}[2][]{% %%Proto-Indo-European
+    \ifstrempty{#1}{\textit{#2}}%
+    {\textit{#2} `#1'}%
+    }
+\newcommand{\gpie}[2][]{%
+    \ifstrempty{#1}{\gls{pie}~\textit{#2}}%
+    {\gls{pie}~\textit{#2} `#1'}%
+    }    
