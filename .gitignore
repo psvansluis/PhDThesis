@@ -227,3 +227,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 *.ttf
+*.tex~
+*.lang-glo
+*.pdf
+*.xdv

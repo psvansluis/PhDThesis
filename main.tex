@@ -84,7 +84,7 @@
 \DisemulatePackage{setspace}%Use when class=memoir
 \usepackage{setspace}
 % \setstretch{1.33} %Enable to receive one-one-thirds spacing
-% \setstretch{1.5} %Enable to receive one-half spacing
+\setstretch{1.5} %Enable to receive one-half spacing
 % \setstretch{1.667} %Enable to receive one-two-thirds spacing
 \newcommand{\onesp}[1]{\begin{spacing}{1}#1\end{spacing}}
 
@@ -105,10 +105,10 @@
 \newcommand{\oes}{\mw{oes}}
 \newcommand{\ei}{\mw{\mbox{-ei}}}
 
-\newcommand{\y}{ẏ}
+\newcommand{\y}{ẏ\todo{unicode!}}
 \newcommand{\Y}{Ẏ} 
 \newcommand{\gd}{g̊}
-\newcommand{\gwd}{g̊\textsuperscript{w}}
+\newcommand{\gwd}{g̊ʷ}
 \newcommand{\bd}{b̥}
 \newcommand{\dd}{d̥}
 \newcommand{\cw}{w̯}
@@ -155,7 +155,11 @@
 
 
 
-\newcommand{\tqt}[3]{\begin{displayquote}{\small\onesp{#1~\autocite[#3]{#2}}}\end{displayquote}}%quote, reference, page
+\newcommand{\tqt}[3]{%
+  \begin{displayquote}%
+    {\small\onesp{#1~\autocite[#3]{#2}}}%
+    \end{displayquote}%
+  }%quote, reference, page
 
 
 \newenvironment{mylongtable}[1]%
