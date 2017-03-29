@@ -34,7 +34,7 @@
             BoldItalicFont=FantasqueSansMono-BoldItalic.ttf]
 
 \usepackage{ellipsis}
-\usepackage[config=mt-Junicode]{microtype}
+% \usepackage[config=mt-Junicode]{microtype}
 \usepackage{xspace}
 
 \usepackage[
@@ -83,9 +83,7 @@
 
 \DisemulatePackage{setspace}%Use when class=memoir
 \usepackage{setspace}
-% \setstretch{1.33} %Enable to receive one-one-thirds spacing
 \setstretch{1.5} %Enable to receive one-half spacing
-% \setstretch{1.667} %Enable to receive one-two-thirds spacing
 \newcommand{\onesp}[1]{\begin{spacing}{1}#1\end{spacing}}
 
 
@@ -116,11 +114,11 @@
 \newcommand{\ci}{i̯}
 \newcommand{\rh}{r̥}
 \newcommand{\Rh}{R̥}
-\newcommand{\w}{ỽ}
+\newcommand{\w}{ỽ\todo[inline]{unicode!}}
 \newcommand{\W}{Ỽ}
 \newcommand{\wl}{ỻ}
 \newcommand{\Ll}{Ỻ}
-\newcommand{\rr}{ꝛ}
+\newcommand{\rr}{ꝛ\todo[inline]{unicode!}}
 \newcommand{\RR}{Ꝛ}
 \newcommand{\ls}{ſ}
 \newcommand{\zero}{∅}

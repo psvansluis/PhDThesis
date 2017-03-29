@@ -231,3 +231,6 @@ $RECYCLE.BIN/
 *.lang-glo
 *.pdf
 *.xdv
+*.tex#
+*.tex~
+*.tex~
