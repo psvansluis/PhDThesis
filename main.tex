@@ -59,7 +59,10 @@ hidelinks
 \usepackage{multirow}
 \usepackage{tablefootnote}
 \usepackage{booktabs}
-
+\newcolumntype{d}{>{\addfontfeature{RawFeature={+lnum;-onum}}}r}
+\usepackage{collcell}
+\newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
+\newcolumntype{q}{>{`}l<{'}}
 
 \usepackage{csquotes}
 
