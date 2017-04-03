@@ -15,6 +15,7 @@ hidelinks
 \usepackage{pgfplots}
 \usepackage{pgfgantt}
 \usepackage{rotating}
+\usepackage{xstring}
 
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -62,8 +63,20 @@ hidelinks
 \newcolumntype{d}{>{\addfontfeature{RawFeature={+lnum;-onum}}}r}
 \usepackage{collcell}
 \newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
-\newcolumntype{q}{>{`}l<{'}}
+\newcolumntype{q}{>{\collectcell\noparquotes}l<{\endcollectcell}}
+\newcolumntype{a}{>{\collectcell\acrshort}l<{\endcollectcell}}
 
+\newcommand{\noparquotes}[1]{%
+  \IfBeginWith{#1}{(}%
+  {%
+    \IfEndWith{#1}{)}
+    {%
+      #1
+    }%
+    {`#1'}%¬end with ) 
+  }%If begins with (
+  {`#1'}%¬begin with (
+}
 \usepackage{csquotes}
 
 \usepackage{hyphenat}
