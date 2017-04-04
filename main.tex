@@ -65,6 +65,8 @@ hidelinks
 \newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
 \newcolumntype{q}{>{\collectcell\noparquotes}l<{\endcollectcell}}
 \newcolumntype{a}{>{\collectcell\acrshort}l<{\endcollectcell}}
+\newcommand{\tchh}[2]{\multicolumn{#1}{c}{#2}}
+\newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
 
 \newcommand{\noparquotes}[1]{%
   \IfBeginWith{#1}{(}%
@@ -98,10 +100,11 @@ hidelinks
 % \makeevenfoot{plain}{}{\makebox[2em][c]{\thepage}}{}\makeoddfoot{plain}{}{\makebox[2em][c]{\thepage}}{} %%FOR Silly fleurons
 
 \ifdraftdoc
-\makeevenfoot{plain}{}{\thepage}{{\texttt{\tiny Draft: \today}}}
-\makeoddfoot{plain}{{\texttt{\tiny Draft: \today}}}{\thepage}{}
-\makeevenfoot{headings}{}{}{{\texttt{\tiny Draft: \today}}}
-\makeoddfoot{headings}{{\texttt{\tiny Draft: \today}}}{}{}
+\usepackage{datetime}
+\makeevenfoot{plain}{}{\thepage}{{\texttt{\tiny Draft: \today\ @\currenttime}}}
+\makeoddfoot{plain}{{\texttt{\tiny Draft: \today\ @\currenttime}}}{\thepage}{}
+\makeevenfoot{headings}{}{}{{\texttt{\tiny Draft: \today\ @\currenttime}}}
+\makeoddfoot{headings}{{\texttt{\tiny Draft: \today\ @\currenttime}}}{}{}
 \fi
 
 \DisemulatePackage{setspace}%Use when class=memoir
