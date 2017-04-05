@@ -1,0 +1,28 @@
+\chapter*{Declaration}
+\label{cha:declaration}
+\newcounter{statementcounter}
+\newcommand{\statement}[1]{
+  \begin{center}
+    {
+      \addfontfeatures{RawFeature={+lnum;-onum}}
+      STATEMENT \refstepcounter{statementcounter}\arabic{statementcounter}
+    }
+  \end{center}
+  #1
+  \signed  
+}
+\newcommand{\signed}{
+  \begin{itemize}
+    \item[Signed] \dotfill (candidate)
+    \item[Date] \dotfill \hphantom{(candidate)}
+  \end{itemize}
+}
+This work has not previously been accepted in substance for any degree and is not being concurrently submitted in candidature for any degree.	
+\signed
+\statement{This thesis is the result of my own investigations, except where otherwise stated. Where correction services have been used the extent and nature of the correction is clearly marked in a footnote(s). Other sources are acknowledged by footnotes giving explicit references. A bibliography is appended.}
+\statement{I hereby give consent for my thesis, if accepted, to be available for photocopying and for inter-library loan, and for the title and summary to be made available to outside organisations.}
+\statement{I hereby give consent for my thesis to be stored electronically, copied or translated to any approved medium or format for the purpose of future preservation and accessibility.}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

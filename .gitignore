@@ -239,3 +239,6 @@ $RECYCLE.BIN/
 3orth/brut.tex~
 *.tex~
 3orth/brut.tex~
+*.lang-glg
+*.lang-gls
+*.tex~

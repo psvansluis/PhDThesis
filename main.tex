@@ -65,7 +65,7 @@ hidelinks
 \newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
 \newcolumntype{q}{>{\collectcell\noparquotes}l<{\endcollectcell}}
 \newcolumntype{a}{>{\collectcell\acrshort}l<{\endcollectcell}}
-\newcommand{\tchh}[2]{\multicolumn{#1}{c}{#2}}
+\newcommand{\tchh}[1]{\multicolumn{2}{c}{#1}}
 \newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
 
 \newcommand{\noparquotes}[1]{%
@@ -75,9 +75,9 @@ hidelinks
     {%
       #1
     }%
-    {`#1'}%¬end with ) 
+    {`#1'}%end with ) 
   }%If begins with (
-  {`#1'}%¬begin with (
+  {`#1'}%begin with (
 }
 \usepackage{csquotes}
 
@@ -183,20 +183,16 @@ hidelinks
 
 
 
-\title{Lenited voiceless stops in Middle Welsh: phonology and orthography}
-\author{Paulus van Sluis}
-\date{\today}
 
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
 \input{gloss}
 \begin{document}
-\maketitle
-
 \input{structure}
 \end{document}
 
 %%% Local Variables:
+%%% coding: utf-8
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
