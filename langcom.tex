@@ -52,20 +52,20 @@
     {\gls{mow}~\textwelsh{\textit{#2}} `#1'}%
     }
 \newcommand{\oi}[2][]{% %%Old Irish
-    \ifstrempty{#1}{\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
-    {\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    \ifstrempty{#1}{\textirish{\textit{#2}}}%
+    {\textirish{\textit{#2}} `#1'}%
     }
 \newcommand{\goi}[2][]{%
-    \ifstrempty{#1}{\gls{oir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
-    {\gls{oir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    \ifstrempty{#1}{\gls{oir}~\textirish{\textit{#2}}}%
+    {\gls{oir}~\textirish{\textit{#2}} `#1'}%
     }
 \newcommand{\mi}[2][]{% %%Middle Irish
-    \ifstrempty{#1}{\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
-    {\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    \ifstrempty{#1}{\textirish{\textit{#2}}}%
+    {\textirish{\textit{#2}} `#1'}%
     }
 \newcommand{\gmi}[2][]{%
-    \ifstrempty{#1}{\gls{mir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}}}%
-    {\gls{mir}~\textirish{\textit{\addfontfeature{RawFeature={+ss02}}#2}} `#1'}%
+    \ifstrempty{#1}{\gls{mir}~\textirish{\textit{#2}}}%
+    {\gls{mir}~\textirish{\textit{#2}} `#1'}%
     }
 \newcommand{\lat}[2][]{% %%Latin
     \ifstrempty{#1}{\textlatin{\textit{#2}}}%
@@ -73,7 +73,7 @@
     }
 \newcommand{\glat}[2][]{%
     \ifstrempty{#1}{\gls{lat}~\textlatin{\textit{#2}}}%
-    {\gls{vlat}~\textlatin{\textit{#2}} `#1'}%
+    {\gls{lat}~\textlatin{\textit{#2}} `#1'}%
     }
 \newcommand{\vlat}[2][]{% %%Vulgar Latin
     \ifstrempty{#1}{\textlatin{\textit{#2}}}%
