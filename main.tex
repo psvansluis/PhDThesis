@@ -3,18 +3,31 @@ draft,
 a4paper,
 12pt,
 twoside,
-openany,
+openright,
 hidelinks
 ]{memoir}
 \chapterstyle{thatcher}
+
+
+\setlrmargins{*}{*}{1.618033}
+\setlength{\textheight}{1.618033\textwidth}
+\setulmargins{*}{*}{1.618033}
+
+
+
+\pagestyle{headings}
+\nouppercaseheads
+
+
+
 \setsecnumdepth{subsection}
 \renewcommand\labelenumi{(\theenumi)}
 
 \usepackage{hyperref}
 \usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{pgfgantt}
-\usepackage{rotating}
+%\usepackage{pgfplots}
+%\usepackage{pgfgantt}
+%\usepackage{rotating}
 \usepackage{xstring}
 
 \usepackage{fontspec}
@@ -55,7 +68,7 @@ hidelinks
             \addbibresource{latbib.bib}
             \renewcommand{\bibnamedash}{\rule[.5ex]{1.5em}{.1ex}\space}
             \AtEveryBibitem{\clearlist{language}}
-            
+        
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{tablefootnote}
@@ -79,6 +92,7 @@ hidelinks
   }%If begins with (
   {`#1'}%begin with (
 }
+
 \usepackage{csquotes}
 
 \usepackage{hyphenat}
@@ -92,19 +106,17 @@ hidelinks
 
 \usepackage[color=orange!40!white!40!yellow!20,linecolor=gray,textsize=footnotesize]{todonotes}
 \usepackage[normalem]{ulem} %underlining
+
 \usepackage{graphicx} % For images
 \graphicspath{ {images/} }
-% \usepackage{fancyhdr} %%Not necessarily with memoir
-\pagestyle{headings}
-\nouppercaseheads
-% \makeevenfoot{plain}{}{\makebox[2em][c]{\thepage}}{}\makeoddfoot{plain}{}{\makebox[2em][c]{\thepage}}{} %%FOR Silly fleurons
 
 \ifdraftdoc
 \usepackage{datetime}
-\makeevenfoot{plain}{}{\thepage}{{\texttt{\tiny Draft: \today\ @\currenttime}}}
-\makeoddfoot{plain}{{\texttt{\tiny Draft: \today\ @\currenttime}}}{\thepage}{}
-\makeevenfoot{headings}{}{}{{\texttt{\tiny Draft: \today\ @\currenttime}}}
-\makeoddfoot{headings}{{\texttt{\tiny Draft: \today\ @\currenttime}}}{}{}
+\newcommand*{\draftfoottext}{\textwelsh[date=long]{\texttt{\tiny Drafft: \today\ @\currenttime}}}
+  \makeevenfoot{plain}{}{\thepage}{\draftfoottext}
+  \makeoddfoot{plain}{\draftfoottext}{\thepage}{}
+  \makeevenfoot{headings}{}{}{\draftfoottext}
+  \makeoddfoot{headings}{\draftfoottext}{}{}
 \fi
 
 \DisemulatePackage{setspace}%Use when class=memoir
@@ -112,7 +124,7 @@ hidelinks
 \setstretch{1.5} %Enable to receive one-half spacing
 \newcommand{\onesp}[1]{\begin{spacing}{1}#1\end{spacing}}
 
-
+\usepackage[marginal]{footmisc}
 
 %% NO DOT: vs
 \makeatletter
@@ -187,6 +199,8 @@ hidelinks
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
 \input{gloss}
+
+
 \begin{document}
 \input{structure}
 \end{document}
