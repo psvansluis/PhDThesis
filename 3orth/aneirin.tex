@@ -37,17 +37,17 @@ However, AB\textsuperscript{1} also show signs of a post-Old North transmission 
 
 \begin{table}[h]
     \centering
-        \begin{tabular}{@{}lllll@{}}
+        \begin{tabular}{@{}ld@{--}Dlll@{}}
         \toprule
-        \textbf{Text} & \textbf{Pages} & \textbf{IW} & \textbf{Koch} & \textbf{Hand} \\ \midrule
-        \mw{Gododdin A} & 1.1--23.5 & A & A & A \\
-        \mw{Gododdin B} & 23.6--24.21 & C & B\textsuperscript{1} & B \\
-        \mw{Gwarchan Tudfwlch} & 25.1--26.7 & & & A \\
-        \mw{Gwarchan Adebon} & 26.8--16 & & & A \\
-        \mw{Gwarchan Cynfelyn} & 26.18--28.6 & & & A \\
-        \mw{Gwarchan Maeldderw} & 28.18--30.11 & & & A \\
-        \mw{Gododdin B} & 30.12--34.6 & B & B\textsuperscript{1} & B \\
-        \mw{Gododdin B} & 34.6--38.22 & B & B\textsuperscript{2} & B \\ \bottomrule
+        \tch{Text} & \tchh{Pages} & \tch{IW} & \tch{Koch} & \tch{Hand} \\ \midrule
+        \mw{Gododdin A} & 1.1&23.5 & A & A & A \\
+        \mw{Gododdin B} & 23.6&24.21 & C & B\textsuperscript{1} & B \\
+        \mw{Gwarchan Tudfwlch} & 25.1&26.7 & & & A \\
+        \mw{Gwarchan Adebon} & 26.8&26.16 & & & A \\
+        \mw{Gwarchan Cynfelyn} & 26.18&28.6 & & & A \\
+        \mw{Gwarchan Maeldderw} & 28.18&30.11 & & & A \\
+        \mw{Gododdin B} & 30.12&34.6 & B & B\textsuperscript{1} & B \\
+        \mw{Gododdin B} & 34.6&38.22 & B & B\textsuperscript{2} & B \\ \bottomrule
         \end{tabular}
     \caption{The contents of the Book of Aneirin}
     \label{contentsllaneirin}
@@ -72,14 +72,14 @@ What we do see, however, is a large contrast between IW's versions A and C on on
 
 \begin{table}[h]
 \centering
-\begin{tabular}{@{}lllllllll@{}}
-\toprule
-\multirow{2}{*}{\textbf{Text (IW)}} & \multirow{2}{*}{\textbf{Table}} & \multicolumn{3}{l}{\textbf{Voiceless stops}} & \multicolumn{3}{l}{\textbf{Not voiceless stops}} & \multirow{2}{*}{\textbf{Total rep.\ (\%)}}\\
-  &  & \textbf{rep.} & \textbf{not rep.} & \textbf{rep.~(\%)} & \textbf{rep.} & \textbf{not rep.} & \textbf{rep.~(\%).} \\ \midrule
-\mw{Gododdin} A (A) & \ref{gododdina} & 43 & 5 & 89.6 & 66 & 18 & 78.6 & 82.6 \\
-\mw{Gododdin} B (C) & \ref{gododdinc} & 29 & 4 & 87.9 & 25 & 9 & 73.5 & 80.6\\
-\mw{Gododdin} B (B) & \ref{gododdinb} & 30 & 15 & 66.7 & 32 & 24 & 57.1 &61.4\\
-\textbf{Total}  & \textbf{} & \textbf{102} & \textbf{24} & \textbf{81.0} & \textbf{123} & \textbf{51} & \textbf{70.7} & \textbf{75.0} \\ \bottomrule
+\begin{tabular}{@{}ll*{7}{d}@{}}
+  \toprule
+  \multirow{2}{*}{\tch{Text (IW)}} & \multirow{2}{*}{\tch{Table}} & \tchhh{Voiceless stops} & \tchhh{Not voiceless stops} & \multirow{2}{*}{\tch{Total (\%)}}\\
+                                   &  & \tch{rep.} & \tch{not rep.} & \tch{(\%)} & \tch{rep.} & \tch{not rep.} & \tch{(\%)} \\ \midrule
+  \mw{Gododdin} A (A) & \ref{gododdina} & 43 & 5 & 89.6 & 66 & 18 & 78.6 & 82.6 \\
+  \mw{Gododdin} B (C) & \ref{gododdinc} & 29 & 4 & 87.9 & 25 & 9 & 73.5 & 80.6\\
+  \mw{Gododdin} B (B) & \ref{gododdinb} & 30 & 15 & 66.7 & 32 & 24 & 57.1 &61.4\\
+  \textbf{Total}  & \textbf{} & \textbf{102} & \textbf{24} & \textbf{81.0} & \textbf{123} & \textbf{51} & \textbf{70.7} & \textbf{75.0} \\ \bottomrule
 \end{tabular}
 \caption{Representation of lenition in the \mw{Gododdin}}
 \label{sumgododdin}
@@ -114,9 +114,9 @@ Another point is object lenition. \Textcite{van_sluis_development_2014} consider
 
 \begin{table}[h]
 \centering
-\begin{tabular}{@{}llllll@{}}
+\begin{tabular}{@{}ddllll@{}}
 \toprule
-\textbf{Folio} & \textbf{Line} & \textbf{Word} & \textbf{Translation} & \textbf{Represented} & \textbf{IW} \\ \midrule
+\tch{Folio} & \tch{Line} & \tch{Word} & \tch{Translation} & \tch{Represented} & \tch{IW} \\ \midrule
 20 & 4 & \mw{gwẏr} & `men' & no & A \\
 20 & 10 & \mw{vudic} & `victor' & yes & A \\
 20 & 13 & \mw{gwaetlin} & `bloodshed' & no & A \\

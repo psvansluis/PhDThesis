@@ -74,10 +74,12 @@ hidelinks
 \usepackage{tablefootnote}
 \usepackage{booktabs}
 \newcolumntype{d}{>{\addfontfeature{RawFeature={+lnum;-onum}}}r}
+\newcolumntype{D}{>{\addfontfeature{RawFeature={+lnum;-onum}}}l}
 \usepackage{collcell}
 \newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
 \newcolumntype{q}{>{\collectcell\noparquotes}l<{\endcollectcell}}
 \newcolumntype{a}{>{\collectcell\acrshort}l<{\endcollectcell}}
+\newcommand{\tchhh}[1]{\multicolumn{3}{c}{#1}}
 \newcommand{\tchh}[1]{\multicolumn{2}{c}{#1}}
 \newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
 
@@ -140,7 +142,7 @@ hidelinks
 
 \newcommand{\oes}{\mw{oes}}
 \newcommand{\ei}{\mw{\mbox{-ei}}}
-\newcommand{\graph}[1]{⟨#1⟩}
+\newcommand{\graph}[1]{\textnormal{\textup{⟨}}#1\textnormal{\textup{⟩}}}
 
 \newcommand{\gd}{g̊}
 \newcommand{\gwd}{g̊ʷ}
@@ -200,7 +202,6 @@ hidelinks
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
 \input{gloss}
-
 
 \begin{document}
 \input{structure}
