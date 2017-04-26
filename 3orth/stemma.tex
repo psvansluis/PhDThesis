@@ -1,0 +1,135 @@
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[font=\itshape,level distance=10mm]
+    \node(A){A}
+    child {node {E}
+      child [missing]
+      child [missing]
+      child {node(B) {B}}
+    }
+    child [missing]
+    child {node(C) {C}}
+    ;
+    \draw(B)--(C)
+    ;
+    \node[right= 1em of C](S){\upshape saec.~XIII\textsuperscript{med}};
+    \node[right= 5em of A]{c.~\upshape 1200};
+    \node[right= 5em of B]{c.~\upshape 1282};
+  \end{tikzpicture}
+  \caption{Gwenogvryn Evans's \mw{Llyfr Iorwerth}}
+  \label{fig:gwevanslli}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[font=\itshape]
+    \node{X}
+    child {node(alph) {α}
+      child {node(B) {B}}
+    }
+    child {node (beta) {β}
+      child {node(C) {C}}
+      child {node (gamma) {γ}
+        child {node (delta) {δ}
+          child{node{A}}
+          child{node{E}}
+        }
+        child[missing]
+        child {node (eps){ε}
+          child {node{D}}
+          child{node{ζ}
+            child {node {Col}}
+            child {node {\upshape Llanforda}}
+          }
+        }
+      }
+    }
+    ;
+    \node[left=of alph](nalph){Galanas B \upshape added};
+    \node[left= of B](nB){{\upshape no} damweiniau};
+    \node[below left= of C](nC){{\upshape no} damweiniau};
+    \node[below left=of delta,align=left](ndelta){- {\upshape Pref.\ to Test Bk.}\\+ Br.\ Gwŷr Arfon};
+    \node[right=of beta](nbeta){+ Galanas E \upshape\& Pref.\ to Test Book};
+    \node[right=of gamma](ngamma){+ Damweiniau I};
+    \node[right=of eps](neps){+ Damweiniau II};
+    \draw[dotted](alph)--(nalph);
+    \draw[dotted](B)--(nB);
+    \draw[dotted](C)--(nC);
+    \draw[dotted](delta)--(ndelta);
+    \draw[dotted](beta)--(nbeta);
+    \draw[dotted](gamma)--(ngamma);
+    \draw[dotted](eps)--(neps);
+  \end{tikzpicture}
+  \caption{Wiliam's \mw{Llyfr Iorwerth}, simplified by Thomas Charles-Edwards.}
+  \label{fig:wiliamiorwerth}
+\end{figure}
+
+%  \begin{figure}[h]
+%     \centering
+% \begin{tikzpicture}[font=\itshape]
+% \node{\upshape Redaction I} 
+% child {node {α}
+%   child [level distance=15mm]{node {A}}
+%   child [level distance=15mm]{node {E}}
+% }
+% child [xshift=1em]{node {\upshape Redaction II}
+%   child [grow=down] {node {β}
+%     child [level distance =10mm,xshift=-1em]{node {C}}
+%     }
+%     child[level distance=20mm] {node{γ}
+%       child [level distance=15mm]{node {\vphantom{J}GDLew}}
+%       child [level distance=15mm]{node{BJKTim}}
+%     }
+% }
+%     ;
+%   \end{tikzpicture}
+%     \caption{A stemma of the Laws of the Country  according to Thomas Charles-Edwards.}
+%     \label{fig:stemmalawc}
+%   \end{figure}
+  
+  \begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[font=\itshape]
+\node(1){\upshape Redaction I} 
+child {node {α}
+  child{node(A) {A}}
+  child{node(E) {E}}
+  child[missing]
+}
+child[missing]
+child {node(2) {\upshape Redaction II}
+  child {node[align=center] {β\\Bees I}
+    child [dashed,level distance=30mm]{node(B) {B}
+      edge from parent node [above,sloped]{Test Book}}
+    child {node {C}}
+    child[missing]
+  }
+  child[missing]
+  child {node[align=center](gamma){γ\\Bees II}
+    child  {node {GDLew}}
+    child[missing]
+      child [level distance=30mm]{node {JKTim}
+      edge from parent node (J){}  
+      }
+  }
+ }
+  ;
+  \node[above left=of E](nA){Bees I \& II};
+  \node[right=of 1](n1){Bees I \& II};
+  \node[right=of 2,align=center](n2){+ Preface to Test Book\\ Bees I \& II};
+  \node[right=of gamma](ngamma){+ Hywel to Rome};
+  \draw[dotted](A)--(nA) -- (E);
+  \draw[dotted](1)--(n1);
+  \draw[dotted](2)--(n2);
+  \draw[dotted](gamma)--(ngamma);
+  \draw[dashed](B) to  node [midway,below,sloped]{Laws of Country}  (J);
+\end{tikzpicture}
+\caption{A stemma of \mw{Llyfr Iorwerth} manuscripts according to Thomas Charles-Edwards. Dashed lines represent partial transmission.}
+\label{fig:stemmatestb}
+\end{figure}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
