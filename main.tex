@@ -25,9 +25,10 @@ hidelinks
 
 \usepackage{hyperref}
 \usepackage{tikz}
+\usetikzlibrary{positioning,calc}
 %\usepackage{pgfplots}
 %\usepackage{pgfgantt}
-%\usepackage{rotating}
+\usepackage{rotating}
 \usepackage{xstring}
 
 \usepackage{fontspec}
@@ -79,6 +80,8 @@ hidelinks
 \newcolumntype{w}{>{\collectcell\mw}l<{\endcollectcell}}
 \newcolumntype{q}{>{\collectcell\noparquotes}l<{\endcollectcell}}
 \newcolumntype{a}{>{\collectcell\acrshort}l<{\endcollectcell}}
+% \newcolumntype{L}{>{/}c<{/}}
+% \newcolumntype{T}{>{{[}}c<{{]}}}
 \newcommand{\tchhh}[1]{\multicolumn{3}{c}{#1}}
 \newcommand{\tchh}[1]{\multicolumn{2}{c}{#1}}
 \newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
@@ -204,7 +207,9 @@ hidelinks
 \input{gloss}
 
 \begin{document}
-\input{structure}
+\input{2phon/phonconclus.tex}
+% \input{3orth/laws.tex}
+%\input{structure}
 \end{document}
 
 %%% Local Variables:

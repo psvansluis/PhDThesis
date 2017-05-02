@@ -87,46 +87,47 @@
 %     \label{fig:stemmalawc}
 %   \end{figure}
   
-  \begin{figure}[h]
+  \begin{sidewaysfigure}[h]
     \centering
-    \begin{tikzpicture}[font=\itshape]
+    \begin{tikzpicture}[font=\itshape,level distance=17.5mm]
 \node(1){\upshape Redaction I} 
 child {node {α}
   child{node(A) {A}}
   child{node(E) {E}}
-  child[missing]
 }
 child[missing]
 child {node(2) {\upshape Redaction II}
-  child {node[align=center] {β\\Bees I}
-    child [dashed,level distance=30mm]{node(B) {B}
-      edge from parent node [above,sloped]{Test Book}}
+  child {node[align=center] (beta){β}
+    child [dashed,level distance=35mm]{node(B) {\vphantom{J}B}
+      edge from parent node [midway,above,sloped]{Test Book}}
     child {node {C}}
     child[missing]
   }
   child[missing]
-  child {node[align=center](gamma){γ\\Bees II}
+  child {node(gamma){γ}
     child  {node {GDLew}}
     child[missing]
-      child [level distance=30mm]{node {JKTim}
+      child [level distance=35mm]{node {JKTim}
       edge from parent node (J){}  
       }
   }
- }
+}
   ;
   \node[above left=of E](nA){Bees I \& II};
+  \node[below left=of beta,xshift=-15mm](nbeta){Bees I};
   \node[right=of 1](n1){Bees I \& II};
   \node[right=of 2,align=center](n2){+ Preface to Test Book\\ Bees I \& II};
-  \node[right=of gamma](ngamma){+ Hywel to Rome};
+  \node[right=of gamma,align=center](ngamma){+ Hywel to Rome\\Bees II};
   \draw[dotted](A)--(nA) -- (E);
+  \draw[dotted](beta)--(nbeta);
   \draw[dotted](1)--(n1);
   \draw[dotted](2)--(n2);
   \draw[dotted](gamma)--(ngamma);
   \draw[dashed](B) to  node [midway,below,sloped]{Laws of Country}  (J);
 \end{tikzpicture}
-\caption{A stemma of \mw{Llyfr Iorwerth} manuscripts according to Thomas Charles-Edwards. Dashed lines represent partial transmission.}
+\caption{A stemma of \mw{Llyfr Iorwerth} manuscripts according to Thomas Charles-Edwards. Dashed lines indicate partial transmission.}
 \label{fig:stemmatestb}
-\end{figure}
+\end{sidewaysfigure}
 
 
 %%% Local Variables:
