@@ -118,8 +118,8 @@ hidelinks
 \ifdraftdoc
 \usepackage{datetime}
 \newcommand*{\draftfoottext}{\textwelsh[date=long]{\texttt{\tiny Drafft: \today\ @\currenttime}}}
-  \makeevenfoot{plain}{}{\thepage}{\draftfoottext}
-  \makeoddfoot{plain}{\draftfoottext}{\thepage}{}
+  \makeevenfoot{plain}{\texttt{\tiny Paulus van Sluis}}{\thepage}{\draftfoottext}
+  \makeoddfoot{plain}{\draftfoottext}{\thepage}{\texttt{\tiny Paulus van Sluis}}
   \makeevenfoot{headings}{}{}{\draftfoottext}
   \makeoddfoot{headings}{\draftfoottext}{}{}
 \fi
@@ -136,6 +136,7 @@ hidelinks
 \newcommand*{\ie}{\@ifnextchar{.}{i.e}{i.e.\@\xspace}}
 \newcommand*{\eg}{\@ifnextchar{.}{e.g}{e.g.\@\xspace}}
 \newcommand*{\etc}{\@ifnextchar{.}{etc}{etc.\@\xspace}}
+\newcommand*{\cf}{\@ifnextchar{.}{cf}{cf.\@\xspace}}
 \makeatother
 
 \input{langcom}
@@ -205,11 +206,22 @@ hidelinks
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
 \input{gloss}
-
 \begin{document}
-\input{2phon/phonconclus.tex}
-% \input{3orth/laws.tex}
-%\input{structure}
+\input{3orth/brut}
+\input{3orth/laws.tex}
+% \input{structure}
+\begin{spacing}{1}
+\backmatter
+\printglossary
+\printglossary[%
+    type=lang,%
+    style=mcolindex,%
+    nonumberlist=true,%
+    nogroupskip=true]
+\printglossary[type=\acronymtype]
+\printbibliography
+\end{spacing}
+
 \end{document}
 
 %%% Local Variables:

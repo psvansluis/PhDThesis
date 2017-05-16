@@ -1,5 +1,13 @@
-\tqt{One advantage which Welsh law enjoyed in the political storms of the thirteenth century was that it had a written form. Already in the twelfth century it was felt to be an embarassment if law remained unwritten. Roman law was embodied in texts, and with the great legal revival of the eleventh and twelfth centuries it was felt that any law worthy of the name should be written.
-}{charles-edwards_welsh_1989}{14}
+
+\chapter{The transmission of the Welsh laws}
+\label{cha:welsh-laws}
+
+\section{Some quotes, tables, and stemma's}
+\label{sec:some-quotes-tables}
+
+
+% \tqt{One advantage which Welsh law enjoyed in the political storms of the thirteenth century was that it had a written form. Already in the twelfth century it was felt to be an embarassment if law remained unwritten. Roman law was embodied in texts, and with the great legal revival of the eleventh and twelfth centuries it was felt that any law worthy of the name should be written.
+% }{charles-edwards_welsh_1989}{14}
 
 \tqt{Welsh law survives in many complete manuscripts and fragments of others. The difficulty scholars have had in coping with this wealth of material stems from two opposite truths: first, each manuscript is an individual entity in that no one manuscript presents a text exactly the same as any other; but, secondly, the manuscripts fall into groups because they share, to a greater or lesser extent, the same content. As a result there have been long terminological travails attempting to give due weight both to the variations between manuscripts and also the links between them.
 }{charles-edwards_welsh_1989}{17}
@@ -9,32 +17,34 @@
   Linguistically, the laws are not unlike many Middle Welsh prose tales: in spite of the occasional early feature the language as a whole generally acords with the dates of the manuscripts.
 }{charles-edwards_welsh_1989}{21--22}
 
-\tqt{{[T]}he distinction between the Versions [\eg of Gwynedd, Deheubarth, Gwent] and the Anomalous Laws lies in the existence of a certain pattern according to which it was thought that a wide-ranging account of the Law of Hywel ought to be constructed. The pattern was not immutable, as is shown by the creation of the Test Book in \textsc{Ior} or by the wide variations in the ordering of the tractates in \textsc{Cyfn}.}{charles-edwards_welsh_1989}{26}
+% \tqt{{[T]}he distinction between the Versions and the Anomalous Laws lies in the existence of a certain pattern according to which it was thought that a wide-ranging account of the Law of Hywel ought to be constructed. The pattern was not immutable, as is shown by the creation of the Test Book in \textsc{Ior} or by the wide variations in the ordering of the tractates in \textsc{Cyfn}.}{charles-edwards_welsh_1989}{26}
+
+\input{3orth/stemma.tex}
 
 \begin{figure}[h]
   \centering
   \begin{tabular}{cc}
 I  & II\\
-\begin{tikzpicture}[level distance=15mm]
+\begin{tikzpicture}[level distance=15mm,align=left]
 \node(p){Proto-Cyfn}
-child{node {Deutero-Cyfn I}
+child{node {Deutero-\\Cyfn I}
   child{node(ior){\textsc{Ior}}}
 }
 child[missing]
-child {node {Deutero-Cyfn II}
-  child[level distance=30mm] {node(lat){The Latin Family and \textsc{Bleg}}}
+child {node {Deutero-\\Cyfn II}
+  child[level distance=30mm] {node(lat){The Latin Family\\ and \textsc{Bleg}}}
 }
 ;
 \draw(ior)--(lat);    
 \end{tikzpicture}
    &
-\begin{tikzpicture}[level distance=22.5mm]
+\begin{tikzpicture}[level distance=22.5mm,align=left]
 \node(p){Proto-Cyfn}
-child{node {Deutero-Cyfn I}
+child{node {Deutero-\\Cyfn I}
 }
 child[missing]
-child {node {Deutero-Cyfn II}
-  child[xshift=15mm] {node(lat){The Latin Family and \textsc{Bleg}}}
+child {node {Deutero-\\Cyfn II}
+  child[xshift=15mm] {node(lat){The Latin Family\\ and \textsc{Bleg}}}
 }
 ;
 \node[xshift=30mm](ior){\vphantom{J}\textsc{Ior}};
@@ -46,22 +56,22 @@ child {node {Deutero-Cyfn II}
 \label{fig:lawfamilies}
 \end{figure}
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{@{}ll@{}}
-    \toprule
-    \tch{Old} & \tch{New} \\
-    \midrule
-    Ɛ & Ep \\
-    Ð & Dd \\
-    Ā & As\\
-    \rotatebox[origin=c]{180}{ω}& Mor\\
-     & An \\
-    \bottomrule
-  \end{tabular}
-\caption{Sigla for the anomalous laws}
-\label{tab:sigla}
-\end{table}
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{@{}ll@{}}
+%     \toprule
+%     \tch{Old} & \tch{New} \\
+%     \midrule
+%     Ɛ & Ep \\
+%     Ð & Dd \\
+%     Ā & As\\
+%     \rotatebox[origin=c]{180}{ω}& Mor\\
+%      & An \\
+%     \bottomrule
+%   \end{tabular}
+% \caption{Sigla for the anomalous laws}
+% \label{tab:sigla}
+% \end{table}
 
 \begin{table}[h]
 \centering
@@ -120,6 +130,38 @@ child {node {Deutero-Cyfn II}
 \label{tab:divisions}
 \end{table}
 
+\section{Research plan for the laws}
+\label{sec:research-plan-laws}
+
+What do I want to do?
+I want to analyze where \lT\ was represented in the various law texts.
+
+Why do I want to do this?
+I want to see under what circumstances scribes copying manuscripts maintained or changed the non-representation of \lT.
+
+Which period is suitable for this purpose?
+I expect that most instances of \lT\ were represented by the mid-fourteenth century, so manuscripts up until this period are most useful to chart the change in orthography.
+Later manuscripts may still show traces of the early orthography, and may thus also be included.
+I will focus on the transmission of \mw{Llyfr Iorwerth}, because most of the oldest law manuscripts contain this law text.
+
+How are various manuscripts related to each other?
+It is nowadays thought that none of the earliest extant manuscripts is a direct ancestor of another extant copy.
+One author who did think this was J.\ Gwenogvryn Evans (Figure~\ref{fig:gwevanslli}).
+Rather, extant manuscripts are held to have common exemplars that no longer exist.
+Figure~\ref{fig:stemmatestb} gives a stemma for the Iorwerth manuscripts (and some more manuscripts), and I will use this stemma as a point of departure for my own research.
+
+Which manuscripts may be used for analysis?
+One useful manuscript is \textit{A}, the \gls{bbch}, dating from around 1250. This manuscript is one of the oldest law manuscripts, and its orthography is very unusual.
+Another useful manuscript is \textit{B}, which is also fairly old, and dates from the end of the thirteenth century.
+Other thirteenth-century manuscripts shown in Figure~\ref{fig:stemmatestb}: \textit{EC};
+early fourteenth century: \textit{G};
+other manuscripts in this stemma are all later than the fourteenth century.
+Some more useful manuscripts are: \textit{VW}, by scribe X86; \textit{Tr}, by Gwilym Was Da.
+
+What sections of the law texts are useful for analysis?
+Figure~\ref{fig:stemmatestb} shows that B was  transmitted in part from several sources. This makes both the Test Book and the Laws of Country interesting targets for analysis, as the orthography of lenition may confirm or deny this peculiar reconstruction by Charles-Edwards.
+Figure~\ref{fig:stemmatestb} also shows that different parts of the Test Book may have been added in intermediate stages between Redaction I and the extant manuscripts.
+Comparison of these chunks with text found in all the manuscripts may prove useful in establishing at what point in time these chunks were added, and therefore when some of the hypothetical nodes in the stemma were written.
 
 
 %%% Local Variables:

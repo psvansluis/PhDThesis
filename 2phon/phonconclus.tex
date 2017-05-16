@@ -83,36 +83,36 @@ Os oes amser, gallaf drafod:
   \begin{tikzpicture}[
     ->,
     align=left,
-    condit/.style={font=\small,above,near end, sloped}]
-    \node(pb){Proto-Brittonnic};
+    condit/.style={font=\footnotesize,above,near end, sloped}]
+    \node(pb){Archiphoneme};
     \node[right=of pb](phot){Phonetic lenition \&\\First spirantization};
     \node[right=of phot](apoc){Apocope};
     \node[right=of apoc](spir){Second \\spirantization};
     \node[right=of spir](merge){Merger\\\xD/\lT};
     %% Voiceless stops
     \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
-    \node[left=of t1](t){\gls{T}\asp};
+    \node[above=5mm of t1](t){\gls{T}\asp};
     \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
     \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
     \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
     \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
     \node(t4rs)[yshift=18mm] at (spir|-t3r){/f/\\/θ/\\/x/};
-    \node(t4ri) at (spir|-t3r){{id.}};
-    \node(t4l) at (spir|-t3l){{id.}};
+    \node(t4ri) at (spir|-t3r){};
+    \node(t4l) at (spir|-t3l){};
     \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
-    \node(t5rs) at (merge|-t4rs){{id.}};
+    \node(t5rs) at (merge|-t4rs){};
     %% Voiced stops
     \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
-    \node[left =of d1](d){\gls{D}\asp[-]};
+    \node[above =5mm of d1](d){\gls{D}\asp[-]};
     \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
     \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
     \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
     \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
-    \node at (spir|-d3r)(d4r){{id.}};
-    \node at (spir|-d3l)(d4l){{id.}};
-    \node at (merge|-d4l)(d5l){{id.}};
+    \node at (spir|-d3r)(d4r){};
+    \node at (spir|-d3l)(d4l){};
+    \node at (merge|-d4l)(d5l){};
     %% Merged stops
-    \node  at ($(t4l)!0.5!(d4r)$)(td4){/p/\\/t/\\/k/};
+    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
     \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
     %% Arrows
     \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
@@ -122,22 +122,143 @@ Os oes amser, gallaf drafod:
     \draw (t2r)to node[above] {\lng}(t3r);
     \draw (t2l)to node[above] {\lng[-]}(t3l);
     \draw (d2r)to node[above] {\lng}(d3r);
-    \draw (d2l)to node[above] {\lng[-]}(d3l);
+    \draw (d2l)to (d3l);
     \draw[dashed] (t3r) to node[condit] {/¬\#\_}(t4rs);
     \draw[dashed] (t3r) to node[condit] {/\#\_}(t4ri);
     \draw(t4ri)--(t5ri);
-    \draw[dashed] (t3l) to node[condit] {/\#\_}(t4l);
-    \draw(t4l)--(td5);
-    \draw(d4r)--(td5);
-    \draw[dashed] (d3r) to node[condit] {/\#\_}(d4r);
-    \draw (d3l)--(d4l)--(d5l);
-    \draw (td4)--(td5);
-    \draw[dashed] (d3r)to node[condit] {/¬\#\_}(td4);
-    \draw[dashed] (t3l)to node[condit] {/¬\#\_}(td4);
+    \draw (t3l) to (td5);
+    \draw(d3r)--(td5);
+    \draw (d3l)--(d5l);
+    \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
     \draw(t4rs)--(t5rs);
   \end{tikzpicture}
-  \caption{Summary of posited phonological developments}
+  \caption{Summary of posited phonological developments (Apocope before second spirantization)}
   \label{fig:phondevelopconc}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[h]
+  \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
+  \newcommand{\lng}[1][+]{[\textsc{#1long}]}
+  \centering
+  \begin{tikzpicture}[
+    ->,
+    align=left,
+    condit/.style={font=\footnotesize,above,near end, sloped}]
+    \node(pb){Archiphoneme};
+    \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
+    \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization};
+    \node[right=of spir](apoc){Apocope};
+    \node[right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
+    %% Voiceless stops
+    \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
+    \node[above=5mm of t1](t){\gls{T}\asp};
+    \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
+    \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
+    \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
+    \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
+    \node(t4rs)[yshift=18mm] at (spir|-t2r){[f]\\{[θ]}\\{[x]}};
+    \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
+    \node(t4ri) at (spir|-t3r){};
+    \node(t4l) at (spir|-t3l){};
+    \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
+    \node(t5rs) at (merge|-t4rs){};
+    %% Voiced stops
+    \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
+    \node[above =5mm of d1](d){\gls{D}\asp[-]};
+    \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
+    \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
+    \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
+    \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
+    \node at (spir|-d3r)(d4r){};
+    \node at (spir|-d3l)(d4l){};
+    \node at (merge|-d4l)(d5l){};
+    %% Merged stops
+    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
+    \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
+    %% Arrows
+    \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
+    \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
+    \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
+    \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
+    \draw[dashed] (t2r)to node[condit, near start] {/\#\_} node[above] {\lng}(t3r);
+    \draw (t2l)to node[above] {\lng[-]}(t3l);
+    \draw[dashed] (d2r)to node[condit, near start] {/\#\_} node[above] {\lng}(d3r);
+    \draw (d2l)to (d3l);
+    \draw[dashed] (t2r) to node[condit,midway] {/¬\#\_}(t4rs);
+    \draw(t3r)--(t5ri);
+    \draw (t3l) to (td5);
+    \draw(d3r)--(td5);
+    \draw (d3l)--(d5l);
+    \draw[dashed] (d2r)to node[condit,midway] {/¬\#\_}(t4l);
+    \draw(t4rs)--(t3rs);
+    \draw(t3rs)--(t5rs);
+  \end{tikzpicture}
+  \caption{Summary of posited phonological developments (Apocope after second spirantization)}
+  \label{fig:phondevelopconc2}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[h]
+  \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
+  \newcommand{\lng}[1][+]{[\textsc{#1long}]}
+  \centering
+  \begin{tikzpicture}[
+    ->,
+    align=left,
+    condit/.style={font=\footnotesize,above,pos=0.8, sloped}]
+    \node(pb){Archiphoneme\\/kʷ/ > /p/};
+    \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
+    \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization \&\\
+    Apocope};
+    \node[above=of spir](apoc){Proto-Brittonnic};
+    \node[below right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
+    \node[above=of merge]{Welsh};
+    \node at ($(pb)!0.5!(phot)$)(pic){};
+    \node at (pic|-apoc){Proto-Insular-Celtic};
+    %% Voiceless stops
+    \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
+    \node[above=5mm of t1](t){\gls{T}\asp};
+    \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
+    \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
+    \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
+    \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
+    \node(t4rs)[yshift=20mm] at (spir|-t2r){};
+    \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
+    \node(t4ri) at (spir|-t3r){};
+    \node(t4l) at (spir|-t3l){};
+    \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
+    \node(t5rs) at (merge|-t4rs){/f/\\/θ/\\/x/};
+    %% Voiced stops
+    \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
+    \node[above =5mm of d1](d){\gls{D}\asp[-]};
+    \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
+    \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
+    \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
+    \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
+    \node at (spir|-d3r)(d4r){};
+    \node at (spir|-d3l)(d4l){};
+    \node at (merge|-d4l)(d5l){/β/\\{/ð/}\\{/ɣ/}};
+    %% Merged stops
+    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
+    \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
+    %% Arrows
+    \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
+    \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
+    \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
+    \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
+    \draw[dashed] (t2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(t3r);
+    \draw (t2l)to node[above, pos=.4] {\lng[-]}(t3l);
+    \draw[dashed] (d2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(d3r);
+    \draw (d2l)to (d3l);
+    \draw[dashed] (t2r) to node[condit] {/¬\#\_}(t3rs);
+    \draw(t3r)--(t5ri);
+    \draw (t3l) to (td5);
+    \draw(d3r)--(td5);
+    \draw (d3l)--(d5l);
+    \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
+    \draw(t3rs)--(t5rs);
+  \end{tikzpicture}
+  \caption{Summary of posited phonological developments (Agnostic)}
+  \label{fig:phondevelopconc3}
 \end{sidewaysfigure}
 
 %%% Local Variables:
