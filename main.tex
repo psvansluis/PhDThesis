@@ -131,6 +131,7 @@ hidelinks
 
 \usepackage[marginal]{footmisc}
 
+
 %% NO DOT: vs
 \makeatletter
 \newcommand*{\ie}{\@ifnextchar{.}{i.e}{i.e.\@\xspace}}
@@ -206,10 +207,17 @@ hidelinks
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
 \input{gloss}
+
+\usepackage[series={},nocritical,noend,noeledsec,nofamiliar,noledgroup]{reledmac}
+\usepackage{reledpar} %%For parallel texts
+
 \begin{document}
-\input{3orth/brut}
-\input{3orth/laws.tex}
+% \input{3orth/brut}
+% \input{3orth/laws.tex}
+\input{2phon/phonconclus.tex}
 % \input{structure}
+
+\input{3orth/issues}
 \begin{spacing}{1}
 \backmatter
 \printglossary
