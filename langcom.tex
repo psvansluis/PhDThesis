@@ -2,6 +2,22 @@
 %% COMMANDS PREFIXED WITH g GIVE THE LANGUAGE NAME ABBREVIATION; 
 %% OPTIONAL ARGUMENTS MAY BE USED FOR TRANSLATIONS
 % \newcommand{\mw}[1]{\textwelsh{\textit{#1}}} %% OLD \mw command
+\newcommand{\mco}[2][]{%  %%Middle Cornish
+    \ifstrempty{#1}{{\textit{#2}}}%
+    {{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmco}[2][]{%
+    \ifstrempty{#1}{\gls{mco}~{\textit{#2}}}%
+    {\gls{mco}~{\textit{#2}} `#1'}%
+    }
+\newcommand{\oco}[2][]{%  %%Old Cornish
+    \ifstrempty{#1}{{\textit{#2}}}%
+    {{\textit{#2}} `#1'}%
+    }
+\newcommand{\goco}[2][]{%
+    \ifstrempty{#1}{\gls{oco}~{\textit{#2}}}%
+    {\gls{oco}~{\textit{#2}} `#1'}%
+    }
 
 \newcommand{\mb}[2][]{%  %%Middle Breton
     \ifstrempty{#1}{\textbreton{\textit{#2}}}%
