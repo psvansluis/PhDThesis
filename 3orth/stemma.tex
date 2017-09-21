@@ -1,3 +1,19 @@
+
+% \tqt{One advantage which Welsh law enjoyed in the political storms of the thirteenth century was that it had a written form. Already in the twelfth century it was felt to be an embarassment if law remained unwritten. Roman law was embodied in texts, and with the great legal revival of the eleventh and twelfth centuries it was felt that any law worthy of the name should be written.
+% }{charles-edwards_welsh_1989}{14}
+
+\tqt{Welsh law survives in many complete manuscripts and fragments of others. The difficulty scholars have had in coping with this wealth of material stems from two opposite truths: first, each manuscript is an individual entity in that no one manuscript presents a text exactly the same as any other; but, secondly, the manuscripts fall into groups because they share, to a greater or lesser extent, the same content. As a result there have been long terminological travails attempting to give due weight both to the variations between manuscripts and also the links between them.
+}{charles-edwards_welsh_1989}{17}
+
+
+\tqt{The considerable differences between the law books show that their authors were not concerned, like the Irish, to preserve intact a standard text handed down from the past.
+  Linguistically, the laws are not unlike many Middle Welsh prose tales: in spite of the occasional early feature the language as a whole generally accords with the dates of the manuscripts.
+}{charles-edwards_welsh_1989}{21--22}
+
+% \tqt{{[T]}he distinction between the Versions and the Anomalous Laws lies in the existence of a certain pattern according to which it was thought that a wide-ranging account of the Law of Hywel ought to be constructed. The pattern was not immutable, as is shown by the creation of the Test Book in \textsc{Ior} or by the wide variations in the ordering of the tractates in \textsc{Cyfn}.}{charles-edwards_welsh_1989}{26}
+
+\Textcite{wiliam_llyfr_1960} notes that, within \textit{B}, `[m]utations of initial consonants are sometimes indicated, sometimes not. The nasal mutation, however, is regularly shown.'~\autocite[xlii]{wiliam_llyfr_1960}.
+
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[font=\itshape,level distance=10mm]
@@ -163,6 +179,171 @@ child {node(2) {\upshape Redaction II}
   \label{fig:suretyshstemma}
 \end{figure}
 
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{cc}
+I  & II\\
+\begin{tikzpicture}[level distance=15mm,align=left]
+\node(p){Proto-Cyfn}
+child{node {Deutero-\\Cyfn I}
+  child{node(ior){\textsc{Ior}}}
+}
+child[missing]
+child {node {Deutero-\\Cyfn II}
+  child[level distance=30mm] {node(lat){The Latin Family\\ and \textsc{Bleg}}}
+}
+;
+\draw(ior)--(lat);    
+\end{tikzpicture}
+   &
+\begin{tikzpicture}[level distance=22.5mm,align=left]
+\node(p){Proto-Cyfn}
+child{node {Deutero-\\Cyfn I}
+}
+child[missing]
+child {node {Deutero-\\Cyfn II}
+  child[xshift=15mm] {node(lat){The Latin Family\\ and \textsc{Bleg}}}
+}
+;
+\node[xshift=30mm](ior){\vphantom{J}\textsc{Ior}};
+\draw(ior)--(lat);
+\end{tikzpicture}
+\end{tabular}
+
+\caption{Two possible family trees of the Welsh law books according to \textcite[48]{charles-edwards_welsh_1989}.}
+\label{fig:lawfamilies}
+\end{figure}
+
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{@{}ll@{}}
+%     \toprule
+%     \tch{Old} & \tch{New} \\
+%     \midrule
+%     Ɛ & Ep \\
+%     Ð & Dd \\
+%     Ā & As\\
+%     \rotatebox[origin=c]{180}{ω}& Mor\\
+%      & An \\
+%     \bottomrule
+%   \end{tabular}
+% \caption{Sigla for the anomalous laws}
+% \label{tab:sigla}
+% \end{table}
+
+\begin{table}[h]
+\centering
+  \renewcommand{\labelenumi}{\Roman{enumi}}
+  \renewcommand{\labelenumii}{\arabic{enumii}}
+  \renewcommand{\labelenumiii}{(\roman{enumiii})}
+\begin{tabular}{@{}p{0.45\textwidth}p{0.45\textwidth}@{}}
+  \toprule
+  \tch{\itshape Mk:}&\tch{\textsc{Ior}:}\\\midrule
+\begin{enumerate}
+\item Prologue
+\item Laws of Court
+\item Laws of Country
+  \begin{enumerate}
+  \item The Three Columns of Law, the Nine Tongued-ones, the value of limbs, \mw{galanas} and \mw{sarhaed}
+  \item Land
+  \item Value of Wild and Tame
+  \item Other Laws of Country
+    \begin{enumerate}
+    \item Corn-damage
+    \item Suretyship
+    \item Women
+    \end{enumerate}
+  \end{enumerate}
+\item Triads
+\end{enumerate}
+&
+
+\begin{enumerate}
+\item Prologue
+\item The Book of the Court (43/17 from Manuscript \textit{B})
+\item The Laws of Country
+  \begin{enumerate}
+  \item The Nine Tongued-ones
+  \item Women
+  \item Injury to Animals
+  \item Surety and Contract
+  \item Church Protection
+  \item Land
+  \item Children and Paternity
+  \end{enumerate}
+\item The Test Book (colophon: 120/7)
+  \begin{enumerate}
+  \item The Three Columns of Law (colophon: 120/7)
+  \item Value of Wild and Tame (and the Value of Trees)
+  \end{enumerate}
+\item Appendages to the Test Book:
+  \begin{enumerate}
+  \item Value of Houses and Equipment
+  \item Joint-ploughing
+  \item Corn-damage
+  \end{enumerate}
+\end{enumerate}\\\bottomrule
+\end{tabular}
+\caption{The main divisions of \textit{Mk} and \textsc{Ior} according to \textcite[27--28]{charles-edwards_welsh_1989}}
+\label{tab:divisions}
+\end{table}
+
+
+\begin{spacing}{1}
+  \itshape
+  \begin{pages}
+    \begin{Leftside}
+      \beginnumbering
+      \pstart[
+      \subsection*{C 180ra1--180va23}
+      \label{sec:parallel-text-c-1}
+      ]
+      \textup{/180ra/} Hewel \al{ỽ}ap kadell \al{t}ewyssaỽc kemry a deỽynnỽs attaỽ chwe gwyr o \al{p}ob kantref eg kemry oll hyt e ty gwyn en dyỽet a henny or gwyr doethaf en e \al{k}eỽoeth. e pedwar onadỽnt en llegyon ar deỽ en escolheygyon. Sef achaỽs e dwcpwyt er escolheygyon rac dody or lleegyon petheỽ a \al{ỽ}ey en erbyn er escrethỽr \al{g}lan. Ac esef amser e doethant eno petheỽnos amys \al{g}arawys. ac esef achaỽs e doethant eno e \al{g}arawys ỽrth na dely nep na dewedwyt kam nay \al{g}wneỽthỽr en er amser gleyndyt hỽnnỽ.
+      \pend
+      \pstart
+      Ac ena ed edrychassant e kyỽreythyeỽ. ar hon a \al{ỽ}ey re \al{t}rom onadỽnt y hescaỽynhaỽ. ar hon a \al{ỽ}ey re eskaỽyn onadỽnt yhachwanegỽ. Peth or kyỽreythyeỽ a \al{a}dassant \al{ỽ}al ed oeydynt. peth arall a \al{ỽ}ynnassant y emendaỽ. ereyll a dyleassant \textup{/180rb/} en \al{k}ỽbyl. ac ereyll o newyd a \al{o}ssodassant.
+      \pend
+      \pstart
+      Ac ena e dodassant hewel a henny o doethyon eỽ hemendyth ar nep a \al{k}amarỽerey or kyỽreythyeỽ henny ac ar er arglwyd ay semỽtey yr ỽn onadỽnt namyn kan dỽỽndep kynnỽlleytỽa \al{k}ymeynt ac a \al{w}u eno. ER eyl emendyth a dodassant ar er arglwyd ay rodey. ac ar e dyn ay kymerey \al{t}eylygdaỽt egneydyaeth ar ny \al{g}wyney teyr koloỽyn kyỽreyth a gwerth gwyllt a dof. ac a \al{p}erthyn attadỽnt
+      \pend
+      \pstart
+      \pend
+      \pstart
+      Pwy \al{b}ynnac a \al{ỽ}ynho kymryt egneydyaeth \al{ỽ}al hy e mae yaỽn ydaỽ gwybot e llyỽyr hỽn. \al{ỽ}al e bo teylỽng. ydaỽ kymryt egneydyaeth. a phan \al{g}welo y athro y \al{ỽ}ot yn \al{t}eylỽng. ellyget ar er egnat llys ef. ar egnat llys \al{p}yeỽ y \al{p}roỽy. Ac os gwyl en \al{t}eylỽng enteỽ \al{p}yeỽ y ellỽng ef ar er arglwyd. ar arglwyd \al{p}yeỽ estynnỽ ydaỽ enteỽ egneydyaeth. ac en \al{ỽ}arnedyc e \al{ỽ}raỽt a \al{ỽ}arnho enteỽ o henny allan. Ac enteỽ \al{p}yeỽ rody pedeyr ar ỽgeynt yr egnat llys en y \al{o}byr. O derỽyd ydaỽ enteỽ barnỽ kam \al{ỽ}raỽt o henny allan ny dely enteỽ y \al{t}aỽaỽt \textup{/180va/} onys pryn yr y \al{w}erth kyỽreyth. O derỽyd emwystlaỽ ac enteỽ. ae \al{ỽ}ot enteỽ ar er yaỽn. ef adely wynepwarth y \al{g}an e nep a emwystlo ac ef. a chamlỽrỽ yr arglwyd. Ny dely egnat kymryt gwystyl onys myn ehỽn gwedy del oe \al{ỽ}raỽtle. ac ny dely kymryt y \al{g}an \al{l}eyc onyt kan adaỽ braỽt a \al{ỽ}o gwell y \al{g}an egnat arall nor hon a \al{ỽ}arnỽs ef.
+      \pend
+      \pstart
+      Ar lleỽyr hỽn a \al{g}ynỽllỽs yorwerth \al{ỽ}ap madaỽc o \al{l}yỽyr kyỽnerth \al{ỽ}ap morgeneỽ. ac o \al{l}yỽyr gweyr \al{ỽ}ap rỽuaỽn. ac o \al{l}yỽyr Goronwy \al{ỽ}ap morydyc. ac y \al{g}yt a hennyor llyỽreỽ goreỽ a kaỽas heỽyt eg gwyned. a phowys. a deheỽparth. ar llyỽyr hỽn a \al{e}lwyr e llyỽyr praỽ. Sef ew henny teyr koloỽyn \al{k}yỽreyth. a gwerth gwyllt a dof. ac a \al{p}erthyn ar henny.
+      \pend
+      \endnumbering
+    \end{Leftside}
+    \begin{Rightside}
+      \beginnumbering
+      \pstart[
+      \subsection*{D 55v20--57r2}
+      \label{sec:d}
+      ]
+      \textup{/55v/} Howel \al{v}ab kadeỻ \al{t}ywyssaỽc kymry a dyuynnaỽd attaỽ chwe gwyr o \al{b}op kantref yng kymry hyt y ty gwynn yn dyuet. a hynny or gỽyr doethaf yn y \al{g}yuoeth. y pedwar onadunt yn ỻeygyon. ar deu yn yscolheigyon. \textup{/56r/} rac dodi or ỻeygyon petheu a \al{v}ei yn erbyn yr ysgruthyr \al{l}an. Sef amser y doethant yno; pythewnos a mis \al{g}arawys. ỽrth na dylyei neb na dywedut cam nae \al{w}neuthur yn yr amser gleindyt hỽnnỽ.
+      \pend
+      \pstart
+      Ac yna yd edrychassant y kyfreitheu; yr honn a \al{v}ei ry \al{d}rom y chosp onadunt. y ỻeihau. ar honn a \al{v}ei ry \al{v}echan; y hachwanegu. Peth or kyfreitheu a \al{a}dassant \al{u}al yd yttoedynt peth araỻ a emendanassant. ereiỻ o \al{g}ỽbyl a dileassant.
+      \pend
+      \pstart
+      ac yna y dodassant eu hemeỻtith howel a hynny o doethon ar yr arglỽyd a symuttei vn or kyfreitheu hynny; namyn \al{g}an duundeb kynnuỻeitua \al{g}ymeint a honno. ar eil emeỻtith a dodassant ar yr arglỽyd ae rodei. ac ar y dyn a \al{g}ymerei arnaỽ \al{d}eilygdaỽt ygneityaeth ar ny \al{w}ypei \al{t}eir kolofyn kyfreith. a gỽerth gỽyỻt a dof. ac a \al{b}erthyn attunt.
+      \pend
+      \pstart
+      A gỽedy gỽneuthur ohonunt y kyfreitheu \al{u}al y tebygynt eu bot yn \al{d}eilỽg; yd aeth howel ac escob mynyỽ. ac escob assaf. ac escob bangor. ac y am hynny yny \al{v}u ar y \al{d}rydyd ar dec o athraỽon a doethon ereiỻ o \al{l}eygyon. ac yd aethant hyt yn ruuein. y \al{g}ymryt aỽdurdaỽt pab ruuein y \al{g}yfreitheu howel. ac yna y darỻewyt kyfreitheu howel rac bronn \al{p}ab ruuein. ac y bu \al{u}odlaỽn y pab udunt. ac y rodes y aỽdurdaỽt udunt. \textup{/56v/} ac y doeth howel ae \al{g}edymdeithon adref. Ac yr hynny hediỽ yd ydys yn daly o \al{g}yfreitheu hoỽel.
+      \pend
+      \pstart
+      Pỽy \al{b}ynnac a \al{v}ynno kymryt ygneityaeth arnaỽ; \al{v}al hynn y mae idaỽ gỽybot y ỻyfyr hỽnn. \al{u}al y bo teilỽg idaỽ kymryt ygneityaeth. a phan \al{w}elo y athro y \al{v}ot yn \al{d}eilỽg; goỻyget ef att yr ygnat ỻys. ar ygnat ỻys \al{b}ieu y \al{b}roui. ac os gỽyl yn \al{d}eilỽg; ynteu \al{b}ieu y oỻỽg ef att yr arglỽyd. ar arglỽyd \al{b}ieu estynnu ygneityaeth idaỽ. ac yn \al{u}arnedic y \al{v}arn a \al{v}arnho o hynny aỻan. ac ynteu \al{b}ieu rodi pedeir ar hugeint yr ygnat ỻys yn y \al{o}byr. O deruyd idaỽ ynteu \al{v}arnu camvraỽt o hynny aỻan; ny dyly y \al{d}auaỽt ony s pryn yr y \al{w}erth kyfreith. O deruyd. ymwystlaỽ ac ynteu ae \al{v}ot ef ar yr iaỽn; ef a dyly wynebwerth y \al{g}an y neb a ymỽystlo ac ef. a chamlỽrỽ yr arglỽyd. Ny dyly ygnat kymryt gỽystyl gỽedy del oe \al{v}raỽtle. ony s mynn. ac ny dyly y \al{g}ymryt y \al{g}an \al{l}eyc; onyt \al{g}an adaỽ braỽt a \al{v}o gỽeỻ y \al{g}an araỻ nor \al{v}raỽt a \al{v}arnaỽd ef.
+      \pend
+      \pstart
+      Y ỻyfyr hỽnn a \al{g}ynnuỻaỽd Jorwerth \al{u}ab madaỽc. o \al{l}yfyr kyfreith Morgeneu. a ỻyfyr gỽeir \al{u}ab ruaỽn. a ỻyfyr gronỽy \al{u}ab Moridic. ac y\al{g}yt a hynny or ỻyfreu goreu yg gỽyned. a phowys. a deheubarth. ar ỻyfyr hỽnn a \al{e}lwir ỻyfyr praỽf. Sef \textup{/57r/} yỽ hynny; teir kolofyn \al{k}yfreith. a gỽerth gỽyỻt a dof. ac a \al{b}erthyn ar hynny.
+      \pend
+      \endnumbering
+    \end{Rightside}
+  \end{pages} 
+  \Pages
+\end{spacing}
 
 
 
