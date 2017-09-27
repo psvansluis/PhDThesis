@@ -255,6 +255,48 @@ The contrast between these percentages shows how easy it is to miss out on how  
 
 Table~\ref{tab:perlenbrutex} shows how rarely morphophonemic lenition of \mw{p, t, c} is represented in the earlier translations of the \mw{Brut}. The orthographical development of these consonants will be discussed in this section.
 
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=.9\linewidth,
+      height=.6\linewidth,
+      xlabel=Manuscript,
+      ylabel={Representation of lenition (\%)},
+      symbolic x coords={
+        \gls{ll1},
+        \gls{p44},
+        \gls{bd},
+        \gls{bcc}
+      },
+      xtick=data,
+      legend style={legend pos=north west},
+      ]
+      \addplot[color=black,rounded corners,thick,dotted,] coordinates {
+        (\gls{ll1},0.00)
+        (\gls{p44},8.33)
+        (\gls{bd},22.22)
+        (\gls{bcc},95.83)
+      };
+      \addplot[color=black,rounded corners,thick,dashed,] coordinates {
+        (\gls{ll1},0.00)
+        (\gls{p44},0.00)
+        (\gls{bd},0.00)
+        (\gls{bcc},80.00)
+      };
+      \addplot[color=black,rounded corners,thick] coordinates {
+        (\gls{ll1},8.70)
+        (\gls{p44},7.32)
+        (\gls{bd},88.00)
+        (\gls{bcc},78.57)
+      };
+      \legend{\mw[]{p},\mw[]{t},\mw[]{c}}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Orthographical representation of voiceless stops over time.}
+  \label{fig:linechartbrut}
+\end{figure}
+
 \subsection{Lenition in \acrshort{ll1} and \acrshort{p44}}
 \label{sec:lenit-acrsh-acrsh}
 
@@ -456,7 +498,7 @@ However, if the \mw{g} is followed by consonantal \mw{\cw}, and then followed by
     & \tch{\graph{w}} & \tch{\graph{gw}}\\
     \midrule
     /ɡ\cw{}\gls{C}/ & 3 & 48\\
-    /ɡ\cw{}\gls{V}, ɡu/ &24 &13\\
+    /ɡ\cw{}\gls{V}/ or /ɡu/ &24 &13\\
     \bottomrule
   \end{tabular}
   \caption{Lenition of \mw{gw} divided by phonological structure of the word.}
