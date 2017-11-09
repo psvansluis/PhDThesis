@@ -242,3 +242,5 @@ $RECYCLE.BIN/
 *.lang-glg
 *.lang-gls
 *.tex~
+*.rip#
+3orth/mickey.tex
