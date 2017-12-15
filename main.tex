@@ -86,6 +86,7 @@ hidelinks
 \newcommand{\tchhh}[1]{\multicolumn{3}{c}{#1}}
 \newcommand{\tchh}[1]{\multicolumn{2}{c}{#1}}
 \newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
+\usepackage{subfig}
 
 \newcommand{\noparquotes}[1]{%
   \IfBeginWith{#1}{(}%
@@ -203,6 +204,9 @@ hidelinks
     {\begin{spacing}{1}\begin{longtable}[c]{#1}}%
     {\end{longtable}\end{spacing}}%
 
+\usepackage[nointegrals]{wasysym}
+\newcommand{\TRUE}{\CheckedBox}
+\newcommand{\FALSE}{\Square}
 
 
 
@@ -215,22 +219,22 @@ hidelinks
 
 \begin{document}
 % \input{3orth/brut}
-\input{3orth/laws.tex}
+% \input{3orth/laws.tex}
 % \input{2phon/phonconclus.tex}
-% \input{structure}
-\input{3orth/dewi.tex}
+\input{structure}
+% \input{3orth/dewi.tex}
 % \input{3orth/issues}
-\begin{spacing}{1}
-\backmatter
-\printglossary
-\printglossary[%
-    type=lang,%
-    style=mcolindex,%
-    nonumberlist=true,%
-    nogroupskip=true]
-% \printglossary[type=\acronymtype] %% Acronyms go with main glossary unless acronym option in package is on
-\printbibliography
-\end{spacing}
+% \begin{spacing}{1}
+% \backmatter
+% \printglossary
+% \printglossary[%
+%     type=lang,%
+%     style=mcolindex,%
+%     nonumberlist=true,%
+%     nogroupskip=true]
+% % \printglossary[type=\acronymtype] %% Acronyms go with main glossary unless acronym option in package is on
+% \printbibliography
+% \end{spacing}
 
 \end{document}
 
