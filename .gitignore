@@ -244,3 +244,13 @@ $RECYCLE.BIN/
 *.tex~
 *.rip#
 3orth/mickey.tex
+3orth/.#dewi.tex
+*.RData
+*.Rhistory
+rfigures/data/lentypedewi.csv
+*.csv
+rfigures/figure/dewifirstresults.tex
+*.rnw~
+rfigures/figures.tex
+*.emf
+rfigures/gg.txt

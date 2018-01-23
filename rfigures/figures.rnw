@@ -1,0 +1,180 @@
+\documentclass[a4paper]{article}
+
+\usepackage{tikz}
+\usepackage{pgf}
+\newcommand{\gls}[1]{((\textbf{#1}))}
+\newcommand{\mw}[1]{\textit{#1}}
+\newcommand{\mow}[1]{\textit{#1}}
+
+\begin{document}
+<<loadlibraries,fig.width=5,fig.height=4>>=
+library("ggplot2")
+library("tidyverse")
+library("broom")
+library("dplyr")
+library("xtable")
+library("MASS")
+library("ggdendro")
+library("corrplot")
+library("eulerr")
+library("tikzDevice")
+
+###THEMES
+theme_set(theme_bw())
+scale_colour_discrete <- scale_colour_grey
+scale_fill_discrete <- scale_fill_grey
+
+###CHUNK OPTIONS
+opts_chunk$set(dev='tikz',
+               external=FALSE,
+               fig.width=5,
+               fig.height=3.5)
+
+###TIKZDEVICE OPTIONS
+tikz("fontsize-normal.tikz")
+@ 
+
+<<dewidatabase>>=
+#df.dewi <- read.csv(file="./data/lentypedewi2.csv")
+df.dewi.c <- read.csv(file="./data/lentypedewi.csv")
+glsnames <- c("\\gls{j119}","\\gls{ll27}","\\gls{ctd22}")
+colnames(df.dewi.c)[5:7] <- glsnames
+#names(df.dewi) <- gsub("_lenited", "", names(df.dewi))
+df.dewi.c <- df.dewi.c %>%
+    mutate(Lemma = paste(Word, " ", Ll27_p, ".", Ll27_l, sep=""),
+           Sum = (df.dewi.c[,5]+df.dewi.c[,6]+df.dewi.c[,7])) 
+names(df.dewi.c) <- 
+    gsub("Type.of.lenition", "lenition", names(df.dewi.c))
+
+
+### Get rid of consonant "c"
+df.dewi <- df.dewi.c %>% filter(Initial.consonant != "c")
+
+### Make special free/contact lenition df's
+dewi.free <- df.dewi  %>%
+    filter(lenition == "free")
+dewi.cont <- df.dewi  %>%
+    filter(lenition == "contact")
+@
+
+<<firstresults>>=
+### Calculate mean rates of representation
+firstresults <- df.dewi.c  %>% 
+    gather(MS,represented,5:7)
+firstresults <- aggregate(firstresults$represented, 
+          by=list(long.c$Initial.consonant,long.c$MS), 
+          FUN=mean) %>% 
+    data.frame  %>%
+    mutate(cons=paste("\\mw{", Group.1, "}", sep=""),
+           perc=format(x*100,digits=3),
+           colcons=paste("\\tch{", cons, "}", sep="")
+           )
+firstresults
+### Get these rates in a LaTeX table
+## firstresults$perc %>%  format(flag="#")  %>% as.character()
+df.results <- firstresults[,c(2,5,6)] %>% 
+    spread(colcons,perc) %>% 
+    rename("\\tch{MS}" = Group.2)
+df.results <- df.results[,c(1,3,4,2)]
+latex.results <- paste(
+    "\\begin{tabular}{lddd}\n\\toprule\n", colnames(df.results[1]), 
+    " & ", colnames(df.results[2]), " & ", colnames(df.results[3]), 
+    " & ", colnames(df.results[4]), " \\\\ \\midrule\n", 
+    df.results[1,1], " & ", df.results[1,2], " & ", df.results[1,3], 
+    " & ", df.results[1,4], " \\\\\n", df.results[2,1], " & ", 
+    df.results[2,2], " & ", df.results[2,3], " & ", df.results[2,4], 
+    " \\\\\n", df.results[3,1], " & ", df.results[3,2], " & ", 
+    df.results[3,3], " & ",     df.results[3,4], 
+    " \\\\ \\bottomrule\n\\end{tabular}\n", sep="")
+cat(latex.results,file="figure/dewifirstresults.tex")
+
+### Visualise them with a bar plot
+ggplot(firstresults,aes(x= c(Group.2),y=as.numeric(perc),fill=cons))+
+    geom_col(position="dodge",color="black")+
+    labs(x="",y="lenition represented (\\%)")+
+    guides(fill = guide_legend(title = "consonant"))
+
+
+### Alternative with stacked bars; NB unweighed for rel. freq of p t c
+ggplot(firstresults,aes(x= c(Group.2),y=as.numeric(perc)/3,fill=cons))+
+    geom_col(position="stack",color="black")+
+    labs(x="",y="lenition represented (\\%)")+
+    ylim(0,100)+
+    guides(fill = guide_legend(title = "consonant"))
+@ 
+
+
+<<bardewi1>>=
+df.dewi %>% 
+    ggplot(aes(x=Sum,fill=lenition))+
+    geom_histogram(stat="count",binwidth=1,colour="black")+
+    labs(x="amount of manuscripts representing lenition")
+@ 
+
+<<bardewi2>>=
+unique.df.dewi <- df.dewi %>%
+    filter(!((df.dewi[,5] == df.dewi[,6]) & (df.dewi[,6] == df.dewi[,7])))%>%
+        cbind(data.frame("unique"=rep("unique", nrow(.))))
+
+notunique.df.dewi <- df.dewi %>%
+    cbind(data.frame("unique"=rep("not unique", nrow(.))))
+
+
+rbind(unique.df.dewi, notunique.df.dewi)%>%
+    gather(key=MS,value=represented,5:7) %>%
+    ggplot(aes(x=MS,fill=represented))+
+    xlab("manuscript")+
+    geom_histogram(stat="count",binwidth=1)+
+    facet_grid(unique~lenition)
+@ 
+
+<<vennfree>>=
+euler.dewi.free <- euler(dewi.free[,5:7], shape="ellipse") 
+euler.dewi.free 
+
+
+euler.dewi.free %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
+                         fill_alpha=.25,
+                         fontface="plain",
+                         quantities=TRUE,
+                         auto.key=list(space="bottom",columns=3)
+                         )
+@ 
+
+<<venncont>>=
+colnames(dewi.cont)[5:7] <- glsnames
+euler.dewi.cont <- euler(dewi.cont[,5:7], shape="ellipse")
+euler.dewi.cont
+euler.dewi.cont %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
+                         fill_alpha=.25,
+                         fontface="plain",
+                         quantities=TRUE,
+                         auto.key=list(space="bottom",columns=3)
+                         )
+@ 
+<<dist>>=
+dist.free <- dewi.free[5:7] %>% 
+    t %>% 
+    dist(method="binary") %>% 
+    cmdscale %>% 
+    data.frame %>% 
+    mutate(MS=rownames(.)) %>% 
+    cbind(data.frame("lenition"=rep("free", nrow(.))))
+dist.cont <- dewi.cont[5:7] %>% 
+    t %>% 
+    dist(method="binary") %>% 
+    cmdscale %>% 
+    data.frame %>% 
+    mutate(MS=rownames(.)) %>% 
+    cbind(data.frame("lenition"=rep("contact", nrow(.))))
+    
+rbind(dist.cont,dist.free) %>% 
+    ggplot(aes(x=X2,y=X1,label=MS))+
+    geom_text()+
+    xlim(-.20,.20)+
+    coord_fixed()+
+    labs(x=NULL,y=NULL)+
+    facet_grid(~lenition)
+           
+@ 
+\end{document}
