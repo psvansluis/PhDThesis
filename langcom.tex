@@ -83,6 +83,14 @@
     \ifstrempty{#1}{\gls{mir}~\textirish{\textit{#2}}}%
     {\gls{mir}~\textirish{\textit{#2}} `#1'}%
     }
+\newcommand{\moi}[2][]{% %%Middle Irish
+    \ifstrempty{#1}{\textirish{\textit{#2}}}%
+    {\textirish{\textit{#2}} `#1'}%
+    }
+\newcommand{\gmoi}[2][]{%
+    \ifstrempty{#1}{\gls{mir}~\textirish{\textit{#2}}}%
+    {\gls{moir}~\textirish{\textit{#2}} `#1'}%
+    }
 \newcommand{\lat}[2][]{% %%Latin
     \ifstrempty{#1}{\textlatin{\textit{#2}}}%
     {\textlatin{\textit{#2}} `#1'}%
