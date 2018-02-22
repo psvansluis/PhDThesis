@@ -1,0 +1,520 @@
+\documentclass[a4paper]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{amsmath}
+\newcommand{\gls}[1]{((\textbf{#1}))}
+\newcommand{\mw}[1]{\textit{#1}}
+\newcommand{\mow}[1]{\textit{#1}}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"tidyverse"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"broom"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"xtable"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"MASS"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"ggdendro"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"corrplot"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"eulerr"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"tikzDevice"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"knitr"}\hlstd{)}
+\hlcom{###THEMES}
+\hlkwd{theme_set}\hlstd{(}\hlkwd{theme_bw}\hlstd{())}
+\hlstd{scale_colour_discrete} \hlkwb{<-} \hlstd{scale_colour_grey}
+\hlstd{scale_fill_discrete} \hlkwb{<-} \hlstd{scale_fill_grey}
+
+\hlcom{###CHUNK OPTIONS}
+\hlstd{opts_chunk}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{dev}\hlstd{=}\hlstr{'tikz'}\hlstd{,}
+               \hlkwc{external}\hlstd{=}\hlnum{FALSE}\hlstd{,}
+               \hlkwc{fig.width}\hlstd{=}\hlnum{5}\hlstd{,}
+               \hlkwc{fig.height}\hlstd{=}\hlnum{3.5}\hlstd{)}
+
+\hlcom{###TIKZDEVICE OPTIONS}
+\hlkwd{tikz}\hlstd{(}\hlstr{"fontsize-normal.tikz"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlcom{#df.dewi <- read.csv(file="./data/lentypedewi2.csv")}
+\hlstd{df.dewi.c} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"./data/lentypedewi.csv"}\hlstd{)}
+\hlstd{glsnames} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}gls\{j119\}"}\hlstd{,}\hlstr{"\textbackslash{}\textbackslash{}gls\{ll27\}"}\hlstd{,}\hlstr{"\textbackslash{}\textbackslash{}gls\{ctd22\}"}\hlstd{)}
+\hlkwd{colnames}\hlstd{(df.dewi.c)[}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{]} \hlkwb{<-} \hlstd{glsnames}
+\hlcom{#names(df.dewi) <- gsub("_lenited", "", names(df.dewi))}
+\hlstd{df.dewi.c} \hlkwb{<-} \hlstd{df.dewi.c} \hlopt{%>%}
+    \hlkwd{mutate}\hlstd{(}\hlkwc{Lemma} \hlstd{=} \hlkwd{paste}\hlstd{(Word,} \hlstr{" "}\hlstd{, Ll27_p,} \hlstr{"."}\hlstd{, Ll27_l,} \hlkwc{sep}\hlstd{=}\hlstr{""}\hlstd{),}
+           \hlkwc{Sum} \hlstd{= (df.dewi.c[,}\hlnum{5}\hlstd{]}\hlopt{+}\hlstd{df.dewi.c[,}\hlnum{6}\hlstd{]}\hlopt{+}\hlstd{df.dewi.c[,}\hlnum{7}\hlstd{]))}
+\hlkwd{names}\hlstd{(df.dewi.c)} \hlkwb{<-}
+    \hlkwd{gsub}\hlstd{(}\hlstr{"Type.of.lenition"}\hlstd{,} \hlstr{"lenition"}\hlstd{,} \hlkwd{names}\hlstd{(df.dewi.c))}
+
+
+\hlcom{### Get rid of consonant "c"}
+\hlstd{df.dewi} \hlkwb{<-} \hlstd{df.dewi.c} \hlopt{%>%} \hlkwd{filter}\hlstd{(Initial.consonant} \hlopt{!=} \hlstr{"c"}\hlstd{)}
+
+\hlcom{### Make special free/contact lenition df's}
+\hlstd{dewi.free} \hlkwb{<-} \hlstd{df.dewi}  \hlopt{%>%}
+    \hlkwd{filter}\hlstd{(lenition} \hlopt{==} \hlstr{"free"}\hlstd{)}
+\hlstd{dewi.cont} \hlkwb{<-} \hlstd{df.dewi}  \hlopt{%>%}
+    \hlkwd{filter}\hlstd{(lenition} \hlopt{==} \hlstr{"contact"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlcom{### Calculate mean rates of representation}
+\hlcom{## df.dewi.c[4:7] %>% ## This code is actually more elegant than that below}
+\hlcom{##     gather(key=MS,value=Rep, 2:4) %>% }
+\hlcom{##     group_by(Initial.consonant, MS) %>% }
+\hlcom{##     summarise(mean = format(mean(Rep)*100,digits=3)) %>% }
+\hlcom{##     spread(key=Initial.consonant,value=mean)}
+\hlstd{firstresults}  \hlkwb{<-} \hlstd{df.dewi.c}  \hlopt{%>%}
+    \hlkwd{gather}\hlstd{(MS,represented,}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{)}
+\hlstd{firstresults} \hlkwb{<-} \hlkwd{aggregate}\hlstd{(firstresults}\hlopt{$}\hlstd{represented,}
+          \hlkwc{by}\hlstd{=}\hlkwd{list}\hlstd{(firstresults}\hlopt{$}\hlstd{Initial.consonant,firstresults}\hlopt{$}\hlstd{MS),}
+          \hlkwc{FUN}\hlstd{=mean)}\hlopt{%>%}
+    \hlstd{data.frame}  \hlopt{%>%}
+    \hlkwd{mutate}\hlstd{(}\hlkwc{cons}\hlstd{=}\hlkwd{paste}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}mw\{"}\hlstd{, Group.1,} \hlstr{"\}"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{""}\hlstd{),}
+           \hlkwc{perc}\hlstd{=}\hlkwd{format}\hlstd{(x}\hlopt{*}\hlnum{100}\hlstd{,}\hlkwc{digits}\hlstd{=}\hlnum{3}\hlstd{),}
+           \hlkwc{colcons}\hlstd{=}\hlkwd{paste}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}tch\{"}\hlstd{, cons,} \hlstr{"\}"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{""}\hlstd{))}
+\hlstd{firstresults}
+\end{alltt}
+\begin{verbatim}
+##   Group.1      Group.2         x    cons  perc        colcons
+## 1       c \\gls{ctd22} 1.0000000 \\mw{c} 100.0 \\tch{\\mw{c}}
+## 2       p \\gls{ctd22} 0.8133333 \\mw{p}  81.3 \\tch{\\mw{p}}
+## 3       t \\gls{ctd22} 0.9024390 \\mw{t}  90.2 \\tch{\\mw{t}}
+## 4       c  \\gls{j119} 0.9894737 \\mw{c}  98.9 \\tch{\\mw{c}}
+## 5       p  \\gls{j119} 0.6800000 \\mw{p}  68.0 \\tch{\\mw{p}}
+## 6       t  \\gls{j119} 0.6585366 \\mw{t}  65.9 \\tch{\\mw{t}}
+## 7       c  \\gls{ll27} 0.9894737 \\mw{c}  98.9 \\tch{\\mw{c}}
+## 8       p  \\gls{ll27} 0.8933333 \\mw{p}  89.3 \\tch{\\mw{p}}
+## 9       t  \\gls{ll27} 0.8536585 \\mw{t}  85.4 \\tch{\\mw{t}}
+\end{verbatim}
+\begin{alltt}
+\hlcom{### Get these rates in a LaTeX table}
+\hlstd{df.results} \hlkwb{<-} \hlstd{firstresults[,}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{5}\hlstd{,}\hlnum{6}\hlstd{)]} \hlopt{%>%}
+    \hlkwd{spread}\hlstd{(colcons,perc)} \hlopt{%>%}
+    \hlkwd{rename}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}tch\{MS\}"} \hlstd{= Group.2)}
+\hlstd{df.results} \hlkwb{<-} \hlstd{df.results[,}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{,}\hlnum{4}\hlstd{,}\hlnum{2}\hlstd{)]}
+\hlstd{latex.results} \hlkwb{<-} \hlkwd{paste}\hlstd{(}
+    \hlstr{"\textbackslash{}\textbackslash{}begin\{tabular\}\{lddd\}\textbackslash{}n\textbackslash{}\textbackslash{}toprule\textbackslash{}n"}\hlstd{,} \hlkwd{colnames}\hlstd{(df.results[}\hlnum{1}\hlstd{]),}
+    \hlstr{" & "}\hlstd{,} \hlkwd{colnames}\hlstd{(df.results[}\hlnum{2}\hlstd{]),} \hlstr{" & "}\hlstd{,} \hlkwd{colnames}\hlstd{(df.results[}\hlnum{3}\hlstd{]),}
+    \hlstr{" & "}\hlstd{,} \hlkwd{colnames}\hlstd{(df.results[}\hlnum{4}\hlstd{]),} \hlstr{" \textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{} \textbackslash{}\textbackslash{}midrule\textbackslash{}n"}\hlstd{,}
+    \hlstd{df.results[}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{],} \hlstr{" & "}\hlstd{, df.results[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{],} \hlstr{" & "}\hlstd{, df.results[}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{],}
+    \hlstr{" & "}\hlstd{, df.results[}\hlnum{1}\hlstd{,}\hlnum{4}\hlstd{],} \hlstr{" \textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n"}\hlstd{, df.results[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{],} \hlstr{" & "}\hlstd{,}
+    \hlstd{df.results[}\hlnum{2}\hlstd{,}\hlnum{2}\hlstd{],} \hlstr{" & "}\hlstd{, df.results[}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{],} \hlstr{" & "}\hlstd{, df.results[}\hlnum{2}\hlstd{,}\hlnum{4}\hlstd{],}
+    \hlstr{" \textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n"}\hlstd{, df.results[}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{],} \hlstr{" & "}\hlstd{, df.results[}\hlnum{3}\hlstd{,}\hlnum{2}\hlstd{],} \hlstr{" & "}\hlstd{,}
+    \hlstd{df.results[}\hlnum{3}\hlstd{,}\hlnum{3}\hlstd{],} \hlstr{" & "}\hlstd{,     df.results[}\hlnum{3}\hlstd{,}\hlnum{4}\hlstd{],}
+    \hlstr{" \textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{} \textbackslash{}\textbackslash{}bottomrule\textbackslash{}n\textbackslash{}\textbackslash{}end\{tabular\}\textbackslash{}n"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{""}\hlstd{)}
+\hlkwd{cat}\hlstd{(latex.results,}\hlkwc{file}\hlstd{=}\hlstr{"figure/dewifirstresults.tex"}\hlstd{)}
+
+\hlcom{### Visualise them with a bar plot}
+\hlkwd{ggplot}\hlstd{(firstresults,}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=} \hlkwd{c}\hlstd{(Group.2),}\hlkwc{y}\hlstd{=}\hlkwd{as.numeric}\hlstd{(perc),}\hlkwc{fill}\hlstd{=cons))}\hlopt{+}
+    \hlkwd{geom_col}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{,}\hlkwc{color}\hlstd{=}\hlstr{"black"}\hlstd{)}\hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{x}\hlstd{=}\hlstr{""}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"lenition represented (\textbackslash{}\textbackslash{}%)"}\hlstd{)}\hlopt{+}
+    \hlkwd{guides}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{guide_legend}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"consonant"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\input{figure/firstresults-1.tikz}
+\begin{kframe}\begin{alltt}
+\hlcom{### Alternative with stacked bars; NB unweighed for rel. freq of p t c}
+\hlkwd{ggplot}\hlstd{(firstresults,}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=} \hlkwd{c}\hlstd{(Group.2),}\hlkwc{y}\hlstd{=}\hlkwd{as.numeric}\hlstd{(perc)}\hlopt{/}\hlnum{3}\hlstd{,}\hlkwc{fill}\hlstd{=cons))}\hlopt{+}
+    \hlkwd{geom_col}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"stack"}\hlstd{,}\hlkwc{color}\hlstd{=}\hlstr{"black"}\hlstd{)}\hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{x}\hlstd{=}\hlstr{""}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"lenition represented (\textbackslash{}\textbackslash{}%)"}\hlstd{)}\hlopt{+}
+    \hlkwd{ylim}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{100}\hlstd{)}\hlopt{+}
+    \hlkwd{guides}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{guide_legend}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"consonant"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\input{figure/firstresults-2.tikz}
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlcom{### Here we generate the right numbers for the different contingency tables}
+
+\hlcom{### Contingency table for observed values}
+\hlstd{obs.ll27ctd22} \hlkwb{<-} \hlstd{df.dewi}  \hlopt{%>%}
+    \hlkwd{summarise}\hlstd{(}
+        \hlkwc{AA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{AI} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{)),}
+        \hlkwc{IA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{II} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{))}
+    \hlstd{)} \hlopt{%>%} \hlstd{as.numeric}  \hlopt{%>%} \hlkwd{matrix}\hlstd{(}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+
+\hlstd{obs.j119ll27} \hlkwb{<-} \hlstd{df.dewi}  \hlopt{%>%}
+    \hlkwd{summarise}\hlstd{(}
+        \hlkwc{AA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{AI} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE}\hlstd{)),}
+        \hlkwc{IA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{II} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE}\hlstd{))}
+    \hlstd{)} \hlopt{%>%} \hlstd{as.numeric}  \hlopt{%>%} \hlkwd{matrix}\hlstd{(}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+
+\hlstd{obs.ctd22j119} \hlkwb{<-} \hlstd{df.dewi}  \hlopt{%>%}
+    \hlkwd{summarise}\hlstd{(}
+        \hlkwc{AA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{AI} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{TRUE}\hlstd{)),}
+        \hlkwc{IA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{II} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{j119\}`} \hlopt{==} \hlnum{TRUE}\hlstd{))}
+    \hlstd{)} \hlopt{%>%} \hlstd{as.numeric}  \hlopt{%>%} \hlkwd{matrix}\hlstd{(}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+
+\hlcom{### Calculating expected values}
+\hlstd{expval} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,}\hlkwc{r}\hlstd{,}\hlkwc{c}\hlstd{)\{}\hlkwd{rowSums}\hlstd{(x)[r]}\hlopt{*}\hlkwd{colSums}\hlstd{(x)[c]}\hlopt{/}\hlkwd{sum}\hlstd{(x)\}}
+\hlstd{expmat} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)\{}
+    \hlstd{exp_lst} \hlkwb{<-} \hlkwd{list}\hlstd{()}
+    \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlkwd{ncol}\hlstd{(x))\{exp_lst[[i]]} \hlkwb{<-} \hlkwd{expval}\hlstd{(}\hlkwc{x}\hlstd{=x,}\hlkwc{r}\hlstd{=}\hlnum{1}\hlopt{:}\hlkwd{nrow}\hlstd{(x),}\hlkwc{c}\hlstd{=i)\}}
+    \hlkwd{matrix}\hlstd{(}\hlkwd{unlist}\hlstd{(exp_lst),}\hlkwc{nrow}\hlstd{=}\hlkwd{nrow}\hlstd{(x),}\hlkwc{byrow}\hlstd{=}\hlnum{FALSE}\hlstd{)\}}
+\hlstd{exp.ll27ctd22} \hlkwb{<-} \hlstd{obs.ll27ctd22}  \hlopt{%>%} \hlstd{expmat}
+\hlstd{exp.j119ll27} \hlkwb{<-} \hlstd{obs.j119ll27}  \hlopt{%>%} \hlstd{expmat}
+\hlstd{exp.ctd22j119} \hlkwb{<-} \hlstd{obs.ctd22j119}  \hlopt{%>%} \hlstd{expmat}
+
+\hlcom{### Calculating squared residuals}
+\hlstd{sqres} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{o}\hlstd{,}\hlkwc{e}\hlstd{=}\hlkwd{expmat}\hlstd{(o))\{((o}\hlopt{-}\hlstd{e)}\hlopt{^}\hlnum{2}\hlstd{)}\hlopt{/}\hlstd{e\}}
+\hlstd{sqres.ll27ctd22} \hlkwb{<-} \hlstd{obs.ll27ctd22}  \hlopt{%>%} \hlstd{sqres}
+\hlstd{sqres.j119ll27} \hlkwb{<-} \hlstd{obs.j119ll27}  \hlopt{%>%} \hlstd{sqres}
+\hlstd{sqres.ctd22j119} \hlkwb{<-} \hlstd{obs.ctd22j119}  \hlopt{%>%} \hlstd{sqres}
+
+\hlcom{### Calculating chi-squared score}
+\hlstd{chisq.ll27ctd22} \hlkwb{<-} \hlstd{sqres.ll27ctd22}  \hlopt{%>%} \hlstd{sum}
+\hlstd{chisq.j119ll27} \hlkwb{<-} \hlstd{sqres.j119ll27}  \hlopt{%>%} \hlstd{sum}
+\hlstd{chisq.ctd22j119} \hlkwb{<-} \hlstd{sqres.ctd22j119}  \hlopt{%>%} \hlstd{sum}
+
+\hlstd{cont.table.tot} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{d}\hlstd{,}\hlkwc{x}\hlstd{,}\hlkwc{y}\hlstd{)\{}
+    \hlkwd{paste}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}begin\{tabular\}\{ccddd\}\textbackslash{}n\textbackslash{}\textbackslash{}toprule\textbackslash{}n & & \textbackslash{}\textbackslash{}tchhh\{\textbackslash{}\textbackslash{}gls\{"}\hlstd{,}
+          \hlstd{x,}
+          \hlstr{"\}\} \textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n& & \textbackslash{}\textbackslash{}tch\{A\} & \textbackslash{}\textbackslash{}tch\{I\} & \textbackslash{}\textbackslash{}tch\{Total\}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n\textbackslash{}\textbackslash{}multirow\{3\}\{*\}\{\textbackslash{}\textbackslash{}gls\{"}\hlstd{,}
+          \hlstd{y,}
+          \hlstr{"\}\} & A  & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(d[}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{],}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(d[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{],}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(}\hlkwd{sum}\hlstd{(d[}\hlnum{1}\hlstd{,}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]),}\hlnum{2}\hlstd{),}
+          \hlstr{"\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n& I & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(d[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{],}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(d[}\hlnum{2}\hlstd{,}\hlnum{2}\hlstd{],}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(}\hlkwd{sum}\hlstd{(d[}\hlnum{2}\hlstd{,}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]),}\hlnum{2}\hlstd{),}
+          \hlstr{"\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}n& Total & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(}\hlkwd{sum}\hlstd{(d[}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{]),}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(}\hlkwd{sum}\hlstd{(d[}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{,}\hlnum{2}\hlstd{]),}\hlnum{2}\hlstd{),}
+          \hlstr{" & "}\hlstd{,}
+          \hlkwd{round}\hlstd{(}\hlkwd{sum}\hlstd{(d),}\hlnum{2}\hlstd{),}
+          \hlstr{"\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}bottomrule\textbackslash{}n\textbackslash{}\textbackslash{}end\{tabular\}"}\hlstd{,}
+          \hlkwc{sep}\hlstd{=}\hlstr{""}\hlstd{)}
+\hlstd{\}}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=obs.ll27ctd22,}\hlkwc{x}\hlstd{=}\hlstr{"ll27"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ctd22"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/obsll27ctd22.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=obs.j119ll27,}\hlkwc{x}\hlstd{=}\hlstr{"j119"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ll27"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/obsj119ll27.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=obs.ctd22j119,}\hlkwc{x}\hlstd{=}\hlstr{"ctd22"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"j119"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/obsctd22j119.tex"}\hlstd{)}
+
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=exp.ll27ctd22,}\hlkwc{x}\hlstd{=}\hlstr{"ll27"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ctd22"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/expll27ctd22.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=exp.j119ll27,}\hlkwc{x}\hlstd{=}\hlstr{"j119"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ll27"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/expj119ll27.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=exp.ctd22j119,}\hlkwc{x}\hlstd{=}\hlstr{"ctd22"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"j119"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/expctd22j119.tex"}\hlstd{)}
+
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=sqres.ll27ctd22,}\hlkwc{x}\hlstd{=}\hlstr{"ll27"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ctd22"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/sqresll27ctd22.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=sqres.j119ll27,}\hlkwc{x}\hlstd{=}\hlstr{"j119"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ll27"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/sqresj119ll27.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=sqres.ctd22j119,}\hlkwc{x}\hlstd{=}\hlstr{"ctd22"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"j119"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/sqresctd22j119.tex"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlcom{### Here I illustrate over- and undercategorisation.}
+\hlcom{### I do this by analysing the relationship between ll27 and ctd22,}
+\hlcom{### separated between contact lenition and free lenition.}
+
+\hlstd{obs.ll27ctd22.free} \hlkwb{<-} \hlstd{df.dewi[}\hlnum{6}\hlopt{:}\hlnum{8}\hlstd{]} \hlopt{%>%} \hlcom{# contingency table for free lenition}
+    \hlkwd{filter}\hlstd{(lenition}\hlopt{==}\hlstr{"free"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{summarise}\hlstd{(}
+        \hlkwc{AA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{AI} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{)),}
+        \hlkwc{IA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{II} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{))}
+    \hlstd{)} \hlopt{%>%} \hlstd{as.numeric}  \hlopt{%>%} \hlkwd{matrix}\hlstd{(}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+
+\hlstd{obs.ll27ctd22.contact} \hlkwb{<-} \hlstd{df.dewi[}\hlnum{6}\hlopt{:}\hlnum{8}\hlstd{]} \hlopt{%>%} \hlcom{# contingency table for contact leniton}
+    \hlkwd{filter}\hlstd{(lenition}\hlopt{==}\hlstr{"contact"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{summarise}\hlstd{(}
+        \hlkwc{AA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{AI} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{FALSE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{)),}
+        \hlkwc{IA} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{FALSE}\hlstd{)),}
+        \hlkwc{II} \hlstd{=} \hlkwd{nrow}\hlstd{(}\hlkwd{filter}\hlstd{(.,`\textbackslash{}\textbackslash{}gls\{ll27\}`} \hlopt{==} \hlnum{TRUE} \hlopt{&} \hlstd{`\textbackslash{}\textbackslash{}gls\{ctd22\}`} \hlopt{==} \hlnum{TRUE}\hlstd{))}
+    \hlstd{)} \hlopt{%>%} \hlstd{as.numeric}  \hlopt{%>%} \hlkwd{matrix}\hlstd{(}\hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+
+\hlcom{### Export observed values to LaTeX contingency table}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=obs.ll27ctd22.free,}\hlkwc{x}\hlstd{=}\hlstr{"ll27"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ctd22"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/obsll27ctd22free.tex"}\hlstd{)}
+\hlkwd{cont.table.tot}\hlstd{(}\hlkwc{d}\hlstd{=obs.ll27ctd22.contact,}\hlkwc{x}\hlstd{=}\hlstr{"ll27"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"ctd22"}\hlstd{)} \hlopt{%>%}
+    \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/obsll27ctd22contact.tex"}\hlstd{)}
+
+\hlcom{### Squared residuals // chi^2 score}
+\hlkwd{sqres}\hlstd{(obs.ll27ctd22.free)} \hlopt{%>%} \hlstd{sum} \hlopt{%>%} \hlkwd{round}\hlstd{(}\hlnum{3}\hlstd{)} \hlopt{%>%} \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/chisqll27ctd22free.tex"}\hlstd{)}
+\hlkwd{sqres}\hlstd{(obs.ll27ctd22.contact)} \hlopt{%>%} \hlstd{sum} \hlopt{%>%} \hlkwd{round}\hlstd{(}\hlnum{3}\hlstd{)} \hlopt{%>%} \hlkwd{cat}\hlstd{(}\hlkwc{file}\hlstd{=}\hlstr{"figure/chisqll27ctd22contact.tex"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlstd{obs.ll27ctd22}  \hlopt{%>%} \hlkwd{fisher.test}\hlstd{(}\hlkwc{alternative}\hlstd{=}\hlstr{"greater"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Fisher's Exact Test for Count Data
+## 
+## data:  .
+## p-value = 0.008426
+## alternative hypothesis: true odds ratio is greater than 1
+## 95 percent confidence interval:
+##  1.640074      Inf
+## sample estimates:
+## odds ratio 
+##   5.501389
+\end{verbatim}
+\begin{alltt}
+\hlstd{obs.j119ll27}   \hlopt{%>%} \hlkwd{fisher.test}\hlstd{(}\hlkwc{alternative}\hlstd{=}\hlstr{"greater"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Fisher's Exact Test for Count Data
+## 
+## data:  .
+## p-value = 0.0002473
+## alternative hypothesis: true odds ratio is greater than 1
+## 95 percent confidence interval:
+##  2.867772      Inf
+## sample estimates:
+## odds ratio 
+##   9.947767
+\end{verbatim}
+\begin{alltt}
+\hlstd{obs.ctd22j119}  \hlopt{%>%} \hlkwd{fisher.test}\hlstd{(}\hlkwc{alternative}\hlstd{=}\hlstr{"greater"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Fisher's Exact Test for Count Data
+## 
+## data:  .
+## p-value = 0.0002301
+## alternative hypothesis: true odds ratio is greater than 1
+## 95 percent confidence interval:
+##  2.609142      Inf
+## sample estimates:
+## odds ratio 
+##   7.434496
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlstd{df.dewi} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Sum,}\hlkwc{fill}\hlstd{=lenition))}\hlopt{+}
+    \hlkwd{geom_histogram}\hlstd{(}\hlkwc{stat}\hlstd{=}\hlstr{"count"}\hlstd{,}\hlkwc{binwidth}\hlstd{=}\hlnum{1}\hlstd{,}\hlkwc{colour}\hlstd{=}\hlstr{"black"}\hlstd{)}\hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{x}\hlstd{=}\hlstr{"amount of manuscripts representing lenition"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Ignoring unknown parameters: binwidth, bins, pad}}\end{kframe}
+\input{figure/bardewi1-1.tikz}
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlstd{unique.df.dewi} \hlkwb{<-} \hlstd{df.dewi} \hlopt{%>%}
+    \hlkwd{filter}\hlstd{(}\hlopt{!}\hlstd{((df.dewi[,}\hlnum{5}\hlstd{]} \hlopt{==} \hlstd{df.dewi[,}\hlnum{6}\hlstd{])} \hlopt{&} \hlstd{(df.dewi[,}\hlnum{6}\hlstd{]} \hlopt{==} \hlstd{df.dewi[,}\hlnum{7}\hlstd{])))}\hlopt{%>%}
+        \hlkwd{cbind}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlstr{"unique"}\hlstd{=}\hlkwd{rep}\hlstd{(}\hlstr{"unique"}\hlstd{,} \hlkwd{nrow}\hlstd{(.))))}
+
+\hlstd{notunique.df.dewi} \hlkwb{<-} \hlstd{df.dewi} \hlopt{%>%}
+    \hlkwd{cbind}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlstr{"unique"}\hlstd{=}\hlkwd{rep}\hlstd{(}\hlstr{"not unique"}\hlstd{,} \hlkwd{nrow}\hlstd{(.))))}
+
+
+\hlkwd{rbind}\hlstd{(unique.df.dewi, notunique.df.dewi)}\hlopt{%>%}
+    \hlkwd{gather}\hlstd{(}\hlkwc{key}\hlstd{=MS,}\hlkwc{value}\hlstd{=represented,}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{)} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=MS,}\hlkwc{fill}\hlstd{=represented))}\hlopt{+}
+    \hlkwd{xlab}\hlstd{(}\hlstr{"manuscript"}\hlstd{)}\hlopt{+}
+    \hlkwd{geom_histogram}\hlstd{(}\hlkwc{stat}\hlstd{=}\hlstr{"count"}\hlstd{,}\hlkwc{binwidth}\hlstd{=}\hlnum{1}\hlstd{)}\hlopt{+}
+    \hlkwd{facet_grid}\hlstd{(unique}\hlopt{~}\hlstd{lenition)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Ignoring unknown parameters: binwidth, bins, pad}}\end{kframe}
+\input{figure/bardewi2-1.tikz}
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlstd{euler.dewi.free} \hlkwb{<-} \hlkwd{euler}\hlstd{(dewi.free[,}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{],} \hlkwc{shape}\hlstd{=}\hlstr{"ellipse"}\hlstd{)}
+\hlstd{euler.dewi.free}
+\end{alltt}
+\begin{verbatim}
+##                                      original fitted residuals regionError
+## \\gls{j119}                                 2  1.961     0.039       0.002
+## \\gls{ll27}                                 7  6.903     0.097       0.004
+## \\gls{ctd22}                                0  0.000     0.000       0.000
+## \\gls{j119}&\\gls{ll27}                     0  0.157    -0.157       0.007
+## \\gls{j119}&\\gls{ctd22}                    0  0.112    -0.112       0.005
+## \\gls{ll27}&\\gls{ctd22}                    4  3.954     0.046       0.002
+## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}        8  7.890     0.110       0.005
+## 
+## diagError: 0.007 
+## stress:    0
+\end{verbatim}
+\begin{alltt}
+\hlstd{euler.dewi.free} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#33EEEE"}\hlstd{,}\hlstr{"#EE33EE"}\hlstd{,} \hlstr{"#EEEE33"}\hlstd{),}
+                         \hlkwc{fill_alpha}\hlstd{=}\hlnum{.25}\hlstd{,}
+                         \hlkwc{fontface}\hlstd{=}\hlstr{"plain"}\hlstd{,}
+                         \hlkwc{quantities}\hlstd{=}\hlnum{TRUE}\hlstd{,}
+                         \hlkwc{auto.key}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{space}\hlstd{=}\hlstr{"bottom"}\hlstd{,}\hlkwc{columns}\hlstd{=}\hlnum{3}\hlstd{)}
+                         \hlstd{)}
+\end{alltt}
+\end{kframe}
+\input{figure/vennfree-1.tikz}
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlkwd{colnames}\hlstd{(dewi.cont)[}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{]} \hlkwb{<-} \hlstd{glsnames}
+\hlstd{euler.dewi.cont} \hlkwb{<-} \hlkwd{euler}\hlstd{(dewi.cont[,}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{],} \hlkwc{shape}\hlstd{=}\hlstr{"ellipse"}\hlstd{)}
+\hlstd{euler.dewi.cont}
+\end{alltt}
+\begin{verbatim}
+##                                      original fitted residuals regionError
+## \\gls{j119}                                 1  0.868     0.132       0.001
+## \\gls{ll27}                                 3  2.947     0.053       0.001
+## \\gls{ctd22}                                8  7.965     0.035       0.000
+## \\gls{j119}&\\gls{ll27}                     2  2.072    -0.072       0.001
+## \\gls{j119}&\\gls{ctd22}                    0  0.276    -0.276       0.003
+## \\gls{ll27}&\\gls{ctd22}                   13 12.984     0.016       0.000
+## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}       65 64.845     0.155       0.001
+## 
+## diagError: 0.003 
+## stress:    0
+\end{verbatim}
+\begin{alltt}
+\hlstd{euler.dewi.cont} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#33EEEE"}\hlstd{,}\hlstr{"#EE33EE"}\hlstd{,} \hlstr{"#EEEE33"}\hlstd{),}
+                         \hlkwc{fill_alpha}\hlstd{=}\hlnum{.25}\hlstd{,}
+                         \hlkwc{fontface}\hlstd{=}\hlstr{"plain"}\hlstd{,}
+                         \hlkwc{quantities}\hlstd{=}\hlnum{TRUE}\hlstd{,}
+                         \hlkwc{auto.key}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{space}\hlstd{=}\hlstr{"bottom"}\hlstd{,}\hlkwc{columns}\hlstd{=}\hlnum{3}\hlstd{)}
+                         \hlstd{)}
+\end{alltt}
+\end{kframe}
+\input{figure/venncont-1.tikz}
+
+\end{knitrout}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
+\begin{alltt}
+\hlstd{dist.free} \hlkwb{<-} \hlstd{dewi.free[}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{]} \hlopt{%>%}
+    \hlstd{t} \hlopt{%>%}
+    \hlkwd{dist}\hlstd{(}\hlkwc{method}\hlstd{=}\hlstr{"binary"}\hlstd{)} \hlopt{%>%}
+    \hlstd{cmdscale} \hlopt{%>%}
+    \hlstd{data.frame} \hlopt{%>%}
+    \hlkwd{mutate}\hlstd{(}\hlkwc{MS}\hlstd{=}\hlkwd{rownames}\hlstd{(.))} \hlopt{%>%}
+    \hlkwd{cbind}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlstr{"lenition"}\hlstd{=}\hlkwd{rep}\hlstd{(}\hlstr{"free"}\hlstd{,} \hlkwd{nrow}\hlstd{(.))))}
+\hlstd{dist.cont} \hlkwb{<-} \hlstd{dewi.cont[}\hlnum{5}\hlopt{:}\hlnum{7}\hlstd{]} \hlopt{%>%}
+    \hlstd{t} \hlopt{%>%}
+    \hlkwd{dist}\hlstd{(}\hlkwc{method}\hlstd{=}\hlstr{"binary"}\hlstd{)} \hlopt{%>%}
+    \hlstd{cmdscale} \hlopt{%>%}
+    \hlstd{data.frame} \hlopt{%>%}
+    \hlkwd{mutate}\hlstd{(}\hlkwc{MS}\hlstd{=}\hlkwd{rownames}\hlstd{(.))} \hlopt{%>%}
+    \hlkwd{cbind}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlstr{"lenition"}\hlstd{=}\hlkwd{rep}\hlstd{(}\hlstr{"contact"}\hlstd{,} \hlkwd{nrow}\hlstd{(.))))}
+
+\hlkwd{rbind}\hlstd{(dist.cont,dist.free)} \hlopt{%>%}
+    \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=X2,}\hlkwc{y}\hlstd{=X1,}\hlkwc{label}\hlstd{=MS))}\hlopt{+}
+    \hlkwd{geom_text}\hlstd{()}\hlopt{+}
+    \hlkwd{xlim}\hlstd{(}\hlopt{-}\hlnum{.20}\hlstd{,}\hlnum{.20}\hlstd{)}\hlopt{+}
+    \hlkwd{coord_fixed}\hlstd{()}\hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{x}\hlstd{=}\hlkwa{NULL}\hlstd{,}\hlkwc{y}\hlstd{=}\hlkwa{NULL}\hlstd{)}\hlopt{+}
+    \hlkwd{facet_grid}\hlstd{(}\hlopt{~}\hlstd{lenition)}
+\end{alltt}
+\end{kframe}
+\input{figure/dist-1.tikz}
+
+\end{knitrout}
+Yates' Correction for Continuity:
+\[
+\chi^2=\frac{(|o_1-e_1|-0.5)^2}{e_1r}+\frac{(|o_2-e_2|-0.5)^2}{e_2r}+...+\frac{(|o_k-e_k|-0.5)^2}{e_kr}
+\]
+
+\end{document}

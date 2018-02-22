@@ -2,23 +2,22 @@
 
 \usepackage{tikz}
 \usepackage{pgf}
+\usepackage{amsmath}
 \newcommand{\gls}[1]{((\textbf{#1}))}
 \newcommand{\mw}[1]{\textit{#1}}
 \newcommand{\mow}[1]{\textit{#1}}
 
 \begin{document}
 <<loadlibraries,fig.width=5,fig.height=4>>=
-library("ggplot2")
 library("tidyverse")
 library("broom")
-library("dplyr")
 library("xtable")
 library("MASS")
 library("ggdendro")
 library("corrplot")
 library("eulerr")
 library("tikzDevice")
-
+library("knitr")
 ###THEMES
 theme_set(theme_bw())
 scale_colour_discrete <- scale_colour_grey
@@ -59,19 +58,22 @@ dewi.cont <- df.dewi  %>%
 
 <<firstresults>>=
 ### Calculate mean rates of representation
-firstresults <- df.dewi.c  %>% 
+## df.dewi.c[4:7] %>% ## This code is actually more elegant than that below
+##     gather(key=MS,value=Rep, 2:4) %>% 
+##     group_by(Initial.consonant, MS) %>% 
+##     summarise(mean = format(mean(Rep)*100,digits=3)) %>% 
+##     spread(key=Initial.consonant,value=mean)
+firstresults  <- df.dewi.c  %>% 
     gather(MS,represented,5:7)
 firstresults <- aggregate(firstresults$represented, 
-          by=list(long.c$Initial.consonant,long.c$MS), 
-          FUN=mean) %>% 
+          by=list(firstresults$Initial.consonant,firstresults$MS), 
+          FUN=mean)%>% 
     data.frame  %>%
     mutate(cons=paste("\\mw{", Group.1, "}", sep=""),
            perc=format(x*100,digits=3),
-           colcons=paste("\\tch{", cons, "}", sep="")
-           )
+           colcons=paste("\\tch{", cons, "}", sep=""))
 firstresults
 ### Get these rates in a LaTeX table
-## firstresults$perc %>%  format(flag="#")  %>% as.character()
 df.results <- firstresults[,c(2,5,6)] %>% 
     spread(colcons,perc) %>% 
     rename("\\tch{MS}" = Group.2)
@@ -101,6 +103,144 @@ ggplot(firstresults,aes(x= c(Group.2),y=as.numeric(perc)/3,fill=cons))+
     labs(x="",y="lenition represented (\\%)")+
     ylim(0,100)+
     guides(fill = guide_legend(title = "consonant"))
+@ 
+
+<<contingencytables>>=
+### Here we generate the right numbers for the different contingency tables
+
+### Contingency table for observed values
+obs.ll27ctd22 <- df.dewi  %>%
+    summarise(
+        AA = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == FALSE)),
+        AI = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == TRUE)),
+        IA = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == FALSE)),
+        II = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == TRUE))
+    ) %>% as.numeric  %>% matrix(nrow=2)
+
+obs.j119ll27 <- df.dewi  %>%
+    summarise(
+        AA = nrow(filter(.,`\\gls{j119}` == FALSE & `\\gls{ll27}` == FALSE)),
+        AI = nrow(filter(.,`\\gls{j119}` == FALSE & `\\gls{ll27}` == TRUE)),
+        IA = nrow(filter(.,`\\gls{j119}` == TRUE & `\\gls{ll27}` == FALSE)),
+        II = nrow(filter(.,`\\gls{j119}` == TRUE & `\\gls{ll27}` == TRUE))
+    ) %>% as.numeric  %>% matrix(nrow=2)
+
+obs.ctd22j119 <- df.dewi  %>%
+    summarise(
+        AA = nrow(filter(.,`\\gls{ctd22}` == FALSE & `\\gls{j119}` == FALSE)),
+        AI = nrow(filter(.,`\\gls{ctd22}` == FALSE & `\\gls{j119}` == TRUE)),
+        IA = nrow(filter(.,`\\gls{ctd22}` == TRUE & `\\gls{j119}` == FALSE)),
+        II = nrow(filter(.,`\\gls{ctd22}` == TRUE & `\\gls{j119}` == TRUE))
+    ) %>% as.numeric  %>% matrix(nrow=2)
+
+### Calculating expected values
+expval <- function(x,r,c){rowSums(x)[r]*colSums(x)[c]/sum(x)}
+expmat <- function(x){
+    exp_lst <- list()
+    for (i in 1:ncol(x)){exp_lst[[i]] <- expval(x=x,r=1:nrow(x),c=i)}
+    matrix(unlist(exp_lst),nrow=nrow(x),byrow=FALSE)}
+exp.ll27ctd22 <- obs.ll27ctd22  %>% expmat
+exp.j119ll27 <- obs.j119ll27  %>% expmat
+exp.ctd22j119 <- obs.ctd22j119  %>% expmat
+
+### Calculating squared residuals
+sqres <- function(o,e=expmat(o)){((o-e)^2)/e}
+sqres.ll27ctd22 <- obs.ll27ctd22  %>% sqres
+sqres.j119ll27 <- obs.j119ll27  %>% sqres
+sqres.ctd22j119 <- obs.ctd22j119  %>% sqres
+
+### Calculating chi-squared score
+chisq.ll27ctd22 <- sqres.ll27ctd22  %>% sum
+chisq.j119ll27 <- sqres.j119ll27  %>% sum
+chisq.ctd22j119 <- sqres.ctd22j119  %>% sum
+
+cont.table.tot <- function(d,x,y){
+    paste("\\begin{tabular}{ccddd}\n\\toprule\n & & \\tchhh{\\gls{",
+          x,
+          "}} \\\\\n& & \\tch{A} & \\tch{I} & \\tch{Total}\\\\\n\\multirow{3}{*}{\\gls{",
+          y,
+          "}} & A  & ",
+          round(d[1,1],2),
+          " & ",
+          round(d[1,2],2),
+          " & ",
+          round(sum(d[1,1:2]),2),
+          "\\\\\n& I & ",
+          round(d[2,1],2),
+          " & ",
+          round(d[2,2],2),
+          " & ",
+          round(sum(d[2,1:2]),2),
+          "\\\\\n& Total & ",
+          round(sum(d[1:2,1]),2),
+          " & ",
+          round(sum(d[1:2,2]),2),
+          " & ",
+          round(sum(d),2),
+          "\\\\\\bottomrule\n\\end{tabular}",
+          sep="")
+}
+cont.table.tot(d=obs.ll27ctd22,x="ll27",y="ctd22") %>%
+    cat(file="figure/obsll27ctd22.tex")
+cont.table.tot(d=obs.j119ll27,x="j119",y="ll27") %>%
+    cat(file="figure/obsj119ll27.tex")
+cont.table.tot(d=obs.ctd22j119,x="ctd22",y="j119") %>%
+    cat(file="figure/obsctd22j119.tex")
+
+cont.table.tot(d=exp.ll27ctd22,x="ll27",y="ctd22") %>%
+    cat(file="figure/expll27ctd22.tex")
+cont.table.tot(d=exp.j119ll27,x="j119",y="ll27") %>%
+    cat(file="figure/expj119ll27.tex")
+cont.table.tot(d=exp.ctd22j119,x="ctd22",y="j119") %>%
+    cat(file="figure/expctd22j119.tex")
+
+cont.table.tot(d=sqres.ll27ctd22,x="ll27",y="ctd22") %>%
+    cat(file="figure/sqresll27ctd22.tex")
+cont.table.tot(d=sqres.j119ll27,x="j119",y="ll27") %>%
+    cat(file="figure/sqresj119ll27.tex")
+cont.table.tot(d=sqres.ctd22j119,x="ctd22",y="j119") %>%
+    cat(file="figure/sqresctd22j119.tex")
+
+@ 
+
+<<chisqsepcontfree>>=
+### Here I illustrate over- and undercategorisation.
+### I do this by analysing the relationship between ll27 and ctd22,
+### separated between contact lenition and free lenition.
+
+obs.ll27ctd22.free <- df.dewi[6:8] %>% # contingency table for free lenition
+    filter(lenition=="free") %>% 
+    summarise(
+        AA = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == FALSE)),
+        AI = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == TRUE)),
+        IA = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == FALSE)),
+        II = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == TRUE))
+    ) %>% as.numeric  %>% matrix(nrow=2)
+    
+obs.ll27ctd22.contact <- df.dewi[6:8] %>% # contingency table for contact leniton
+    filter(lenition=="contact") %>% 
+    summarise(
+        AA = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == FALSE)),
+        AI = nrow(filter(.,`\\gls{ll27}` == FALSE & `\\gls{ctd22}` == TRUE)),
+        IA = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == FALSE)),
+        II = nrow(filter(.,`\\gls{ll27}` == TRUE & `\\gls{ctd22}` == TRUE))
+    ) %>% as.numeric  %>% matrix(nrow=2)
+
+### Export observed values to LaTeX contingency table
+cont.table.tot(d=obs.ll27ctd22.free,x="ll27",y="ctd22") %>%
+    cat(file="figure/obsll27ctd22free.tex")
+cont.table.tot(d=obs.ll27ctd22.contact,x="ll27",y="ctd22") %>%
+    cat(file="figure/obsll27ctd22contact.tex")
+
+### Squared residuals // chi^2 score
+sqres(obs.ll27ctd22.free) %>% sum %>% round(3) %>% cat(file="figure/chisqll27ctd22free.tex")
+sqres(obs.ll27ctd22.contact) %>% sum %>% round(3) %>% cat(file="figure/chisqll27ctd22contact.tex")
+@ 
+
+<<fishertest>>=
+obs.ll27ctd22  %>% fisher.test(alternative="greater")
+obs.j119ll27   %>% fisher.test(alternative="greater")
+obs.ctd22j119  %>% fisher.test(alternative="greater")
 @ 
 
 
@@ -177,4 +317,9 @@ rbind(dist.cont,dist.free) %>%
     facet_grid(~lenition)
            
 @ 
+Yates' Correction for Continuity:
+\[
+\chi^2=\frac{(|o_1-e_1|-0.5)^2}{e_1r}+\frac{(|o_2-e_2|-0.5)^2}{e_2r}+...+\frac{(|o_k-e_k|-0.5)^2}{e_kr}
+\]
+
 \end{document}
