@@ -321,5 +321,4 @@ Yates' Correction for Continuity:
 \[
 \chi^2=\frac{(|o_1-e_1|-0.5)^2}{e_1r}+\frac{(|o_2-e_2|-0.5)^2}{e_2r}+...+\frac{(|o_k-e_k|-0.5)^2}{e_kr}
 \]
-
 \end{document}
