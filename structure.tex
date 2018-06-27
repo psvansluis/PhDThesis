@@ -27,14 +27,18 @@
 \include{3orth/dewi}
 \include{3orth/orconclus}
 \begin{spacing}{1}
-\backmatter
-\printglossary
-\printglossary[%
-    type=lang,%
-    style=mcolindex,%
-    nonumberlist=true,%
-    nogroupskip=true]
-\printbibliography
+  \appendix
+  \include{4app/envir}
+  \include{4app/lenitions}
+  \include{4app/bdleni}
+  \backmatter
+  \printglossary
+  \printglossary[%
+  type=lang,%
+  style=mcolindex,%
+  nonumberlist=true,%
+  nogroupskip=true]
+  \printbibliography
 \end{spacing}
 %%% Local Variables:
 %%% mode: latex
