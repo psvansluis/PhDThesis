@@ -7,17 +7,12 @@ openright
 ]{memoir}
 \chapterstyle{thatcher}
 
-
 \setlrmargins{*}{*}{1.618033}
 \setlength{\textheight}{1.618033\textwidth}
 \setulmargins{*}{*}{1.618033}
 
-
-
 \pagestyle{headings}
 \nouppercaseheads
-
-
 
 \setsecnumdepth{subsection}
 \renewcommand\labelenumi{(\theenumi)}
@@ -134,7 +129,6 @@ openright
 
 \usepackage[marginal]{footmisc}
 
-
 %% NO DOT: vs
 \makeatletter
 \newcommand*{\ie}{\@ifnextchar{.}{i.e}{i.e.\@\xspace}}
@@ -144,7 +138,6 @@ openright
 \makeatother
 
 \input{langcom}
-
 
 \newcommand{\al}[1]{\uline{#1}}
 
@@ -170,16 +163,20 @@ openright
 \newcommand{\xT}{\gls{x}\gls{T}}
 \newcommand{\lD}{\gls{l}\gls{D}}
 
-
 \newcounter{equationsave}
 
 \newcommand{\mwcc}[4][]{\begin{mwl}\mwc[#1]{#2}{#3}{#4}\end{mwl}}
 
 \newcommand{\mwc}[4][]{%
-    \ifstrempty{#1}{\item{\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
-    {\item{\label{#1}\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
-    }
+  \ifstrempty{#1}{\item{\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+  {\item{\label{#1}\mw{#3} \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+}
+\newcommand{\langc}[4][]{%
+  \ifstrempty{#1}{\item{#3 \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+  {\item{\label{#1}#3 \mbox{(#2)}\\*\textquoteleft #4\textquoteright}}
+}
 
+    
 \newenvironment{mwl}{%
     \begin{spacing}{1}%
     \begin{list}{\theequation}{%
@@ -192,14 +189,11 @@ openright
     }\small}%
     {\end{list}\end{spacing}}
 
-
-
 \newcommand{\tqt}[3]{%
   \begin{displayquote}%
     {\small\onesp{#1~\autocite[#3]{#2}}}%
     \end{displayquote}%
   }%quote, reference, page
-
 
 \newenvironment{mylongtable}[1]%
     {\begin{spacing}{1}\begin{longtable}[c]{#1}}%
@@ -208,8 +202,6 @@ openright
 \usepackage[nointegrals]{wasysym}
 \newcommand{\TRUE}{\CheckedBox}
 \newcommand{\FALSE}{\Square}
-
-
 
 % \input{misc/wordcount} Excludes parts; Activate to count words without examples, footnotes and page numbers.
 
