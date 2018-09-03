@@ -182,35 +182,37 @@ Table~\ref{tab:perlenbrut} confirms these impressions: only a minority of lenite
 \footnote{This result shows that the behaviour of Scribe X86 is not unique to this scribe. See Section~\ref{sec:haycock}.}.
 
 \begin{table}[h]
-  \centering
-  \begin{tabular}{lddddddd}
-    \toprule
-    \tch{Manuscript} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
-    \midrule
-    \acrshort{ll1} & 82.1 & 72.1 & 83.3 & 98.2 & 0.0 & 9.1 & 35.8 \\
-    \acrshort{p44} & 82.5 & 36.1 & 78.6 & 91.7 & 8.3 & 13.3 & 29.1 \\
-    \acrshort{bd} & 89.7 & 98.4 & 87.5 & 100.0 & 22.2 & 33.3 & 92.2 \\
-    \acrshort{bcc} & 67.9 & 98.5 & 85.7 & 100.0 & 95.8 & 83.3 & 86.2 \\
-    \bottomrule
-  \end{tabular}%
-  \caption{Lenition including research exceptions represented in the \mw{Brut}, in percentages.}
-  \label{tab:perlenbrut}
-\end{table}
-
-\begin{table}[h]
-  \centering
-  \begin{tabular}{lddddddd}
-    \toprule
-    \tch{Manuscript} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
-    \midrule
-\acrshort{ll1} & 82.1 & 72.1 & 83.3 & 98.1 & 0.0 & 0.0 & 8.7 \\
-\acrshort{p44} & 82.5 & 36.1 & 78.6 & 91.4 & 8.3 & 0.0 & 7.3 \\
-\acrshort{bd} & 89.7 & 98.4 & 87.5 & 100.0 & 22.2 & 0.0 & 88.0 \\
-\acrshort{bcc} & 67.9 & 98.5 & 85.7 & 100.0 & 95.8 & 80.0 & 78.6 \\
-    \bottomrule
-  \end{tabular}%
-  \caption{Lenition excluding research exceptions represented in the \mw{Brut}, in percentages.}
-  \label{tab:perlenbrutex}
+  \begin{subtable}[b]{\linewidth}
+    \centering
+    \begin{tabular}{lddddddd}
+      \toprule
+      \tch{Manuscript} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
+      \midrule
+      \acrshort{ll1} & 82.1 & 72.1 & 83.3 & 98.2 & 0.0 & 9.1 & 35.8 \\
+      \acrshort{p44} & 82.5 & 36.1 & 78.6 & 91.7 & 8.3 & 13.3 & 29.1 \\
+      \acrshort{bd} & 89.7 & 98.4 & 87.5 & 100.0 & 22.2 & 33.3 & 92.2 \\
+      \acrshort{bcc} & 67.9 & 98.5 & 85.7 & 100.0 & 95.8 & 83.3 & 86.2 \\
+      \bottomrule
+    \end{tabular}%
+    \caption{Including research exceptions.}
+    \label{tab:perlenbrut}
+  \end{subtable}
+  \begin{subtable}[b]{\linewidth}
+    \centering
+    \begin{tabular}{lddddddd}
+      \toprule
+      \tch{Manuscript} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
+      \midrule
+      \acrshort{ll1} & 82.1 & 72.1 & 83.3 & 98.1 & 0.0 & 0.0 & 8.7 \\
+      \acrshort{p44} & 82.5 & 36.1 & 78.6 & 91.4 & 8.3 & 0.0 & 7.3 \\
+      \acrshort{bd} & 89.7 & 98.4 & 87.5 & 100.0 & 22.2 & 0.0 & 88.0 \\
+      \acrshort{bcc} & 67.9 & 98.5 & 85.7 & 100.0 & 95.8 & 80.0 & 78.6 \\
+      \bottomrule
+    \end{tabular}%
+    \caption{Excluding research exceptions.}
+    \label{tab:perlenbrutex}
+  \end{subtable}
+  \caption{Lenition represented in the \mw{Brut}, in percentages.}
 \end{table}
 
 Table~\ref{tab:perlenbrut} gives the raw numbers of how much lenition we see where we would expect it, which includes instances of \gls{petr} such as \mw[together]{y gyt} (\gls{p44} 25.11).

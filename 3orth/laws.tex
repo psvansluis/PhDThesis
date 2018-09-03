@@ -107,71 +107,78 @@ No manuscript named here has a surviving exemplar and all manuscripts share a co
 \begin{figure}[h]
   \newlength{\stemmalen}
   \setlength{\stemmalen}{2.5cm}
-  \centering
-  \begin{forest} for tree={font=\itshape,l=10mm,l sep=0mm,s sep=3mm,delay={where content={}{shape=coordinate}{}}}
-    [X
-    [α
-    [γ
-    [\gls{sA},l=20mm]
-    [\gls{sE},l=25mm]
-    ]
-    [\gls{sC},l=30mm]
-    ]
-    [β
-    [δ
-    [\gls{sD},l=5.3cm,s=-6mm]]
-    [ε
-    [\gls{sG},l=35mm,s=-6mm]
-    [ζ,s=6mm
-    [\gls{sB},l=15mm]
-    [\gls{sJ},l=4.3cm]
-    [\gls{sK},l=5.5cm,s=6mm]
-    ]
-    ]
-    ]
-    ]
-    \node at (forest cs:l=3cm,s=\stemmalen +.5cm) {1200};
-    \node at (forest cs:l=5cm,s=\stemmalen +.5cm) {1300};
-    \node at (forest cs:l=7cm,s=\stemmalen +.5cm) {1400};
-    \node at (forest cs:l=9cm,s=\stemmalen +.5cm) {1500};
-    \draw[dotted] (forest cs:l=3cm, s=-\stemmalen) -- (forest cs:l=3cm, s=\stemmalen);
-    \draw[dotted] (forest cs:l=5cm, s=-\stemmalen) -- (forest cs:l=5cm, s=\stemmalen);
-    \draw[dotted] (forest cs:l=7cm, s=-\stemmalen) -- (forest cs:l=7cm, s=\stemmalen);  
-    \draw[dotted] (forest cs:l=9cm, s=-\stemmalen) -- (forest cs:l=9cm, s=\stemmalen);  
-  \end{forest}
-  \begin{forest} for tree={font=\itshape,l=10mm,l sep=0mm,s sep=3mm,delay={where content={}{shape=coordinate}{}}}
-    [\textup{Redaction I}
-    [α
-    [\gls{sA},l=30mm]
-    [\gls{sE},l=35mm]
-    ]
-    [\textup{Redaction II}
-    [β
-    [\gls{sC},l=20mm]
-    ]
-    [γ,
-    [
-    [\gls{sD},s=-6mm,l=4.3cm]
-    [\gls{sG},l=25mm]]
-    [
-    [\gls{sB},s=0mm,l=15mm]
-    [\gls{sJ},l=4.3cm,s=0mm]
-    [\gls{sK},l=55mm,s=6mm]
-    ]
-    ]
-    ]
-    ]
-    ]
-    \node at (forest cs:l=3cm,s=\stemmalen +.5cm) {1200};
-    \node at (forest cs:l=5cm,s=\stemmalen +.5cm) {1300};
-    \node at (forest cs:l=7cm,s=\stemmalen +.5cm) {1400};
-    \node at (forest cs:l=9cm,s=\stemmalen +.5cm) {1500};
-    \draw[dotted] (forest cs:l=3cm, s=-\stemmalen) -- (forest cs:l=3cm, s=\stemmalen);
-    \draw[dotted] (forest cs:l=5cm, s=-\stemmalen) -- (forest cs:l=5cm, s=\stemmalen);
-    \draw[dotted] (forest cs:l=7cm, s=-\stemmalen) -- (forest cs:l=7cm, s=\stemmalen);  
-    \draw[dotted] (forest cs:l=9cm, s=-\stemmalen) -- (forest cs:l=9cm, s=\stemmalen);  
-  \end{forest}
-  \caption[Two stemmata of the tractate on suretyship.]{Two stemmata of the tractate on suretyship, according to \textcite[138]{charles-edwards_iorwerth_1986} (left) and \textcite{charles-edwards_textual_2016} (right).}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \begin{forest} for tree={font=\itshape,l=10mm,l sep=0mm,s sep=3mm,delay={where content={}{shape=coordinate}{}}}
+      [X
+      [α
+      [γ
+      [\gls{sA},l=20mm]
+      [\gls{sE},l=25mm]
+      ]
+      [\gls{sC},l=30mm]
+      ]
+      [β
+      [δ
+      [\gls{sD},l=5.3cm,s=-6mm]]
+      [ε
+      [\gls{sG},l=35mm,s=-6mm]
+      [ζ,s=6mm
+      [\gls{sB},l=15mm]
+      [\gls{sJ},l=4.3cm]
+      [\gls{sK},l=5.5cm,s=6mm]
+      ]
+      ]
+      ]
+      ]
+      \node at (forest cs:l=3cm,s=\stemmalen +.5cm) {1200};
+      \node at (forest cs:l=5cm,s=\stemmalen +.5cm) {1300};
+      \node at (forest cs:l=7cm,s=\stemmalen +.5cm) {1400};
+      \node at (forest cs:l=9cm,s=\stemmalen +.5cm) {1500};
+      \draw[dotted] (forest cs:l=3cm, s=-\stemmalen) -- (forest cs:l=3cm, s=\stemmalen);
+      \draw[dotted] (forest cs:l=5cm, s=-\stemmalen) -- (forest cs:l=5cm, s=\stemmalen);
+      \draw[dotted] (forest cs:l=7cm, s=-\stemmalen) -- (forest cs:l=7cm, s=\stemmalen);  
+      \draw[dotted] (forest cs:l=9cm, s=-\stemmalen) -- (forest cs:l=9cm, s=\stemmalen);  
+    \end{forest}
+    \caption{\textcite[138]{charles-edwards_iorwerth_1986}}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \begin{forest} for tree={font=\itshape,l=10mm,l sep=0mm,s sep=3mm,delay={where content={}{shape=coordinate}{}}}
+      [\textup{Redaction I}
+      [α
+      [\gls{sA},l=30mm]
+      [\gls{sE},l=35mm]
+      ]
+      [\textup{Redaction II}
+      [β
+      [\gls{sC},l=20mm]
+      ]
+      [γ,
+      [
+      [\gls{sD},s=-6mm,l=4.3cm]
+      [\gls{sG},l=25mm]]
+      [
+      [\gls{sB},s=0mm,l=15mm]
+      [\gls{sJ},l=4.3cm,s=0mm]
+      [\gls{sK},l=55mm,s=6mm]
+      ]
+      ]
+      ]
+      ]
+      ]
+      \node at (forest cs:l=3cm,s=\stemmalen +.5cm) {1200};
+      \node at (forest cs:l=5cm,s=\stemmalen +.5cm) {1300};
+      \node at (forest cs:l=7cm,s=\stemmalen +.5cm) {1400};
+      \node at (forest cs:l=9cm,s=\stemmalen +.5cm) {1500};
+      \draw[dotted] (forest cs:l=3cm, s=-\stemmalen) -- (forest cs:l=3cm, s=\stemmalen);
+      \draw[dotted] (forest cs:l=5cm, s=-\stemmalen) -- (forest cs:l=5cm, s=\stemmalen);
+      \draw[dotted] (forest cs:l=7cm, s=-\stemmalen) -- (forest cs:l=7cm, s=\stemmalen);  
+      \draw[dotted] (forest cs:l=9cm, s=-\stemmalen) -- (forest cs:l=9cm, s=\stemmalen);  
+    \end{forest}
+    \caption{\textcite{charles-edwards_textual_2016}}
+  \end{subfigure}
+  \caption{Two stemmata of the tractate on suretyship.}
   \label{fig:twostemmata}
 \end{figure}
 
@@ -229,10 +236,11 @@ Another difference is found specifically by comparing the numbers between both T
 No manuscript fully represents lenition of \mw{b} wherever it could. However, more than half of these instances involve inflections of \mw[to be]{bot} following the negative particle \mw{ny, na} or compound containing the same particle: \mw{ony}. This merely sporadic lenition of \mw{bod} following the negative particle is still found in present-day Welsh \autocite[695]{thomas_gramadeg_1996}. Failure to lenite following \mw{ny} is also found with other verbs starting with \mw{b}, and with verbs starting with \mw{m}. Lack of orthographical lenition may mirror lack of phonemic lenition in this specific context, and this pattern is therefore irrelevant to the topic of the orthography of lenition. 
 
 \begin{table}[h]
-  \centering
+  \begin{subtable}[b]{\linewidth}
+    \centering
     \begin{tabular}{lddddddd}
-    \toprule
-    \tch{MS} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
+      \toprule
+      \tch{MS} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
       \midrule
       \gls{sA} & 56.0 & 23.1 & 91.7 & 98.0 & 8.3 & 0.0 & 13.0 \\
       \gls{sB} & 72.7 & 95.8 & 100.0 & 96.2 & 64.3 & 0.0 & 46.3 \\
@@ -242,16 +250,15 @@ No manuscript fully represents lenition of \mw{b} wherever it could. However, mo
       \gls{sG} & 76.9 & 100.0 & 100.0 & 98.3 & 46.9 & 41.2 & 59.3 \\
       \gls{sJ} & 90.9 & 100.0 & 100.0 & 93.9 & 90.5 & 80.0 & 91.2 \\
       \gls{sK} & 80.0 & 98.2 & 100.0 & 96.2 & 51.6 & 18.8 & 71.0 \\
-    \bottomrule
+      \bottomrule
     \end{tabular}%
-    \caption{Percentual representation of lenition in various recensions of the tractate on suretyship, including research exceptions.}
+    \caption{Including research exceptions.}
     \label{tab:lenlawcountryincre}%
-\end{table}%
-
-\begin{table}[h]
-  \centering
+  \end{subtable}
+  \begin{subtable}[b]{\linewidth}
+    \centering
     \begin{tabular}{lddddddd}
-    \toprule
+      \toprule
       \tch{MS} & \tch{\mw{b}} & \tch{\mw{g}} & \tch{\mw{ll}} & \tch{\mw{m}} & \tch{\mw{p}} & \tch{\mw{t}} & \tch{\mw{c}} \\
       \midrule
       \gls{sA} & 56.0 & 23.1 & 91.7 & 97.9 & 10.5 & 0.0 & 10.0 \\
@@ -264,9 +271,12 @@ No manuscript fully represents lenition of \mw{b} wherever it could. However, mo
       \gls{sK} & 80.0 & 98.2 & 100.0 & 95.3 & 34.8 & 13.3 & 55.0 \\
       \bottomrule
     \end{tabular}%
-    \caption{Percentual representation of lenition in various recensions of the tractate on suretyship, excluding research exceptions.}
+    \caption{Excluding research exceptions.}
     \label{tab:lenlawcountryexcre}%
-  \end{table}%
+  \end{subtable}
+  \caption{Percentual representation of lenition in various recensions of the tractate on suretyship.}
+\end{table}%
+
 
   \begin{figure}[h]
     \centering

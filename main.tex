@@ -82,7 +82,15 @@ openright
 \newcommand{\tchhh}[1]{\multicolumn{3}{c}{#1}}
 \newcommand{\tchh}[1]{\multicolumn{2}{c}{#1}}
 \newcommand{\tch}[1]{\multicolumn{1}{c}{#1}}
-\usepackage{subfig}
+
+%\usepackage{subfig}
+\usepackage{subcaption}
+\captionsetup{font+=small}
+\captionsetup[subtable]{labelformat=simple,labelsep=colon}
+\captionsetup[subfigure]{labelformat=simple,labelsep=colon}
+\renewcommand\thesubfigure{\Alph{subfigure}}
+\renewcommand\thesubtable{\Alph{subtable}}
+
 
 \newcommand{\noparquotes}[1]{%
   \IfBeginWith{#1}{(}%
@@ -183,7 +191,7 @@ openright
         \setcounter{equationsave}{\arabic{equation}}%
         \usecounter{equation}%
         \setcounter{equation}{\arabic{equationsave}}%
-        \setlength{\labelsep}{\parindent+\marginparsep}%
+        \setlength{\labelsep}{\parindent}%
         \setlength{\leftmargin}{\parindent}%
         \setlength\labelwidth{3em}%
     }\small}%
@@ -191,8 +199,9 @@ openright
 
 \newcommand{\tqt}[3]{%
   \begin{displayquote}%
-    {\small\onesp{#1~\autocite[#3]{#2}}}%
-    \end{displayquote}%
+    {\small\onesp{#1~\autocite[#3]{#2}}%
+    \vspace{-1ex}}%
+  \end{displayquote}%
   }%quote, reference, page
 
 \newenvironment{mylongtable}[1]%

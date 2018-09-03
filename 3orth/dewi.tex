@@ -177,28 +177,37 @@ It is also possible to diagnose whether two exemplars of a text originally compo
 
 \begin{figure}[h]
   \centering
-  \subfloat[]{
-    \label{sfig:pre1250}
+  \begin{subfigure}[b]{0.33\linewidth}
+    \centering
     \begin{forest}
       [μ < 1250
       [X > 1300]
       [Y > 1300]]
-    \end{forest}}
-  \subfloat[]{
-    \label{sfig:post1250}
+    \end{forest}
+    \caption{Pre-1250 composition}
+    \label{sfig:pre1250}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.33\linewidth}
+    \centering
     \begin{forest}
       [μ > 1300
       [X > 1300]
       [Y > 1300]]
-    \end{forest}}
-    \subfloat[]{
-    \label{sfig:intermediate}
+    \end{forest}
+    \caption{Post-1300 composition}
+    \label{sfig:post1250}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.33\linewidth}
+    \centering
     \begin{forest}
       [μ < 1250
       [ν > 1300
       [X > 1300]
       [Y > 1300]]]
-    \end{forest}}
+    \end{forest}
+    \caption{Post-1300 intermediary}
+    \label{sfig:intermediate}
+  \end{subfigure}
   \caption{Hypothetically reconstructable stemmata based on the orthography of lenited voiceless stops.}
   \label{fig:possiblestemmata}
 \end{figure}
@@ -339,41 +348,55 @@ These calculations tell us the following:
 \item The amount of shared archaisms between \gls{ll27} and \gls{ctd22} is the furthest removed from what would be expected from chance, compared to shared innovations or archaisms in one manuscript that are innovations in another.
 \end{itemize}
 
-Two more pairs of relationships may be analysed: the relationship between \gls{j119} and \gls{ll27}, and the relationship between \gls{j119} and \gls{ctd22}. Table~\ref{tab:continj119ll27} gives the contingency tables for the former relationship, and Table~\ref{tab:continctd22j119} gives the contingency tables for the latter relationship. For both of these pairings, the \(\chi^2\) statistic, \ie the sum of the squared residuals, exceeds the \(\chi^2\) statistic of \gls{ll27} and \gls{ctd22}. All three pairings show a statistically significant relationship at \textit{p} < .05. The squared residuals are again the highest for the shared archaisms in both cases, so it is the archaisms shared between any pair that merit further research. The next section will focus on these archaisms
+Two more pairs of relationships may be analysed: the relationship between \gls{j119} and \gls{ll27}, and the relationship between \gls{j119} and \gls{ctd22}. Table~\ref{tab:continj119ll27} gives the contingency tables for the former relationship, and Table~\ref{tab:continctd22j119} gives the contingency tables for the latter relationship. For both of these pairings, the \(\chi^2\) statistic, \ie the sum of the squared residuals, exceeds the \(\chi^2\) statistic of \gls{ll27} and \gls{ctd22}. All three pairings show a statistically significant relationship at \textit{p} < .05. The squared residuals are again the highest for the shared archaisms in both cases, so it is the archaisms shared between any pair that merit further research. The next section will focus on these archaisms.
 
 \begin{table}[h]
   \centering
-  \subfloat[Observed values.]{%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/obsj119ll27.tex}%
-  }%
-  \hfill
-  \subfloat[Expected values.]{%
+    \caption{Observed values.}
+    \label{stab:obsj119ll27}
+  \end{subtable}%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/expj119ll27.tex}%
-  }
-  
-  \subfloat[Squared residuals.]{%
+    \caption{Expected values.}
+    \label{stab:expj119ll27}
+  \end{subtable}
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/sqresj119ll27.tex}%
-  }
+    \caption{Squared residuals.}
+    \label{stab:sqresj119ll27}
+  \end{subtable}
   \caption{Contingency tables for the relationship between \gls{j119} and \gls{ll27}.}
   \label{tab:continj119ll27}
 \end{table}
 
 \begin{table}[h]
   \centering
-  \subfloat[Observed values.]{%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/obsctd22j119.tex}%
-  }%
-  \hfill
-  \subfloat[Expected values.]{%
+    \caption{Observed values.}
+    \label{stab:obsctd22j119}
+  \end{subtable}%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/expctd22j119.tex}%
-  }
-
-  \subfloat[Squared residuals.]{%
+    \caption{Expected values.}
+    \label{stab:expctd22j119}
+  \end{subtable}
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/sqresctd22j119.tex}%
-  }
+    \caption{Squared residuals.}
+    \label{stab:sqresctd22j119}
+  \end{subtable}
   \caption{Contingency tables for the relationship between \gls{j119} and \gls{ctd22}.}
   \label{tab:continctd22j119}
-\end{table}
+  \end{table}
 
 \section{The evidentiary value of these tests}
 \label{sec:evidence-from-these}
@@ -440,10 +463,11 @@ In the particular case of the example above this point is moot. All three manusc
 Here, the orthographical non-lenition of  consonant cluster \mw{-s \gls{T}-} is also expected from a phonological point of view, because there is no phonetic or phonological difference between voiced and voiceless stops following \mw[]{-s}. However, many other instances of \mw{-s \gls{T}-} do write lenition, \ie \mw[island of Britain]{ynys brydein}. All other instances of \mw[]{ynys brydein} do show lenition in \gls{ctd22}, and so does one instance in \gls{ll27}\footnote{They are found in \gls{ll27} 69.15 and \gls{ctd22} 147r.12, 151r.2, 151r.10, and 151v.2.}. This makes this particular shared archaism non-trivial from an orthographic point of view, so the existence of this variation in orthography implies that non-leniting consonant clusters may be used in establishing the stemmatic relationship between  manuscripts. 
 
 \begin{table}[h]
-  \begin{tabular}{wlddcddcddc}
+  \centering
+  \begin{tabular}{wld@{.}Dcd@{.}Dcd@{.}Dc}
     \toprule
     & & \multicolumn{3}{c}{\gls{j119}} & \multicolumn{3}{c}{\gls{ll27}} & \multicolumn{3}{c}{\gls{ctd22}} \\
-    \tch{Word} & \tch{Cause lenition}  & \tch{f.} & \tch{l. } & \tch{len.} & \tch{f.} & \tch{l. } & \tch{len.} & \tch{f.} & \tch{l. } & \tch{len.} \\
+    \tch{Word} & \tch{Lenited by}  & \tchh{f./l.} &   \tch{len.} & \tchh{f./l.}   & \tch{len.} & \tchh{f./l.}   & \tch{len.} \\
     \midrule
     ben & \mw{uch} & 93r & 14 & \TRUE & 63r & 6  & \FALSE & 138r & 14 & \FALSE \\
     Badrig & fem.\ noun & 93v & 8  & \FALSE & 63r & 22 & \TRUE & 138v & 16 & \FALSE \\
@@ -507,8 +531,10 @@ Figure~\ref{fig:vennfreelendewi} shows that no instance of represented free leni
 
 Figure~\ref{fig:vennfreelendewi} may be compared and contrasted with Figure~\ref{fig:venncontlendewi}, which in turn shows how representation of contact lenition is shared between manuscripts. Here, we see how the three circles overlap nearly completely, and the position of \gls{j119} as an outlier is less obvious than in Figure~\ref{fig:vennfreelendewi}. Still, even here we see thirteen instances of represented contact lenition shared between \gls{ll27} and \gls{ctd22}, but not with \gls{j119}, while only three such instances are uniquely  shared between \gls{j119} and \gls{ll27}, and none at all between \gls{j119} and \gls{ctd22}.
 
-\begin{figure}[h]\centering
-  \subfloat[Free lenition]{
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
     \begin{forest}
       where n children={0}{tier=word}{}
       [α,baseline,for tree={s sep=7mm}
@@ -519,8 +545,12 @@ Figure~\ref{fig:vennfreelendewi} may be compared and contrasted with Figure~\ref
       [\gls{ctd22}, edge label={node[midway,auto]{0}}]]]
       ]
       \draw[draw=none,bend left=50] (ll27) to node[opacity=0,midway,below,swap]{0} (j119); %% phantom node for equal height
-    \end{forest}}
-  \subfloat[Contact lenition. The dashed line shows shared innovations that do not fit within this stemma.]{
+    \end{forest}
+    \caption{Free lenition}
+    \label{sfig:freelenbd}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
     \begin{forest}
       where n children={0}{tier=word}{}
       [α,baseline,for tree={s sep=7mm}
@@ -531,9 +561,13 @@ Figure~\ref{fig:vennfreelendewi} may be compared and contrasted with Figure~\ref
       [\gls{ctd22}, edge label={node[midway,auto]{8}}]]]
       ]
       \draw[dashed,bend left=50] (ll27) to node[midway,below,swap]{2} (j119);
-    \end{forest}}
-  \caption{Stemma of \mw[]{Buchedd Dewi} with representations added for free lenition and contact lenition, respectively.}
-\label{fig:stemmaadditionsfreecont}
+    \end{forest}
+    \caption{Contact lenition.}
+    \label{sfig:contactlenbd}
+  \end{subfigure}
+  {\small The dashed line indicates shared innovations that do not fit within this stemma.}
+  \caption{Stemma of \mw{Buchedd Dewi} with representations added for free lenition and contact lenition.}
+  \label{fig:stemmaadditionsfreecont}
 \end{figure}
 
 Whereas contact lenition seems to have been added by the stage of \textit{β} in the vast majority of cases, this is not the case with free lenition. This shows that the existence of node \textit{γ}, a shared ancestor of \gls{ll27} and \gls{ctd22} hypothesized by Evans, is more clearly apparent from free lenition than it is from contact lenition. Representing free lenition indeed seems to be a less trivial type of orthographical innovation than contact lenition. That is: non-represented contact lenition was more jarring to the eye of the \gls{mw} scribe than free lenition was, so emending such a textual shortcoming was more likely to occur for contact lenition than for free lenition.
@@ -628,8 +662,8 @@ In textual criticism, the principle that shared innovations trump shared archais
 Convergent evolution also plays a role in the orthography of lenition. If the orthography of lenition in different manuscripts is modernised by the same scribe, or in a similar scholarly environment, or at a similar date, then it would stand to reason that lenition would be modernised according to similar patterns. Figure~\ref{fig:diffstemmconv} visualises the difference between convergence and shared inheritance. Lenition could conceivably be similar in terms of which grammatical environments are modernised, or to what extent different consonants are modernised. If the orthography of lenition were to be added in two manuscripts in a similar environment, and their relationship were to be tested for independence, then the null hypothesis of independence would likely be rejected.
 
 \begin{figure}[h]
-  \centering
-  \subfloat[Stemmatic relationship.]{
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
     \begin{forest}
       for tree={s sep=1cm}
       [α[\textit{β},draw,rounded corners,fill=black,fill opacity=0.1[X,name=X][Y,name=Y]]%
@@ -637,16 +671,20 @@ Convergent evolution also plays a role in the orthography of lenition. If the or
       ]
       \node[draw,rounded corners,opacity=0,fit=(X)(Y)](env){};
     \end{forest}
-  }
-  \hfill
-  \subfloat[Convergence.]{
+    \caption{Stemmatic relationship.}
+    \label{sfig:illstemrel}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
     \begin{forest}
       for tree={s sep=1cm}
       [α[X,name=X,l*=2][Y,name=Y,l*=2]]
       \node[draw,rounded corners,fill=black,fill opacity=0.1,fit=(X)(Y)](env){};
       \draw[<-,thick](env.east)--++(1.5cm,1cm) node[anchor=south, align=center]{lenition added in\\same environment.};
     \end{forest}
-  }
+    \caption{Convergence}
+    \label{sfig:illconv}
+  \end{subfigure}
   \caption{The difference between a stemmatic relationship and convergent evolution visualised.}
   \label{fig:diffstemmconv}
 \end{figure}
@@ -664,18 +702,22 @@ Conversely, overcategorising variables would lead to false negative results. Obv
 Let us apply these ideas on convergent modernisation to the relationship between \gls{ll27} and \gls{ctd22}. We saw that representation of lenition in \gls{ll27} correlates to a statistically significant degree with representation in \gls{ctd22} in Subsection~\ref{sec:chisqapplied}. Let us now hypothesise that the correlation we see here is because \gls{ll27} and \gls{ctd22} independently modernise contact lenition and free lenition in similar respective rates, and that representation of lenition is not due to common inheritance. We may test this hypothesis by comparing these manuscripts, but using instances of contact lenition only, or by using instances of free lenition only. 
 
 \begin{table}[h]
-  \centering
-  \subfloat[Contact lenition.]{%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/obsll27ctd22contact.tex}
-  }%
-  \hfill
-  \subfloat[Free lenition.]{%
+    \caption{Contact lenition.}
+    \label{tab:contactlentab}
+  \end{subtable}%
+  \begin{subtable}[b]{0.5\linewidth}
+    \centering
     \input{rfigures/figure/obsll27ctd22free.tex}
+    \caption{Free lenition.}
     \label{tab:obsll27ctd22free}
-  }%
+  \end{subtable}
   \caption{Observed values for the relationship between \gls{ll27} and \gls{ctd22}, subdivided between contact lenition and free lenition.}
   \label{tab:obsll27ctd22freecontact}
 \end{table}
+
 The contingency tables are given in Table~\ref{tab:obsll27ctd22freecontact}. These contingency tables yield the following chi-square scores: \(\chi^2 = \input{rfigures/figure/chisqll27ctd22contact.tex}\), and the following result for free lenition: \(\chi^2 = \input{rfigures/figure/chisqll27ctd22free.tex}\). For contact lenition, the score is significant at \emph{p} < 0.05. This demonstrates that the statistically significant correspondence between \gls{ll27} and \gls{ctd22} argued for in Subsection~\ref{sec:chisqapplied} was not simply because contact lenition and free lenition were modernised similarly enough. 
 
 For free lenition, the score is not significant. However, the methodology used to collect examples of free lenition differs from contact lenition: examples are only included where at least one manuscript represents lenition\footnote{See Section~\ref{sec:free-lenition-1}.}. The result is that the top-left category in Table~\ref{tab:obsll27ctd22free}, containing shared archaisms, only counts shared archaisms that are also innovations in \gls{j119}, but not shared archaisms between the three manuscripts. It thus understates the real amount of shared archaisms between \gls{ll27} and \gls{ctd22}. A higher amount of shared archaisms would yield a higher \(\chi^2\) statistic.
