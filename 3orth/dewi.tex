@@ -127,7 +127,7 @@ The word \mw[]{gyn} is erroneously removed in \gls{ll27}. Its removal is probabl
   \mwc[ex:thangneuedll27]{\gls{ll27} 69v.19--20}{arglỽyd kymer dy was \al{y'th dangnefed}.}{Lord, take your servant to your peace.}
   \mwc[ex:thangneuedctd22]{\gls{ctd22} 152r.10}{arglỽyd kymer di dy was \al{y'th dagneued}.}{Lord, take your servant to your peace.}
 \end{mwl}
-Here, Example~\ref{ex:thangneuedj119} from \gls{j119} has \mw[]{y thangneued} for \mw[your peace]{y'th dangneued}. Perhaps the scribe of \gls{j119} erroneously interpreted the expression as `her peace', which does not make sense in context. This does beg the question what sort of exemplar would invite such an erroneous reading. Hypothetical \mw[]{tht} in *\mw[]{ythtangneued} could perhaps be mistaken for an archaic spelling of /θ/\footnote{Spelling \mw[]{tht} for /θ/ is in fact found in the Black Book of Chirk (\gls{sA})~\autocite[147]{Rus_Scribal95}.}. If so, this example is evidence that \gls{j119}'s exemplar did not have orthographic lenition here.
+Here, Example~\ref{ex:thangneuedj119} from \gls{j119} has \mw[]{y thangneued} for \mw[your peace]{y'th dangneued}. Perhaps the scribe of \gls{j119} erroneously interpreted the expression as `her peace', which does not make sense in context. This in turn raises the question what sort of exemplar would invite such an erroneous reading. Hypothetically, \mw[]{tht} in *\mw[]{ythtangneued} could be mistaken for an archaic spelling of /θ/\footnote{Spelling \mw[]{tht} for /θ/ is in fact found in the Black Book of Chirk (\gls{sA})~\autocite[147]{Rus_Scribal95}.}. If this reconstruction is to be accepted, this example shows that \gls{j119}'s exemplar did not have orthographic lenition here, and lenition in the other manuscripts is added after a common examplar with \gls{j119}.
 
 \begin{mwl}
   \mwc[]{\gls{j119} 102v.1--2}{Yna y gỽelut ti \al{gyfuredec} gann seint yr ynys honn.}{There you saw an assembly of the saints of this island}
@@ -153,12 +153,53 @@ As can be seen in Table~\ref{tab:replendewi}, lenition of \mw[]{c} is represente
   \label{tab:replendewi}
 \end{table} 
 
+% \begin{figure}[h]
+%   \centering
+%   \input{rfigures/figure/firstresults-1.tikz}
+%   \caption{Percentual representation of lenition of voiceless stops in the various recensions of \mw[]{Buchedd Dewi}.}
+%   \label{fig:barchartdewi}
+% \end{figure}
+
 \begin{figure}[h]
-  \centering
-  \input{rfigures/figure/firstresults-1.tikz}
+  %% TODO: AUTOMATE INPUT OF THE RIGHT NUMBERS FROM R
+  %% RATHER THAN JUST TELLING THEM
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        ybar,
+        ymin=0,
+        width=.67\linewidth,
+        height=.5\linewidth,
+        % xlabel=Manuscript,
+        % legend style={at={(0.98,0.02)},anchor=south east},
+        legend style={at={(1.02,0.5)},anchor=west},
+        ylabel={Lenition represented (\%)},
+        symbolic x coords={
+          \gls{ctd22},\gls{j119},\gls{ll27}},
+        xtick=data,
+        ]
+        \addplot [fill=black!20] coordinates {
+          (\gls{ctd22},81.3)
+          (\gls{j119},68.0)
+          (\gls{ll27},89.3)
+        };
+        \addplot [fill=black!50] coordinates{     
+          (\gls{ctd22},90.2)
+          (\gls{j119},65.9)
+          (\gls{ll27},85.4)
+        };
+        \addplot [fill=black!80] coordinates{
+          (\gls{ctd22},100)
+          (\gls{j119},100)
+          (\gls{ll27},100)
+        };
+        \legend{\mw[]{p},\mw[]{t},\mw[]{c}}
+      \end{axis}
+    \end{tikzpicture}
   \caption{Percentual representation of lenition of voiceless stops in the various recensions of \mw[]{Buchedd Dewi}.}
   \label{fig:barchartdewi}
-\end{figure}
+  \end{figure}
+
 
 The consistency with which lenition of \mw[]{c} is written implies that the Welsh exemplar was written at a time when lenited \mw[]{c} was already written with \mw[]{g}. This pattern of writing lenition of \mw[]{c}, but not \mw[]{p, t} is found from the second half of the thirteenth century onwards. This is evidence that \textcite{Rob_Ystoriaeu11} was right in positing the late thirteenth century as the time when the Welsh translation was composed and \textcite{Eva_Welsh88} was wrong in positing the fourteenth century.
 
@@ -507,27 +548,67 @@ If it is true that free lenition shows more orthographical variation between man
 
 \begin{figure}[h]
   \centering
-  \input{rfigures/figure/bardewi1-1.tikz}
+  \begin{tikzpicture}
+    \begin{axis}[
+      ybar stacked,
+      ymin=0,
+      width=.5\linewidth,
+      height=.5\linewidth,
+      xlabel={Number of manuscripts representing lenition},
+      legend style={at={(.02,0.98)},anchor=north west},
+      ylabel={Count},
+      symbolic x coords={0,1,2,3},
+      xtick=data,
+      ]
+      \addplot [fill=black!20] coordinates {%contact len
+        (0,3)
+        (1,12)
+        (2,15)
+        (3,65)
+        % \input{rfigures/figure/countcontlenperms.tex}
+        %% \input does not work :-(
+      };
+      \addplot [fill=black!80] coordinates{%free len
+        (0,0)
+        (1,9)
+        (2,4)
+        (3,8)
+        % \input{rfigures/figure/countfreelenperms.tex}
+      };
+      \legend{Contact lenition, Free lenition}
+    \end{axis}
+  \end{tikzpicture}
   \caption{Contact lenition and free lenition and their respective rate of representation.}
   \label{fig:contfreelendewi}
 \end{figure}
 
+% \begin{figure}[h]
+%   \centering
+%   \input{rfigures/figure/bardewi1-1.tikz}
+%   \caption{Contact lenition and free lenition and their respective rate of representation.}
+%   \label{fig:contfreelendewi}
+% \end{figure}
+
 It is more significant that free lenition is comparatively more frequently found in one or two manuscripts only, compared to all three manuscripts. In other words: free lenition indeed has a much higher chance of being represented inconsistently between the manuscripts. This means that any instance of free lenition has a much lower probability of being inherited from a common exemplar shared by all three manuscripts. This, in turn, confirms the hypothesis that the orthographical representation of free lenition was introduced in later recensions of \mw[]{Buchedd Dewi} in a much greater degree than contact lenition. Patterns  emanating from how free lenition is shared between the manuscripts are thus strongly diagnostic in establishing a stemma of the different manuscripts.
 
 \begin{figure}[h]
-  \centering
-  \input{rfigures/figure/vennfree-1.tikz}
-  \caption{Venn diagram showing how frequently free lenition is shared between  the manuscripts.}
-  \label{fig:vennfreelendewi}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \input{rfigures/figure/vennfree-1.tikz}
+    \caption{Free lenition.}
+    \label{fig:vennfreelendewi}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \input{rfigures/figure/venncont-1.tikz}
+    \caption{Contact lenition.}
+    \label{fig:venncontlendewi}
+  \end{subfigure}
+  \caption{Frequency of sharing of lenition between  the manuscripts.}
+  \label{fig:vennlendewi}
 \end{figure}
 Figure~\ref{fig:vennfreelendewi} shows that no instance of represented free lenition  is shared between \gls{j119} and one other manuscript. In other words, whenever \gls{j119} shares free lenition with another manuscript, it does so with both other manuscripts. By contrast, \gls{ll27} and \gls{ctd22} uniquely represent four instances of free lenition. Moreover, no instances of free lenition being represented are unique to \gls{ctd22}. This shows that \gls{ctd22} did not innovate in the representation of free lenition itself. Considering how it nevertheless shares free lenition with \gls{ll27} alone, it seems probable that representation of free lenition was added in a shared exemplar of \gls{ll27} and \gls{ctd22}, which was not shared with \gls{j119}.
 
-\begin{figure}[h]
-  \centering
-  \input{rfigures/figure/venncont-1.tikz}
-  \caption{Venn diagram showing how frequently contact lenition is shared between  the manuscripts.}
-  \label{fig:venncontlendewi}
-\end{figure}
 
 Figure~\ref{fig:vennfreelendewi} may be compared and contrasted with Figure~\ref{fig:venncontlendewi}, which in turn shows how representation of contact lenition is shared between manuscripts. Here, we see how the three circles overlap nearly completely, and the position of \gls{j119} as an outlier is less obvious than in Figure~\ref{fig:vennfreelendewi}. Still, even here we see thirteen instances of represented contact lenition shared between \gls{ll27} and \gls{ctd22}, but not with \gls{j119}, while only three such instances are uniquely  shared between \gls{j119} and \gls{ll27}, and none at all between \gls{j119} and \gls{ctd22}.
 

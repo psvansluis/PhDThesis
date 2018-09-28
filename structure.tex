@@ -33,13 +33,19 @@
   % \begin{landscape}
   %   \include{4app/bdleni}
   % \end{landscape}
-  \printglossary
+  \printglossary[%
+  nonumberlist=true,%
+  style=mcolindex
+  ]
   \printglossary[%
   type=lang,%
   style=mcolindex,%
   nonumberlist=true,%
   nogroupskip=true]
+  \begingroup
+  \sloppy
   \printbibliography
+  \endgroup
 \end{spacing}
 %%% Local Variables:
 %%% mode: latex

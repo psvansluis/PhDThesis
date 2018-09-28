@@ -39,11 +39,16 @@ openright
     \input{fixwelsh}
 
 \setmainfont[
-            RawFeature={+mgrk;+liga;+clig;+ccmp;+tlig;+rlig;+calt;+kern;+onum;+ss01;+falt},
-            BoldFont=Junicode-Bold.ttf,
-            ItalicFont=Junicode-Italic.ttf,
-            BoldItalicFont=Junicode-BoldItalic.ttf,
-            ]{Junicode.ttf}
+RawFeature={%
+  +mgrk;% Upright Greek for IPA
+  +liga;+clig;+ccmp;+tlig;+rlig;+calt;+kern;
+  +onum;% Old-style numerals
+  +ss01;% Nordic letter shapes for IPA-friendly edh and thorn
+  +falt},
+BoldFont=Junicode-Bold.ttf,
+ItalicFont=Junicode-Italic.ttf,
+BoldItalicFont=Junicode-BoldItalic.ttf,
+]{Junicode.ttf}
 \usepackage{biolinum}
 \setmonofont{FantasqueSansMono-Regular.ttf}[%
             Scale=MatchLowercase,
@@ -132,7 +137,7 @@ openright
 
 \DisemulatePackage{setspace}%Use when class=memoir
 \usepackage{setspace}
-\setstretch{1.5} %Enable to receive one-half spacing
+\setstretch{1.33} %Enable to receive one-half spacing
 \newcommand{\onesp}[1]{\begin{spacing}{1}#1\end{spacing}}
 
 \usepackage[marginal]{footmisc}
@@ -200,7 +205,7 @@ openright
 \newcommand{\tqt}[3]{%
   \begin{displayquote}%
     {\small\onesp{#1~\autocite[#3]{#2}}%
-    \vspace{-1ex}}%
+    \vspace{-.5ex}}%
   \end{displayquote}%
   }%quote, reference, page
 
@@ -216,9 +221,7 @@ openright
 
 \input{gloss}
 
-% \usepackage[series={},nocritical,noend,noeledsec,nofamiliar,noledgroup]{reledmac}
-% \usepackage{reledpar} %%For parallel texts
-
+% \includeonly{3orth/orthintro,3orth/issues,3orth/brut,3orth/laws,3orth/dewi,3orth/orconclus}
 \begin{document}
 \input{structure}
 

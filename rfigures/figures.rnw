@@ -245,6 +245,46 @@ obs.ctd22j119  %>% fisher.test(alternative="greater")
 
 
 <<bardewi1>>=
+df.dewi.mscountperlentype <- df.dewi  %>%
+    dplyr::select(Sum,lenition) %>%
+    group_by(Sum) %>%
+    summarise(Freelen=sum(lenition=="free"),
+              Contlen=sum(lenition=="contact")) %>%
+    gather(LenType,Count,-Sum)
+cont.df.dewi.mscountperlentype <-
+    df.dewi.mscountperlentype %>%
+    filter(LenType=="Contlen") %>%
+    dplyr::select(-LenType)
+free.df.dewi.mscountperlentype <-
+    df.dewi.mscountperlentype %>%
+    filter(LenType=="Freelen") %>%
+    dplyr::select(-LenType)
+
+paste0(
+    "(",cont.df.dewi.mscountperlentype[1,1],",",
+    cont.df.dewi.mscountperlentype[1,2],")\n",
+    "(",cont.df.dewi.mscountperlentype[2,1],",",
+    cont.df.dewi.mscountperlentype[2,2],")\n",
+    "(",cont.df.dewi.mscountperlentype[3,1],",",
+    cont.df.dewi.mscountperlentype[3,2],")\n",
+    "(",cont.df.dewi.mscountperlentype[4,1],",",
+    cont.df.dewi.mscountperlentype[4,2],")"
+) %>% cat(file="figure/countcontlenperms.tex")
+
+
+paste0(
+    "(",free.df.dewi.mscountperlentype[1,1],",",
+    free.df.dewi.mscountperlentype[1,2],")\n",
+    "(",free.df.dewi.mscountperlentype[2,1],",",
+    free.df.dewi.mscountperlentype[2,2],")\n",
+    "(",free.df.dewi.mscountperlentype[3,1],",",
+    free.df.dewi.mscountperlentype[3,2],")\n",
+    "(",free.df.dewi.mscountperlentype[4,1],",",
+    free.df.dewi.mscountperlentype[4,2],")"
+) %>% cat(file="figure/countfreelenperms.tex")
+
+
+
 df.dewi %>% 
     ggplot(aes(x=Sum,fill=lenition))+
     geom_histogram(stat="count",binwidth=1,colour="black")+
@@ -268,28 +308,31 @@ rbind(unique.df.dewi, notunique.df.dewi)%>%
     facet_grid(unique~lenition)
 @ 
 
-<<vennfree>>=
+<<vennfree,fig.width=2.5>>=
 euler.dewi.free <- euler(dewi.free[,5:7], shape="ellipse") 
 euler.dewi.free 
 
 
 euler.dewi.free %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
-                         fill_alpha=.25,
-                         fontface="plain",
+                         fills=.25,
+                         cex=.8,
+                         #labels="plain",
                          quantities=TRUE,
-                         auto.key=list(space="bottom",columns=3)
+                         #legend=list(space="bottom",columns=3,alpha=1)
                          )
 @ 
 
-<<venncont>>=
+<<venncont,fig.width=2.5>>=
 colnames(dewi.cont)[5:7] <- glsnames
 euler.dewi.cont <- euler(dewi.cont[,5:7], shape="ellipse")
 euler.dewi.cont
 euler.dewi.cont %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
-                         fill_alpha=.25,
-                         fontface="plain",
+                         fills=.25,
+                         cex=.8,
+                         labels=FALSE,#"plain",
                          quantities=TRUE,
-                         auto.key=list(space="bottom",columns=3)
+                         #auto.key=FALSE,
+                         #auto.key=list(space="bottom")
                          )
 @ 
 <<dist>>=
