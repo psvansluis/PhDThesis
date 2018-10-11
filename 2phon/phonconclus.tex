@@ -1,108 +1,94 @@
 \chapter{Conclusion --- phonology}
 \label{cha:conclusion-phonology}
 
-The aim of Part~\ref{part:phonology-phonetics} was to establish the phonological variables that served to maintain a phonemic three-way distinction between \xT, \lT, and \xD\ in Welsh. In Chapter~\ref{cha:introduction-phonology} I argue why such a distinction must be posited, and introduce earlier scholarship on this three-way distinction. The chapter ends with the hypothesis that \xT\ was originally long and aspirated, \lT\ was short and aspirated, and \xD\ was long and unaspirated. The following chapters explore this hypothesis; their findings are summarised here.
+The aim of Part~\ref{part:phonology-phonetics} was to establish the phonological variables that served to maintain a phonemic three-way distinction between \xT, \lT, and \xD\ in Welsh. In Chapter~\ref{cha:introduction-phonology} I argue that such a distinction must be posited, and introduce earlier scholarship on this three-way distinction. The earlier scholarship generally agrees that a three-way stop series must be reconstructed for some of the earlier stages of Brittonic. What is not agreed upon is which phonological variables kept these three-way stop distinction apart if it survived into the stage of Brittonic where lenition was phonemic. It is also not agreed upon when this three-way stop distinction collapsed into the two-way stop distinction found in \gls{mow}. The chapter ends with the hypothesis that \xT\ was originally long and aspirated, \lT\ was short and aspirated, and \xD\ was long and unaspirated. The following chapters explore this hypothesis; their findings are summarised here.
 
-Chapter~\ref{oldwelsh} does X
+Chapter~\ref{oldwelsh} considers \gls{ow} orthography. Generally speaking, \gls{ow} orthography follows pre-lenition phonology, \ie \gls{T} is represented with \ow{p, t, c} irrespectively of whether it represents \lT\ or \xT, and the same goes for \gls{D} and \ow{b, d, g}. In Chapter~\ref{oldwelsh} I gather the exceptions to this rule, \ie instances where the orthograpy of a stop consonant differs from its etymological value in \gls{ow}. These exceptional spellings occur in two classes: words where etymological  \gls{D} is written with \ow{p, t, c}, and words where etymological \gls{T} is written with \ow{b, d, g}.
 
-Chapter~\ref{cha:prov-mwbe-y} does Y
+Etymological \gls{D} is consistently written as \ow{p, t, c} when it represents a word-medial voiced geminate. This confirms \textcite{martinet_celtic_1952}' s hypothesis discussed in Section~\ref{sec:martinet}, \ie that voiced geminates merged with lenited voiceless stops early on due to the rarity of the former class. Because it is the voiced geminates which were rare and the lenited voiceless stops which were common, it is reasonable to assume that voiced geminates merged to the value of lenited voiceless stops, and not vice versa. When etymological \gls{T} is written with \ow{b, d, g}, this is frequently done in the vicinity of resonants, \ie \ow{m, n, l, r}. Having established that word-medial \xD\ and \lT\ had already merged in \gls{ow}, the instances of \ow{b, d, g} representing stops cannot constitute different phonemes. I propose that this inconsistency with which the same phonemes are written in word-medial position may be understood in analogy with word-initial contrasts. That is, word-initial \lT\ and \xD\ differed from one another, and word-medial \gls{D} was the result of a merger between the two, and this one phonemes was sometimes phonetically closer to \lT, and sometimes closer to \xD. Whenever word-medial \gls{D} stood phonetically closer to \xD\ than to \lT, it had a higher chance of being written with \ow{b, d, g} than otherwise. Resonants are known cross-linguistically to swallow the aspiration of adjacent consonants (See Section~\ref{sec:from-brittonic-welsh} and \textcite{koch_*cothairche_1990}). Thus, assuming that word-initial \lT\ was aspirated, while \xD\ was unaspirated, and assuming that word-medial \gls{D} was usually pronounced as \lT, adjacent resonants and their swallowing effect provided a context within which medial \gls{D} became comparatively more similar to \xD\ and less similar to \lT.
+
+The \gls{ow} evidence in Chapter~\ref{oldwelsh} partly confirms the three-way stop distinction hypothesised. The analogy proposed to account for writing medial \gls{D} with \ow{b, d, g} occasionally implies that initial \lT\ was aspirated, and that \xD\ was not. However, \gls{ow} does not give a complete picture of the three-way distinction; there is no evidence either way whether length served a role to distinguish \xT\ and \xD\ from \lT.
+
+Chapter~\ref{cha:prov-mwbe-y} does provide evidence for phonemic length of stops. The cynghanedd of the eleventh- to thirteenth-century Poets of the Princes gives insight into the sandhi patterns of the Welsh of this period. These sandhi patterns reveal the existence of phonemic stop length: long stops served to indicate radical phonemes and short stops served to indicate lenited phonemes. Evidence for phonemic aspiration is also found: \xT\ was aspirated and \xD\ was not. It is unclear from this chapter, however, whether \lT\ was still aspirated.
+
+It is clear that \lT\ was aspirated whenever it was lengthened through sandhi, but 
+\todo[inline]{here I talk about why it is necessary to posit redundant voicng at all and that it must be posited before merger \xD/\lT}, or whether redundant voicing of \lT\ occurred only to be cancelled by sandhi. However, there is evidence for phonemic length
 
 Does the hypothesis hold up?
 
 %% A chart like Figure 1.1 could go about here, because it could lead on nicely to avenues for further research on the date of redundant voicing
 
+The  chronology of lenition of stops from \gls{pic} to \gls{mow} is illustrated in Figure~\ref{fig:pctomowstops}. It is a reworking of Figure~\ref{fig:pctolbbbstops} in that it considers \gls{mow} rather than Léon Breton. It is a relative chronology, not an absolute chronology. That is, it gives the order in which the sound laws occurred, but it gives no dates as to when they occurred. Redundant voicing is described in Subsection~\ref{sec:date-redund-voic}, and loss of length is discussed in Part~\ref{part:orthography}.
+
+\begin{figure}[h]
+  %%% Modification of fig fig:pctolbbbstops
+  \centering
+  \begin{tikzpicture}
+    %%% NODES
+    \node(topl){};
+    \node[right= 2.5cm of topl](pcxt){\#\xT};
+    \node[right= 5cm of topl](pclt){\#\lT};
+    \node[right= 7.5cm of topl](pcxd){\#\xD};
+    \node[below= 1cm of topl,align=left,anchor=west](1l){%
+      Phonetic\\lenition};
+    \node(1xt) at (1l-|pcxt){{[}pː tː kː]};
+    \node(1lt) at (1l-|pclt){{[}p t k]};
+    \node(1xd) at (1l-|pcxd){{[bː dː ɡː]}};
+    \node[below=3cm of topl,anchor=west](2l){%
+      Apocope};
+    \node(2xt) at (2l-|pcxt){/pː tː kː/};
+    \node(2lt) at (2l-|pclt){/p t k/};
+    \node(2xd) at (2l-|pcxd){/bː dː ɡː/};
+    \node[below=5cm of topl,align=left,anchor=west](3l){%
+      Redundant\\voicing\\of \lT};
+    \node(3xt) at (3l-|pcxt){/pː tː kː/};
+    \node(3lt) at (3l-|pclt){/b d g/};
+    \node(3xd) at (3l-|pcxd){/bː dː ɡː/};
+    \node[below=7cm of topl,align=left,anchor=west](4l){%
+      Loss of \\phonemic \\length};
+    \node(4t) at (4l-|pcxt){/p t k/};
+    \node(3d)  at ($(3lt)!0.5!(3xd)$){};%%dummynode
+    \node(4d) at (4l-|3d){/b d g/};
+    %%% ARROWS
+    \foreach \x in {xt,lt,xd}{%
+      \draw[->] (1\x) -- (2\x);
+      \draw[->] (2\x) -- (3\x);
+    }
+    \draw[->] (3xt) -- (4t);
+    \draw[->] (3lt) -- (4d);
+    \draw[->] (3xd) -- (4d);
+    %%% OPPOSITIONS
+    \draw[<->,dashed, bend left = 50] (2xt) to node[midway,above]{±length} (2lt);
+    \draw[<->,dashed, bend left = 50] (2lt) to node[midway,above]{±\gls{vot}\vphantom{g}} (2xd);
+    \draw[<->,dashed, bend left = 50] (3xt) to node[midway,above]{±\gls{vot}\vphantom{g}} (3lt);
+    \draw[<->,dashed, bend left = 50] (3lt) to node[midway,above]{±length} (3xd);
+    \draw[<->,dashed, bend left = 50] (4t) to node[midway,above]{±\gls{vot}\vphantom{g}} (4d);
+    %%% EXPLANATION
+    \node[%
+    below=9cm of topl,
+    font=\footnotesize,
+    align=left,
+    text width=8cm,
+    anchor=west] (5l){%
+      Dashed lines indicate the phonological variable distinguishing pairs of stop series in a given period.
+    };
+  \end{tikzpicture}
+  \caption{From Proto-Celtic to Modern Welsh word-initial stops.}
+  \label{fig:pctomowstops}
+\end{figure}
+
+
 \section{Avenues for further research}
 \label{sec:aven-furth-rese}
 
-e.g. redundant voicing and its date is unsolved, but there are pointers; the date of loss of phonemic stop length is discussed in detail in Part~\ref{part:orthography}, especially Chapter~\ref{cha:orth-concl}.
+Part~\ref{part:phonology-phonetics} of this thesis provides a rough relative chronology of lenition from \gls{pbr} up until \gls{mow}. That is, it gives a sketch of the sound laws we must posit to derive a \gls{mow} stop phonology from pre-lenition Celtic. The next step is to establish the dates of these sound laws. Part~\ref{part:phonology-phonetics} gives some clues for the date of redundant voicing of lenited stops. The date of the loss of phonemic length is discussed the topic of Part~\ref{part:orthography}, especially Chapter~\ref{cha:orth-concl}.
 
-\section{Consequences for other research topics}
-\label{sec:cons-other-rese-1}
-
-Matasovic
-
-\todo[inline]{Structure of the conclusion
-\begin{itemize}
-\item What was the goal of Part~\ref{part:phonology-phonetics}?
-\item Does the hypothesis given in the introduction hold up?
-\item Per chapter: summarise what was found
-\item What are the implications of the findings, and more specifically:  
-  \begin{itemize}
-  \item Qualify the scope of what Chapter~\ref{oldwelsh} and Chapter~\ref{cha:prov-mwbe-y} really say about Welsh phonology
-  \item Repeat and rework Figure~\ref{fig:pctolbbbstops} for Welsh including dates and the final step of loss of distinctive length. 
-  \end{itemize}
-\item What issues merit further research?
-  \begin{itemize}
-  \item Most important: dating redundant voicing (see below)
-  \end{itemize}
-\item What other research topics may be revisited in the wake of Part~\ref{part:phonology-phonetics}?
-  \begin{itemize}
-  \item Most important: Matasovic and \gls{pic}
-  \end{itemize}
-\item Lookahead to Part~\ref{part:orthography}
-\end{itemize}
-}
-
-\begin{figure}[h]
-  \centering
-  \begin{tikzpicture}
-    \draw[->, thick] (1,3) to node[above]{\gls{vot}} (4,3);
-    \draw[->, thick] (1,3) to node[left]{length} (1,0);
-    \node at (1.5,0.5) {\xD};
-    \node at (3.5,0.5) {\xT};
-    \node at (3.5,2.5) {\lT};
-  \end{tikzpicture}
-  \caption{The two dimensions distinguishing three stop series}
-  \label{fig:twodimthreestop}
-\end{figure}
-
-\section{On length}
-Schrijver considers aspiration as only an epiphenomenon of the other phonological properties, as shown in Table~\ref{stopsystemschrijver}. Nevertheless, Schrijver  is convinced that they were phonetically aspirated: `MoW evidence shows that these were probably strongly aspirated (except after \textit{s}), the aspiration having been lost in Cornish and Breton under Late Latin influence'~\autocite*[31]{schrijver_old_2011}. For arguments, see \textcite[§~25]{koch_*cothairche_1990}.
-
-\begin{table}[h]
-  \centering
-  \begin{tabular}{{@{}lll@{}}}\toprule
-    \xT & \xD & \lT \\\midrule
-    {[}-voice] & [+voice] & [+voice] \\
-    {[}+long] & [+long] & [-long] \\\midrule
-    p{[}ʰː{]} & bː & b \\
-    t{[}ʰː{]} & dː & d \\
-    k{[}ʰː{]} & ɡː & ɡ\\\bottomrule
-  \end{tabular}
-  \caption{Common Brittonic stop system according to Schrijver \autocite*[33]{schrijver_old_2011}}
-  \label{stopsystemschrijver}
-\end{table}
-
-Phonemic consonant length is not unique to stops in Middle Welsh: resonants also had an opposition between /nː/ and /n/, /rː/ and /r/, and /lː/ and /l/. This opposition disappeared by the end of the \gls{mw} period~\autocite[127]{schumacher_mittel-_2011}. These long voiced resonants were found in e.g.\ the \gls{mw} word for `heart' sometimes spelled \mw{callon}, or in \mw{penn} `head'. Both length distinctions were neutralised by the end of the \gls{mw} period. The phonemic status of these long voiced resonants did not only contrast with their short voiced counterparts /n, l, r/, but also with voiceless/aspirated counterparts /n̥, ɬ, r̥/. The three-way contrast system exactly mirrors that of stops in this sense.
-
-
-\begin{table}[h]
-  \centering
-  \begin{tabular}{{@{}lll@{}}}\toprule
-    \xT & \xD & \lT \\\midrule
-    {[}+asp] & [-asp] & [+asp] \\
-    {[}+long] & [+long] & [-long] \\\midrule
-    pʰː & bː~[b̥ː] & pʰ \\
-    tʰː & dː~[d̥ː] & tʰ \\
-    kʰː & ɡː~[ɡ̥ː] & kʰ\\\bottomrule
-  \end{tabular}
-  \caption{Common Brittonic stop system reconstructed on the basis of the cynghanedd}
-  \label{stopsystemme}
-\end{table}\
-
-% The use of length in keeping apart voiceless radicals from their lenited counterparts has consequences for how they are connected to the rise of the spirant mutation from geminates in British. If a radical voiceless stop undergoes the spirant mutation, it turns into its corresponding fricative: i.e.\ /p, t, k/ become /f, θ, x/. \textcite{schrijver_spirantization_1999} tackles the issue of spirantization, and gives some relevant points.  Schrijver follows \textcite{greene_gemination_1956} in dating spirantization after apocope. Radical \textit{D} and lenited \textit{T} were only kept separate word-initially following apocope, so only word-initial spirantization is relevant here. Spirantization occurred across word boundaries in the following contexts: following pre-apocope \textit{*-s},  \textit{*-T, *-N, *-r,} and \textit{*-l}~\autocite[3]{schrijver_spirantization_1999}. After all of these consonants, a following voiceless stop would come to stand in a phonetically longer consonant cluster. Following apocope, the exact final consonant preceding the consonant to be spirantized (or proto-spirant consonant) became obscured, leaving only length as a marker for proto-spirant consonants. This matter presents a problem: if being long was a feature of proto-spirant consonants, then how could length be used to differentiate between radical and lenited voiceless stops? A phonemic three-way length distinction in stop consonants is unlikely at best, and was therefore unstable. This fact explains why the longest stop series, the proto-spirants, developed into spirants\footnote{If gemination also arose in Goidelic at any point, the phonemic system reorganised itself in a near-identical way: one voiceless stop series became a series of spirants, only this time the shortest (lenis) voiceless stops developed into spirants.}.  
-
-
-\section{Why lenited voiceless stops were aspirated}
-The first reason is that we have already established on the basis of cynghanedd that it is principally the feature [long] keeping lenited and unlenited voiceless stops apart. Given how the opposition between radical and lenited consonants only phonemicised after apocope, there was only limited time for this contrast to develop much further phonetically. It is simpler and therefore preferable to propose as few features as possible distinguishing fortis and lenis up until the point where the phonemicise. 
-
-
-
-
-Perhaps a third reason may be posited: the realisation of \lT\ as /f, θ, x/ in Goidelic. Postulating concomitant of aspiration in the original stop would be sensible in theorising how the fricatives emerged. Aspirated voiceless stops similarly developed into fricatives in the phonological history of Greek, for example. Also, Old Irish \lT\ > /θ/ developed into \gls{mir} /h/. This ultimate development in Irish may make more sense in light of aspiration.
-
-\section{On the date of redundant voicing}
+\subsection{Dating redundant voicing}
 \label{sec:date-redund-voic}
+
+Redundant voicing %%WHAT IS IT? REFER BACK TO CARLYLE
+
+%% WHEN IS IT: NOT NECESSARILY AFTER APOCOPE BUT I THINK SO BECAUSE OF OW AND BECAUSE IT IS STILL PRODUCTIVE IN LEON BRETON
 
 \begin{itemize}
 \item I borrow Carlyle's term for the voicing of short consonants; 
@@ -143,8 +129,95 @@ Perhaps a third reason may be posited: the realisation of \lT\ as /f, θ, x/ in 
 \end{itemize}
 These considerations allow for some triangulation, but the picture is not very consistent except that redundant voicing may have occurred in the \gls{ow} period.
 
-\subsection{The presence of resonants and syllable length}
-The presence of either vowels or resonants necessitated the phonetic process of lenition. Lenited stop consonants not next to resonants behaved normally, and were by definition surrounded by vowels (on both sides pre-apocope). The existence of either a vowel only or a vowel and a resonant may have influenced syllable length or weight. We know SE Welsh dialects maintain a difference between \xT\ and \xD\ through neighbouring syllable length only. It is possible that a similar phonetic concomitant existed in \gls{ow}, and that the difference in behaviour of stops in clusters with a resonant had a different influence on neighbouring vowel length than those in no such cluster with a resonant.
+\subsection{Dating loss of phonemic length}
+\label{sec:dating-loss-phonemic}
+
+This is the whole point of Part~\ref{part:orthography}
+
+\section{Consequences for other research topics}
+\label{sec:cons-other-rese-1}
+The early phonetics and phonology of lenition of voiceless stops proposed in this thesis have consequences for other arguments made. Some examples of how exactly this works out are given here.
+
+Matasović considers the divergent ways in which lenited voiceless stops are realised in Brittonnic and Goidelic evidence that \gls{pic} must be considered  \emph{Sprachbund} rather than a node on the Celtic family tree:
+
+\tqt{in British, the voiceless stops become voiced between vowels, while in Goidelic they become voiceless fricatives.
+  What is common to IC developments is that in both cases lenition applied across
+  word boundaries. It is as if both languages at the same time developed a rule prohibiting the occurrence of voiceless stops between vowels; such a rule could initially have developed in bilingual communities, and subsequently spread to monolingual speakers of both languages.  After the phonetic lenition of stops, and the subsequent apocope of final vowels, the results of word-initial lenition were
+  grammaticalized, producing the system of consonant mutations.  This development had to be independent in British and Goidelic, because it presupposes
+  earlier independent lenition, but there had to be some sort of causal connection.
+  This conclusion cannot be avoided, because consonant mutations are typologically so rare 18 that it would be extremely improbable that they developed in two
+  neighbouring languages at approximately the same time, yet completely accidentally. The most likely explanation is that consonant mutations, as a type of
+  morphophonemic rule, first developed in bilingual communities speaking early
+  forms of British and Goidelic. The rules turned out differently in the two languages, because their phonological systems were already significantly different
+  from each other.
+}{matasovic_insular_2008}{97--98}
+Matasović erroneously assumes that phonetic lenition of Brittonnic  voiceless stops must immediately have constituted voicing or deaspiration --- a phonological merger with unlenited voiced stops.
+
+The phonological evidence of this thesis invalidates this argument. Brittonnic intervocalic voiceless stops were initially lenited on a phonetic level only, with length distinction. The phonetics of such lenition can be reconciled with an early pre-phonemic Goidelic lenition. As such, there is no need to believe  that phonetic lenition of voiceless stops cannot have been a feature of \gls{pic} on the basis of lenited stops. 
+
+% \todo[inline]{Structure of the conclusion
+% \begin{itemize}
+% \item What was the goal of Part~\ref{part:phonology-phonetics}?
+% \item Does the hypothesis given in the introduction hold up?
+% \item Per chapter: summarise what was found
+% \item What are the implications of the findings, and more specifically:  
+%   \begin{itemize}
+%   \item Qualify the scope of what Chapter~\ref{oldwelsh} and Chapter~\ref{cha:prov-mwbe-y} really say about Welsh phonology
+%   \item Repeat and rework Figure~\ref{fig:pctolbbbstops} for Welsh including dates and the final step of loss of distinctive length. 
+%   \end{itemize}
+% \item What issues merit further research?
+%   \begin{itemize}
+%   \item Most important: dating redundant voicing (see below)
+%   \end{itemize}
+% \item What other research topics may be revisited in the wake of Part~\ref{part:phonology-phonetics}?
+%   \begin{itemize}
+%   \item Most important: Matasovic and \gls{pic}
+%   \end{itemize}
+% \item Lookahead to Part~\ref{part:orthography}
+% \end{itemize}
+% }
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[->, thick] (1,3) to node[above]{\gls{vot}} (4,3);
+    \draw[->, thick] (1,3) to node[left]{length} (1,0);
+    \node at (1.5,0.5) {\xD};
+    \node at (3.5,0.5) {\xT};
+    \node at (3.5,2.5) {\lT};
+  \end{tikzpicture}
+  \caption{The two dimensions distinguishing three stop series}
+  \label{fig:twodimthreestop}
+\end{figure}
+
+\section{On length}
+Schrijver considers aspiration as only an epiphenomenon of the other phonological properties, as shown in Table~\ref{stopsystemschrijver}. Nevertheless, Schrijver  is convinced that they were phonetically aspirated: `MoW evidence shows that these were probably strongly aspirated (except after \textit{s}), the aspiration having been lost in Cornish and Breton under Late Latin influence'~\autocite*[31]{schrijver_old_2011}. For arguments, see \textcite[§~25]{koch_*cothairche_1990}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{{@{}lll@{}}}\toprule
+    \xT & \xD & \lT \\\midrule
+    {[}-voice] & [+voice] & [+voice] \\
+    {[}+long] & [+long] & [-long] \\\midrule
+    p{[}ʰː{]} & bː & b \\
+    t{[}ʰː{]} & dː & d \\
+    k{[}ʰː{]} & ɡː & ɡ\\\bottomrule
+  \end{tabular}
+  \caption{Common Brittonic stop system according to Schrijver \autocite*[33]{schrijver_old_2011}}
+  \label{stopsystemschrijver}
+\end{table}
+
+Phonemic consonant length is not unique to stops in Middle Welsh: resonants also had an opposition between /nː/ and /n/, /rː/ and /r/, and /lː/ and /l/. This opposition disappeared by the end of the \gls{mw} period~\autocite[127]{schumacher_mittel-_2011}. These long voiced resonants were found in e.g.\ the \gls{mw} word for `heart' sometimes spelled \mw{callon}, or in \mw{penn} `head'. Both length distinctions were neutralised by the end of the \gls{mw} period. The phonemic status of these long voiced resonants did not only contrast with their short voiced counterparts /n, l, r/, but also with voiceless/aspirated counterparts /n̥, ɬ, r̥/. The three-way contrast system exactly mirrors that of stops in this sense.
+
+
+
+
+% The use of length in keeping apart voiceless radicals from their lenited counterparts has consequences for how they are connected to the rise of the spirant mutation from geminates in British. If a radical voiceless stop undergoes the spirant mutation, it turns into its corresponding fricative: i.e.\ /p, t, k/ become /f, θ, x/. \textcite{schrijver_spirantization_1999} tackles the issue of spirantization, and gives some relevant points.  Schrijver follows \textcite{greene_gemination_1956} in dating spirantization after apocope. Radical \textit{D} and lenited \textit{T} were only kept separate word-initially following apocope, so only word-initial spirantization is relevant here. Spirantization occurred across word boundaries in the following contexts: following pre-apocope \textit{*-s},  \textit{*-T, *-N, *-r,} and \textit{*-l}~\autocite[3]{schrijver_spirantization_1999}. After all of these consonants, a following voiceless stop would come to stand in a phonetically longer consonant cluster. Following apocope, the exact final consonant preceding the consonant to be spirantized (or proto-spirant consonant) became obscured, leaving only length as a marker for proto-spirant consonants. This matter presents a problem: if being long was a feature of proto-spirant consonants, then how could length be used to differentiate between radical and lenited voiceless stops? A phonemic three-way length distinction in stop consonants is unlikely at best, and was therefore unstable. This fact explains why the longest stop series, the proto-spirants, developed into spirants\footnote{If gemination also arose in Goidelic at any point, the phonemic system reorganised itself in a near-identical way: one voiceless stop series became a series of spirants, only this time the shortest (lenis) voiceless stops developed into spirants.}.  
+
+
+
+
+
 
 \section{From my seminar}
 Beth bynnag, hoffwn i gyrraedd rhyw fath o derfyniad nawr. Felly, dyna'r syniadau o sut roedd y \textit{stop systems} yn gweithio yn yr Hen Amser eto \emph{The Proto-Brittonic stop system}. Dyna Koch a Schrijver, a'u systemau tan nawr. Mae system Koch yn defnyddio anadliad caled a llais i gyferbynnu'r tair cyfres. Dyw e ddim yn s\^on am hyd. Mae Schrijver yn cop\"io hyd o Lydaweg, ac mae hynny'n cydweithio gyda llais i gyferbynnu'r tair cyfres. Mae'n s\^on am anadliad caled, ond dim ond mewn dimensiwn seinegol. Dyw anadliad caled ddim yn chwarae r\^ol i gyferbynnu dim byd, felly dyw anadliad caled ddim yn ffonemaidd. Mae hynny'n rhyfedd i fi; dyw hynny ddim yn esboniad economaidd. Hefyd, mae pawb yn glynu wrth lais, er bod hi mor hawdd dadlau bod cyferbyniad llais-dilais yn Llydaweg yn arloesiad sy'n dod o Ladin. Dyw e ddim yna yn y Gymraeg...
@@ -175,213 +248,192 @@ Os oes amser, gallaf drafod:
 % Note that the difference between lenited voiceless stops and unlenited voiced stops was only maintained word-initially. Elsewhere, intervocalic voiced geminates had merged with regular intervocalic voiceless stops by the OBr.\ period. Evidence for this is found in Old Welsh words having a historical unlenited voiced stop non-initially consistently being written with \graph{p t c} .
 
 
-\begin{sidewaysfigure}[h]
-  \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
-  \newcommand{\lng}[1][+]{[\textsc{#1long}]}
-  \centering
-  \begin{tikzpicture}[
-    ->,
-    align=left,
-    condit/.style={font=\footnotesize,above,near end, sloped}]
-    \node(pb){Archiphoneme};
-    \node[right=of pb](phot){Phonetic lenition \&\\First spirantization};
-    \node[right=of phot](apoc){Apocope};
-    \node[right=of apoc](spir){Second \\spirantization};
-    \node[right=of spir](merge){Merger\\\xD/\lT};
-    %% Voiceless stops
-    \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
-    \node[above=5mm of t1](t){\gls{T}\asp};
-    \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
-    \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
-    \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
-    \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
-    \node(t4rs)[yshift=18mm] at (spir|-t3r){/f/\\/θ/\\/x/};
-    \node(t4ri) at (spir|-t3r){};
-    \node(t4l) at (spir|-t3l){};
-    \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
-    \node(t5rs) at (merge|-t4rs){};
-    %% Voiced stops
-    \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
-    \node[above =5mm of d1](d){\gls{D}\asp[-]};
-    \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
-    \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
-    \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
-    \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
-    \node at (spir|-d3r)(d4r){};
-    \node at (spir|-d3l)(d4l){};
-    \node at (merge|-d4l)(d5l){};
-    %% Merged stops
-    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
-    \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
-    %% Arrows
-    \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
-    \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
-    \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
-    \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
-    \draw (t2r)to node[above] {\lng}(t3r);
-    \draw (t2l)to node[above] {\lng[-]}(t3l);
-    \draw (d2r)to node[above] {\lng}(d3r);
-    \draw (d2l)to (d3l);
-    \draw[dashed] (t3r) to node[condit] {/¬\#\_}(t4rs);
-    \draw[dashed] (t3r) to node[condit] {/\#\_}(t4ri);
-    \draw(t4ri)--(t5ri);
-    \draw (t3l) to (td5);
-    \draw(d3r)--(td5);
-    \draw (d3l)--(d5l);
-    \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
-    \draw(t4rs)--(t5rs);
-  \end{tikzpicture}
-  \caption{Summary of posited phonological developments (Apocope before second spirantization)}
-  \label{fig:phondevelopconc}
-\end{sidewaysfigure}
+% \begin{sidewaysfigure}[h]
+%   \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
+%   \newcommand{\lng}[1][+]{[\textsc{#1long}]}
+%   \centering
+%   \begin{tikzpicture}[
+%     ->,
+%     align=left,
+%     condit/.style={font=\footnotesize,above,near end, sloped}]
+%     \node(pb){Archiphoneme};
+%     \node[right=of pb](phot){Phonetic lenition \&\\First spirantization};
+%     \node[right=of phot](apoc){Apocope};
+%     \node[right=of apoc](spir){Second \\spirantization};
+%     \node[right=of spir](merge){Merger\\\xD/\lT};
+%     %% Voiceless stops
+%     \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
+%     \node[above=5mm of t1](t){\gls{T}\asp};
+%     \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
+%     \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
+%     \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
+%     \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
+%     \node(t4rs)[yshift=18mm] at (spir|-t3r){/f/\\/θ/\\/x/};
+%     \node(t4ri) at (spir|-t3r){};
+%     \node(t4l) at (spir|-t3l){};
+%     \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
+%     \node(t5rs) at (merge|-t4rs){};
+%     %% Voiced stops
+%     \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
+%     \node[above =5mm of d1](d){\gls{D}\asp[-]};
+%     \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
+%     \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
+%     \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
+%     \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
+%     \node at (spir|-d3r)(d4r){};
+%     \node at (spir|-d3l)(d4l){};
+%     \node at (merge|-d4l)(d5l){};
+%     %% Merged stops
+%     \node  at ($(t4l)!0.5!(d4r)$)(td4){};
+%     \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
+%     %% Arrows
+%     \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
+%     \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
+%     \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
+%     \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
+%     \draw (t2r)to node[above] {\lng}(t3r);
+%     \draw (t2l)to node[above] {\lng[-]}(t3l);
+%     \draw (d2r)to node[above] {\lng}(d3r);
+%     \draw (d2l)to (d3l);
+%     \draw[dashed] (t3r) to node[condit] {/¬\#\_}(t4rs);
+%     \draw[dashed] (t3r) to node[condit] {/\#\_}(t4ri);
+%     \draw(t4ri)--(t5ri);
+%     \draw (t3l) to (td5);
+%     \draw(d3r)--(td5);
+%     \draw (d3l)--(d5l);
+%     \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
+%     \draw(t4rs)--(t5rs);
+%   \end{tikzpicture}
+%   \caption{Summary of posited phonological developments (Apocope before second spirantization)}
+%   \label{fig:phondevelopconc}
+% \end{sidewaysfigure}
 
-\begin{sidewaysfigure}[h]
-  \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
-  \newcommand{\lng}[1][+]{[\textsc{#1long}]}
-  \centering
-  \begin{tikzpicture}[
-    ->,
-    align=left,
-    condit/.style={font=\footnotesize,above,near end, sloped}]
-    \node(pb){Archiphoneme};
-    \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
-    \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization};
-    \node[right=of spir](apoc){Apocope};
-    \node[right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
-    %% Voiceless stops
-    \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
-    \node[above=5mm of t1](t){\gls{T}\asp};
-    \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
-    \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
-    \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
-    \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
-    \node(t4rs)[yshift=18mm] at (spir|-t2r){[f]\\{[θ]}\\{[x]}};
-    \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
-    \node(t4ri) at (spir|-t3r){};
-    \node(t4l) at (spir|-t3l){};
-    \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
-    \node(t5rs) at (merge|-t4rs){};
-    %% Voiced stops
-    \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
-    \node[above =5mm of d1](d){\gls{D}\asp[-]};
-    \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
-    \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
-    \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
-    \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
-    \node at (spir|-d3r)(d4r){};
-    \node at (spir|-d3l)(d4l){};
-    \node at (merge|-d4l)(d5l){};
-    %% Merged stops
-    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
-    \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
-    %% Arrows
-    \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
-    \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
-    \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
-    \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
-    \draw[dashed] (t2r)to node[condit, near start] {/\#\_} node[above] {\lng}(t3r);
-    \draw (t2l)to node[above] {\lng[-]}(t3l);
-    \draw[dashed] (d2r)to node[condit, near start] {/\#\_} node[above] {\lng}(d3r);
-    \draw (d2l)to (d3l);
-    \draw[dashed] (t2r) to node[condit,midway] {/¬\#\_}(t4rs);
-    \draw(t3r)--(t5ri);
-    \draw (t3l) to (td5);
-    \draw(d3r)--(td5);
-    \draw (d3l)--(d5l);
-    \draw[dashed] (d2r)to node[condit,midway] {/¬\#\_}(t4l);
-    \draw(t4rs)--(t3rs);
-    \draw(t3rs)--(t5rs);
-  \end{tikzpicture}
-  \caption{Summary of posited phonological developments (Apocope after second spirantization)}
-  \label{fig:phondevelopconc2}
-\end{sidewaysfigure}
+% \begin{sidewaysfigure}[h]
+%   \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
+%   \newcommand{\lng}[1][+]{[\textsc{#1long}]}
+%   \centering
+%   \begin{tikzpicture}[
+%     ->,
+%     align=left,
+%     condit/.style={font=\footnotesize,above,near end, sloped}]
+%     \node(pb){Archiphoneme};
+%     \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
+%     \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization};
+%     \node[right=of spir](apoc){Apocope};
+%     \node[right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
+%     %% Voiceless stops
+%     \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
+%     \node[above=5mm of t1](t){\gls{T}\asp};
+%     \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
+%     \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
+%     \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
+%     \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
+%     \node(t4rs)[yshift=18mm] at (spir|-t2r){[f]\\{[θ]}\\{[x]}};
+%     \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
+%     \node(t4ri) at (spir|-t3r){};
+%     \node(t4l) at (spir|-t3l){};
+%     \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
+%     \node(t5rs) at (merge|-t4rs){};
+%     %% Voiced stops
+%     \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
+%     \node[above =5mm of d1](d){\gls{D}\asp[-]};
+%     \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
+%     \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
+%     \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
+%     \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
+%     \node at (spir|-d3r)(d4r){};
+%     \node at (spir|-d3l)(d4l){};
+%     \node at (merge|-d4l)(d5l){};
+%     %% Merged stops
+%     \node  at ($(t4l)!0.5!(d4r)$)(td4){};
+%     \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
+%     %% Arrows
+%     \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
+%     \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
+%     \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
+%     \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
+%     \draw[dashed] (t2r)to node[condit, near start] {/\#\_} node[above] {\lng}(t3r);
+%     \draw (t2l)to node[above] {\lng[-]}(t3l);
+%     \draw[dashed] (d2r)to node[condit, near start] {/\#\_} node[above] {\lng}(d3r);
+%     \draw (d2l)to (d3l);
+%     \draw[dashed] (t2r) to node[condit,midway] {/¬\#\_}(t4rs);
+%     \draw(t3r)--(t5ri);
+%     \draw (t3l) to (td5);
+%     \draw(d3r)--(td5);
+%     \draw (d3l)--(d5l);
+%     \draw[dashed] (d2r)to node[condit,midway] {/¬\#\_}(t4l);
+%     \draw(t4rs)--(t3rs);
+%     \draw(t3rs)--(t5rs);
+%   \end{tikzpicture}
+%   \caption{Summary of posited phonological developments (Apocope after second spirantization)}
+%   \label{fig:phondevelopconc2}
+% \end{sidewaysfigure}
 
-\begin{sidewaysfigure}[h]
-  \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
-  \newcommand{\lng}[1][+]{[\textsc{#1long}]}
-  \centering
-  \begin{tikzpicture}[
-    ->,
-    align=left,
-    condit/.style={font=\footnotesize,above,pos=0.8, sloped}]
-    \node(pb){Archiphoneme\\/kʷ/ > /p/};
-    \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
-    \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization \&\\
-      Apocope};
-    \node[above=of spir](apoc){Proto-Brittonnic};
-    \node[below right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
-    \node[above=of merge]{Welsh};
-    \node at ($(pb)!0.5!(phot)$)(pic){};
-    \node at (pic|-apoc){Proto-Insular-Celtic};
-    %% Voiceless stops
-    \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
-    \node[above=5mm of t1](t){\gls{T}\asp};
-    \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
-    \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
-    \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
-    \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
-    \node(t4rs)[yshift=20mm] at (spir|-t2r){};
-    \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
-    \node(t4ri) at (spir|-t3r){};
-    \node(t4l) at (spir|-t3l){};
-    \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
-    \node(t5rs) at (merge|-t4rs){/f/\\/θ/\\/x/};
-    %% Voiced stops
-    \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
-    \node[above =5mm of d1](d){\gls{D}\asp[-]};
-    \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
-    \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
-    \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
-    \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
-    \node at (spir|-d3r)(d4r){};
-    \node at (spir|-d3l)(d4l){};
-    \node at (merge|-d4l)(d5l){/β/\\{/ð/}\\{/ɣ/}};
-    %% Merged stops
-    \node  at ($(t4l)!0.5!(d4r)$)(td4){};
-    \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
-    %% Arrows
-    \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
-    \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
-    \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
-    \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
-    \draw[dashed] (t2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(t3r);
-    \draw (t2l)to node[above, pos=.4] {\lng[-]}(t3l);
-    \draw[dashed] (d2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(d3r);
-    \draw (d2l)to (d3l);
-    \draw[dashed] (t2r) to node[condit] {/¬\#\_}(t3rs);
-    \draw(t3r)--(t5ri);
-    \draw (t3l) to (td5);
-    \draw(d3r)--(td5);
-    \draw (d3l)--(d5l);
-    \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
-    \draw(t3rs)--(t5rs);
-  \end{tikzpicture}
-  \caption{Summary of posited phonological developments (Agnostic)}
-  \label{fig:phondevelopconc3}
-\end{sidewaysfigure}
+% \begin{sidewaysfigure}[h]
+%   \newcommand{\asp}[1][+]{[\textsc{#1asp}]}
+%   \newcommand{\lng}[1][+]{[\textsc{#1long}]}
+%   \centering
+%   \begin{tikzpicture}[
+%     ->,
+%     align=left,
+%     condit/.style={font=\footnotesize,above,pos=0.8, sloped}]
+%     \node(pb){Archiphoneme\\/kʷ/ > /p/};
+%     \node[right=of pb](phot){Phonetic lenition \&\\1\textsuperscript{st}  spirantization};
+%     \node[right=of phot](spir){1\textsuperscript{st} merger \lT/\xD\ \&\\2\textsuperscript{nd} spirantization \&\\
+%       Apocope};
+%     \node[above=of spir](apoc){Proto-Brittonnic};
+%     \node[below right=of apoc](merge){2\textsuperscript{nd} merger \xD/\lT};
+%     \node[above=of merge]{Welsh};
+%     \node at ($(pb)!0.5!(phot)$)(pic){};
+%     \node at (pic|-apoc){Proto-Insular-Celtic};
+%     %% Voiceless stops
+%     \node[below=35mm of pb](t1){/pʰ/\\/tʰ/\\/kʰ/};
+%     \node[above=5mm of t1](t){\gls{T}\asp};
+%     \node[yshift=9mm]at (phot|-t1)(t2r){[pːʰ]\\{[tːʰ]}\\{[kːʰ]}};
+%     \node[yshift=-9mm]at (phot|-t1)(t2l){{[pʰ]}\\{[tʰ]}\\{[kʰ]}};
+%     \node(t3r) at (apoc|-t2r){/pːʰ/\\{/tːʰ/}\\{/kːʰ/}};
+%     \node(t3l) at (apoc|-t2l){/pʰ/\\{/tʰ/}\\{/kʰ/}};
+%     \node(t4rs)[yshift=20mm] at (spir|-t2r){};
+%     \node(t3rs) at (apoc|-t4rs){/f/\\/θ/\\/x/};
+%     \node(t4ri) at (spir|-t3r){};
+%     \node(t4l) at (spir|-t3l){};
+%     \node(t5ri) at (merge|-t4ri){{/pʰ/}\\{/tʰ/}\\{/kʰ/}};
+%     \node(t5rs) at (merge|-t4rs){/f/\\/θ/\\/x/};
+%     %% Voiced stops
+%     \node[below=75mm of pb](d1){/p/\\/t/\\/k/};
+%     \node[above =5mm of d1](d){\gls{D}\asp[-]};
+%     \node[yshift=9mm] at (phot|-d1)(d2r){[pː]\\{[tː]}\\{[kː]}};
+%     \node[yshift=-9mm]at (phot|-d1)(d2l){[β]\\{[ð]}\\{[ɣ]}};
+%     \node at (apoc|-d2r)(d3r){/pː/\\{/tː/}\\{/kː/}};
+%     \node at (apoc|-d2l) (d3l){/β/\\{/ð/}\\{/ɣ/}};
+%     \node at (spir|-d3r)(d4r){};
+%     \node at (spir|-d3l)(d4l){};
+%     \node at (merge|-d4l)(d5l){/β/\\{/ð/}\\{/ɣ/}};
+%     %% Merged stops
+%     \node  at ($(t4l)!0.5!(d4r)$)(td4){};
+%     \node at (merge|-td4)(td5){/p/\\/t/\\/k/};
+%     %% Arrows
+%     \draw[dashed] (t1) to node[condit] {/¬V\_V,R}(t2r);
+%     \draw[dashed] (t1) to node[condit] {/V\_V,R}(t2l);
+%     \draw[dashed] (d1) to node[condit] {/¬V\_V,R}(d2r);
+%     \draw[dashed] (d1) to node[condit] {/V\_V,R}(d2l);
+%     \draw[dashed] (t2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(t3r);
+%     \draw (t2l)to node[above, pos=.4] {\lng[-]}(t3l);
+%     \draw[dashed] (d2r)to node[condit] {/\#\_} node[above,pos=.4] {\lng}(d3r);
+%     \draw (d2l)to (d3l);
+%     \draw[dashed] (t2r) to node[condit] {/¬\#\_}(t3rs);
+%     \draw(t3r)--(t5ri);
+%     \draw (t3l) to (td5);
+%     \draw(d3r)--(td5);
+%     \draw (d3l)--(d5l);
+%     \draw[dashed] (d2r)to node[condit] {/¬\#\_}(t3l);
+%     \draw(t3rs)--(t5rs);
+%   \end{tikzpicture}
+%   \caption{Summary of posited phonological developments (Agnostic)}
+%   \label{fig:phondevelopconc3}
+% \end{sidewaysfigure}
 
-\section{Consequences for other research}
-\label{sec:cons-other-rese}
-The early phonetics and phonology of lenition of voiceless stops proposed in this thesis have consequences for other arguments made. Some examples of how exactly this works out are given here.
 
-Matasović considers the divergent ways in which lenited voiceless stops are realised in Brittonnic and Goidelic evidence that \gls{pic} must be considered  \emph{Sprachbund} rather than a node on the Celtic family tree:
-
-\tqt{in British, the voiceless stops become voiced between vowels, while in Goidelic they become voiceless fricatives.
-  What is common to IC developments is that in both cases lenition applied across
-  word boundaries. It is as if both languages at the same time developed a rule prohibiting the occurrence of voiceless stops between vowels; such a rule could initially have developed in bilingual communities, and subsequently spread to monolingual speakers of both languages.  After the phonetic lenition of stops, and the subsequent apocope of final vowels, the results of word-initial lenition were
-  grammaticalized, producing the system of consonant mutations.  This development had to be independent in British and Goidelic, because it presupposes
-  earlier independent lenition, but there had to be some sort of causal connection.
-  This conclusion cannot be avoided, because consonant mutations are typologically so rare 18 that it would be extremely improbable that they developed in two
-  neighbouring languages at approximately the same time, yet completely accidentally. The most likely explanation is that consonant mutations, as a type of
-  morphophonemic rule, first developed in bilingual communities speaking early
-  forms of British and Goidelic. The rules turned out differently in the two languages, because their phonological systems were already significantly different
-  from each other.
-}{matasovic_insular_2008}{97--98}
-Matasović erroneously assumes that phonetic lenition of Brittonnic  voiceless stops must immediately have constituted voicing or deaspiration --- a phonological merger with unlenited voiced stops.
-
-The phonological evidence of this thesis invalidates this argument. Brittonnic intervocalic voiceless stops were initially lenited on a phonetic level only, with length distinction. The phonetics of such lenition can be reconciled with an early pre-phonemic Goidelic lenition.
-
-As such, there is no need to believe  that phonetic lenition of voiceless stops cannot have been a feature of \gls{pic} on the basis of lenited stops.
 
 %%% Local Variables:
 %%% mode: latex
