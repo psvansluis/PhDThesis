@@ -1,15 +1,14 @@
 \begin{spacing}{1}
-\include{1fm/titlepage}
-\frontmatter
-\include{1fm/declaration}
-\include{1fm/abstract}
-\include{1fm/foreword}
-\tableofcontents
-\listoffigures
-\listoftables
-\printglossary[%
-  nonumberlist=true,%
-  style=mcolindex
+  \include{1fm/titlepage}
+  \frontmatter
+  \include{1fm/declaration}
+  \include{1fm/abstract}
+  \include{1fm/acknowledgements}
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printglossary[%
+  nonumberlist=true
   ]
   \printglossary[%
   type=lang,%
@@ -17,9 +16,7 @@
   nonumberlist=true,%
   nogroupskip=true]
 \end{spacing}
-
 \mainmatter
-
 \part{Phonology}
 \label{part:phonology-phonetics}
 \include{2phon/phonintro}
@@ -34,18 +31,18 @@
 \include{3orth/laws}
 \include{3orth/dewi}
 \include{3orth/orconclus}
+\part*{Bibliography and Appendices}
+\label{part:appendices}
 \begin{spacing}{1}
-  \appendix
-  \include{4app/envir}
-  \include{4app/lenitions}
-  \begin{landscape}
-    \include{4app/bdleni}
-  \end{landscape}
-  \backmatter
   \begingroup
+  \markboth{Bibliography}{Bibliography}
   \sloppy
   \printbibliography
   \endgroup
+  \appendix
+  \include{4app/envir}
+  \include{4app/lenitions}
+  \include{4app/bdleni}
 \end{spacing}
 %%% Local Variables:
 %%% mode: latex
