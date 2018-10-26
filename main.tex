@@ -18,6 +18,7 @@ openright
 \renewcommand\labelenumi{(\theenumi)}
 
 \usepackage{hyperref}
+\usepackage{bookmark}
 \usepackage{tikz}
 \usetikzlibrary{positioning,calc}
 \usepackage{forest}
@@ -126,14 +127,6 @@ BoldItalicFont=Junicode-BoldItalic.ttf,
 \usepackage{graphicx} % For images
 \graphicspath{ {images/} }
 
-\ifdraftdoc
-\usepackage{datetime}
-\newcommand*{\draftfoottext}{\textwelsh[date=long]{\texttt{\tiny Drafft: \today\ @\currenttime}}}
-  \makeevenfoot{plain}{\texttt{\tiny Paulus van Sluis}}{\thepage}{\draftfoottext}
-  \makeoddfoot{plain}{\draftfoottext}{\thepage}{\texttt{\tiny Paulus van Sluis}}
-  \makeevenfoot{headings}{}{}{\draftfoottext}
-  \makeoddfoot{headings}{\draftfoottext}{}{}
-\fi
 
 \DisemulatePackage{setspace}%Use when class=memoir
 \usepackage{setspace}
@@ -205,7 +198,7 @@ BoldItalicFont=Junicode-BoldItalic.ttf,
 \newcommand{\tqt}[3]{%
   \begin{displayquote}%
     {\small\onesp{#1~\autocite[#3]{#2}}%
-    \vspace{-.5ex}}%
+    \vspace{-.25ex}}%
   \end{displayquote}%
   }%quote, reference, page
 
