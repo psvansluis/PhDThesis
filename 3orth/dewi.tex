@@ -4,23 +4,23 @@ The Welsh life of Saint David, known in Welsh as \mw{Buchedd Dewi} survives in s
 
 This chapter demonstrates that the exemplar of these texts may be dated on linguistic grounds using my methodology of counting occurrences of lenition of voiceless stops. Also, I explore the ways that statistical analysis of  orthography of voiceless stops may help in understanding the transmission and the stemmatics of thirteenth-century texts into the fourteenth century and beyond.
 
-\section{The database}
-\label{sec:database}
+
+
+\section{Manuscripts and method}
+\label{sec:manuscripts-1}
+
+\Textcite[lv--lviii]{Eva_Welsh88} describes the various manuscripts in which \mw[]{Buchedd Dewi} survives, noting that the text is extant in some fourteen manuscripts,  five of which he describes. I have taken three of those five for analysis in this chapter.
+
+\Acrfull{j119}, also called the Book of the Anchorite of Llanddewi Brefi, dates to the mid-fourteenth century~\autocite[59]{huws_medieval_2000}. The manuscript's first text has a note in its preface, stating that the manuscript was compiled for Gruffudd ap Llywelyn, who lived in northern Carmarthenshire. The note also contains a year, 1346, although it is not quite certain to what this date refers exactly. It might only have referred to when the first text was copied, and other texts may have been added later~\autocite[lvi--lvii]{Eva_Welsh88}.
+
+\Acrfull{ll27}, also called the Red Book of Talgarth, dates to the turn of the fifteenth century. The manuscript was compiled for a nobleman called Hopcyn ap Thomas ab Einion of Ynystawe, north of Swansea, who was also the patron of the Red Book of Hergest~\autocite[lvii]{Eva_Welsh88}.
+
+\Acrfull{ctd22} dates to the first half of the fifteenth century, not long after 1429~\autocite{Eva_Welsh88}. The writer of the manuscript is thought by \textcite[107]{Pow_description81} to be from South Wales. He based this on some dialectal forms found in the manuscript.
 
 Appendix~\ref{cha:datab-lenit-mwbuch} contains instances of lenition used in this chapter, and its conventions differ from the previous chapters. Appendix~\ref{cha:datab-lenit-mwbuch} only counts lenition of \mw[]{p, t, c}, and research exceptions are not included. Instances of free lenition, such as object lenition or adverbial phrase lenition, are only included when lenition is written for at least one mansucript.
 
 More important, one entry does not consist of an instance where we would expect lenition in one manuscript text, but rather one instance in three manuscript texts: \gls{j119}, \gls{ll27}, and \gls{ctd22}. This approach enables comparison of not only the degree to which each manuscript represents lenition, but also the specific instances of lenition that agree or disagree with one another among manuscripts. As a result, it is possible to find out whether orthographical lenition was added in a common ancestral manuscript or independently. Words are given in \gls{mow} orthography, because the exact spelling of these words may vary between manuscripts.  Appendix~\ref{cha:datab-lenit-mwbuch} contains 210 data points in total.
 
-\section{The manuscripts}
-\label{sec:manuscripts-1}
-
-\Textcite[lv--lviii]{Eva_Welsh88} describes the various manuscripts in which \mw[]{Buchedd Dewi} survives, noting that the text is extant in some fourteen manuscripts,  five of which he describes. I have taken three of those five for analysis in this chapter.
-
-\Acrfull{j119}, also called the Book of the Anchorite of Llanddewi Brefi, dates to the mid-fourteenth century~\autocite{Tho_TEI13}. The manuscript's first text has a note in its preface, stating that the manuscript was compiled for Gruffudd ap Llywelyn, who lived in northern Carmarthenshire. The note also contains a year, 1346, although it is not quite certain to what this date refers exactly. It might only have referred to when the first text was copied, and other texts may have been added later~\autocite[lvi--lvii]{Eva_Welsh88}\todo{add references to Huws' repertory of MSS}.
-
-\Acrfull{ll27}, also called the Red Book of Talgarth, dates to the turn of the fifteenth century. The manuscript was compiled for a nobleman called Hopcyn ap Thomas ab Einion of Ynystawe, north of Swansea, who was also the patron of the Red Book of Hergest~\autocite[lvii]{Eva_Welsh88}.
-
-\Acrfull{ctd22} dates to the first half of the fifteenth century, not long after 1429~\autocite{Eva_Welsh88}. The writer of the manuscript is thought by \textcite[107]{Pow_description81} to be from South Wales. He based this on some dialectal forms found in the manuscript.
 
 \subsection{The relationship among the manuscripts}
 \label{sec:relat-betw-manuscr}
@@ -68,7 +68,7 @@ In Examples~\ref{ex:odalymj119} and \ref{ex:odalymctd22} we find \mw[part]{dalym
   \mwc[ex:ogaryatctd22]{\gls{ctd22} 139r.1--2}{a thi a diodefy lawer yno \al{yr karyat} duỽ}{And there you suffer much for love of God.}
 \end{mwl}
 
-Lenition in \mw[you]{ti/di} is optional in the grammatical context found in Examples~\ref{ex:dosdij119} to \ref{dosdictd22}, as lenition does not impinge on grammaticality or meaning in any way, and is, rather, an instance of petrification. Still, the contrast between unlenited and lenited forms provides evidence that scribes changed the orthography between \mw[]{t} and \mw[]{d}, even if this specific example does not tell us which one is the original reading.
+Lenition in \mw[you]{ti/di} is optional in the grammatical context found in Examples~\ref{ex:dosdij119} to \ref{ex:dosdictd22}, as lenition does not impinge on grammaticality or meaning in any way, and is, rather, an instance of petrification. Still, the contrast between unlenited and lenited forms provides evidence that scribes changed the orthography between \mw[]{t} and \mw[]{d}, even if this specific example does not tell us which one is the original reading.
 
 \begin{mwl}
   \mwc[ex:dosdij119]{\gls{j119} 94r.9}{dos \al{ti} heb y sant}{``Come,'' said the saint}
@@ -151,9 +151,9 @@ As can be seen in Table~\ref{tab:replendewi}, lenition of \mw[]{c} is represente
 
 \begin{table}[h]
   \centering
-  \input{rfigures/figure/dewifirstresults.tex}
   \caption{Representation of \lT\ by percentage in \mw[]{Buchedd Dewi}}
   \label{tab:replendewi}
+  \input{rfigures/figure/dewifirstresults.tex}
 \end{table} 
 
 % \begin{figure}[h]
@@ -316,11 +316,11 @@ This calculation allows one to quantify how much each cell value contributes to 
 
 % If an observed value falls within the 95\textsuperscript{th} percentile of all simulated values, then we can say that the probability that the simulation would return a value at least as high is lower than five per cent. In other words, the probability of the observed value being at least as high as it is would be lower than five per cent. If this is the case, the observed value may be said to be statistically significant.
 
-The \(\chi^2\) test can be unreliable when the absolute number of expected values is too low. In a two-by-two contingency table, each expected cell count should be at least 5, although this condition is not always met using the data from \mw[]{Buchedd Dewi}. In such a case, Yates' correction for continuity may be applied to the \(\chi^2\) test by subtracting 0.5 from the difference between every observed value and its expected counterpart:
+The \(\chi^2\) test can be unreliable when the absolute number of expected values is too low. In a two-by-two contingency table, each expected cell count should be at least 5, although this condition is not always met using the data from \mw[]{Buchedd Dewi}. In such a case, Yates' correction for continuity may be applied to the \(\chi^2\) test by subtracting 0.5 from the difference between every observed value and its expected counterpart~\autocite[222]{Yat_Contingency34}:
 
 \[\chi_\text{Yates}^2 =  \frac{(|O - E| - 0.5)^2}{E}\]
 
-A test using this correction is more conservative than one not using it, because it produces lower \(\chi^2\) statistics and therefore gives more results that fail to reject the null hypothesis. For contingency tables used in this chapter, I have found that applying this correction never gives cause to reject the null hypothesis.\todo{find authoritative source to back me up on this continuity correction}
+A test using this correction is more conservative than one not using it, because it produces lower \(\chi^2\) statistics and therefore gives more results that fail to reject the null hypothesis. For contingency tables used in this chapter, I have found that applying this correction never gives cause to reject the null hypothesis.
 
 \subsection{The chi-square tests applied}
 \label{sec:chisqapplied}
@@ -330,9 +330,9 @@ The expected values for Table~\ref{tab:obsll27ctd22} are given in Table~\ref{tab
 
 \begin{table}[h]
   \centering
-  \input{rfigures/figure/obsll27ctd22.tex}
   \caption{Observed values for the relationship between \acrshort{ll27} and \acrshort{ctd22}}
   \label{tab:obsll27ctd22}
+  \input{rfigures/figure/obsll27ctd22.tex}
 \end{table}
 
 % The corpus size is 117. Lenition of \mw[]{p, t} is represented in 103 instances in \gls{ll27}, and in 98 instances in \gls{ctd22}. The expected amount of shared innovations is calculated by multiplying the product of the respective rates of lenition by the corpus size (\(N\)):
@@ -349,9 +349,9 @@ The expected values for Table~\ref{tab:obsll27ctd22} are given in Table~\ref{tab
 
 \begin{table}[h]
   \centering
-  \input{rfigures/figure/expll27ctd22.tex}
   \caption{Expected values for the relationship between \acrshort{ll27} and \acrshort{ctd22}}
   \label{tab:expll27ctd22}
+  \input{rfigures/figure/expll27ctd22.tex}
 \end{table}
 
 % Using my own function in R, I performed 1000 simulations of two manuscripts with 117 data points, with the first manuscript having 103 instances of lenition, and the second having 98, just like \gls{ll27} and \gls{ctd22}. The function then counted how many data points fell in each of the four categories (AA, AI, IA, II). The observed numbers of agreement compared to these simulations  corresponded to the percentiles given in Table~\ref{tab:percentilesll27ctd22}.
@@ -377,9 +377,9 @@ Because the test establishes a dependence between the two variables, it is appro
 
 \begin{table}[h]
   \centering
-  \input{rfigures/figure/sqresll27ctd22.tex}
   \caption{Squared residuals for the relationship between \acrshort{ll27} and \acrshort{ctd22}}
   \label{tab:contrll27ctd22}
+  \input{rfigures/figure/sqresll27ctd22.tex}
 \end{table}
 
 These calculations tell us that the amount of archaisms and innovations shared between \gls{ll27} and \gls{ctd22} is beyond what may be attributed to chance. Also, the amount of shared archaisms between \gls{ll27} and \gls{ctd22} is the furthest removed from what would be expected from chance, compared to shared innovations or archaisms in one manuscript that are innovations in another.
@@ -387,54 +387,54 @@ These calculations tell us that the amount of archaisms and innovations shared b
 Two more pairs of relationships may be analysed: the relationship between \gls{j119} and \gls{ll27} and the relationship between \gls{j119} and \gls{ctd22}. Table~\ref{tab:continj119ll27} gives the contingency tables for the former relationship, and Table~\ref{tab:continctd22j119} gives the contingency tables for the latter relationship. 
 \begin{table}[h]
   \centering
+  \caption{Contingency tables for the relationship between \acrshort{j119} and \acrshort{ll27}.}
+  \label{tab:continj119ll27}
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/obsj119ll27.tex}%
     \caption{Observed values.}
     \label{stab:obsj119ll27}
+    \input{rfigures/figure/obsj119ll27.tex}%
   \end{subtable}%
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/expj119ll27.tex}%
     \caption{Expected values.}
     \label{stab:expj119ll27}
+    \input{rfigures/figure/expj119ll27.tex}%
   \end{subtable}
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/sqresj119ll27.tex}%
     \caption{Squared residuals.}
     \label{stab:sqresj119ll27}
+    \input{rfigures/figure/sqresj119ll27.tex}%
   \end{subtable}
-  \caption{Contingency tables for the relationship between \acrshort{j119} and \acrshort{ll27}.}
-  \label{tab:continj119ll27}
 \end{table}
 
 \begin{table}[h]
   \centering
+  \caption{Contingency tables for the relationship between \acrshort{j119} and \acrshort{ctd22}.}
+  \label{tab:continctd22j119}
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/obsctd22j119.tex}%
     \caption{Observed values.}
     \label{stab:obsctd22j119}
+    \input{rfigures/figure/obsctd22j119.tex}%
   \end{subtable}%
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/expctd22j119.tex}%
     \caption{Expected values.}
     \label{stab:expctd22j119}
+    \input{rfigures/figure/expctd22j119.tex}%
   \end{subtable}
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/sqresctd22j119.tex}%
     \caption{Squared residuals.}
     \label{stab:sqresctd22j119}
+    \input{rfigures/figure/sqresctd22j119.tex}%
   \end{subtable}
-  \caption{Contingency tables for the relationship between \acrshort{j119} and \acrshort{ctd22}.}
-  \label{tab:continctd22j119}
-  \end{table}
+\end{table}
 For both of these pairings, the \(\chi^2\) statistic, \ie the sum of the squared residuals, exceeds the \(\chi^2\) statistic of \gls{ll27} and \gls{ctd22}. All three pairings show a statistically significant relationship at \textit{p} < .05. The squared residuals are again the highest for the shared archaisms in both cases, so it is the archaisms shared between any pair that merit further research. The next section  focuses on these archaisms.
 
-\section{The evidentiary value of these tests}
+\subsection{The evidentiary value of these tests}
 \label{sec:evidence-from-these}
 
 The p-value is well below .05 for all three combinations of manuscripts. The most obvious interpretation of these observations would be that lenition of \mw[]{p, t} was added to an exemplar common to all three manuscripts, so we may reconstruct the stemma found in Figure~\ref{fig:stemmachisquare} based purely on \(\chi^2\)-tests.
@@ -500,6 +500,8 @@ In Examples~\ref{ex:ynysprydeinj119} to \ref{ex:ynysprydeinctd22}, the orthograp
 
 \begin{table}[h]
   \centering
+  \caption{Instances where exactly one manuscript represents lenition.}
+  \label{tab:exact1mslen}
   \begin{tabular}{wld@{.}Dcd@{.}Dcd@{.}Dc}
     \toprule
     & & \multicolumn{3}{c}{\gls{j119}} & \multicolumn{3}{c}{\gls{ll27}} & \multicolumn{3}{c}{\gls{ctd22}} \\
@@ -528,8 +530,6 @@ In Examples~\ref{ex:ynysprydeinj119} to \ref{ex:ynysprydeinctd22}, the orthograp
     Brydain & fem.\ noun & 101r & 24 & \FALSE & 69r & 27 & \FALSE & 151v & 2  & \TRUE \\
     \bottomrule
   \end{tabular}%
-  \caption{Instances where exactly one manuscript represents lenition.}
-  \label{tab:exact1mslen}
 \end{table}
 All other shared archaisms are found in Table~\ref{tab:exact1mslen}, and they constitute instances where lenition is represented in exactly one manuscript. These are the found in Table~\ref{tab:exact1mslen}. Many instances show the consonant cluster \mw[]{-s \gls{T}-} discussed previously, including \mw[Easter night]{nos basc} (\gls{ll27}~66r.23). Beyond this, some personal names  are lenited irregularly: \mow[]{Badrig, Baulinus} and  \mow{Bebiog}. In \gls{mow}, lenition of personal names is quite rare, and is even rarer for non-Welsh names such as Paulinus~\autocite[702]{thomas_gramadeg_1996}\footnote{In \gls{mw} lenition is still common here, but translations from Latin may differ from original Welsh compositions in this regard. See Chapter~\ref{cha:indep-comp-mwbr}.}. 
 
@@ -669,7 +669,7 @@ Examples~\ref{ex:eibregethj119} to \ref{ex:eibregethctd22} show lenition of \mw[
 
 Both instances of unique non-lenition in \gls{ctd22} have one more crucial feature in common: they are lenited following verbs, but they are not instances of object lenition. Both problematic words are the subjects of their clauses, and they are lenited because it is a property of \ei\ and \mw[]{-et} to cause lenition. Lenition as a property of specific verbal endings existed from the beginning until the end of the \gls{mw} period~\autocite[42]{van_development14}. Because lenition was a property of the verbal ending, and lenition did not occur because the following word was an object or \gls{np}, this type of lenition consitutes contact lenition.
 
-In the Mabinogion tales found in the \gls{wbr}, the pattern of contact lenition following verbs differs from object lenition~\autocite[42, 69--70]{van_development14}. There, object lenition is written inconsistently, but this inconsistency does not hinge on the initial consonant of the word to be lenited. In other words, \mw[]{p, t, c} are equally likely to be lenited  as other consonants are when the cause of lenition is object lenition; however when the cause is contact lenition following \ei\ and \oes, lenition is written consistently, but it is only written for consonants other than \mw[]{p, t, c}. The tales analysed were composed well before the \gls{wbr}, which may itself be dated to the mid-fourteenth century\todo{Huws' repertory}. Examples~\ref{ex:wbrei} to \ref{ex:wbrdywawtgallel} illustrate the pattern found in here:
+In the Mabinogion tales found in the \gls{wbr}, the pattern of contact lenition following verbs differs from object lenition~\autocite[42, 69--70]{van_development14}. There, object lenition is written inconsistently, but this inconsistency does not hinge on the initial consonant of the word to be lenited. In other words, \mw[]{p, t, c} are equally likely to be lenited  as other consonants are when the cause of lenition is object lenition; however when the cause is contact lenition following \ei\ and \oes, lenition is written consistently, but it is only written for consonants other than \mw[]{p, t, c}. The tales analysed were composed well before the \gls{wbr}, which may itself be dated to the mid-fourteenth century~\autocite[228]{huws_medieval_2000}. Examples~\ref{ex:wbrei} to \ref{ex:wbrdywawtgallel} illustrate the pattern found in here:
 \begin{mwl}
   \mwc[ex:wbrei]{\acrshort{wbr}~2.2-4}%
   {ac ual ẏ llathrei \al{ỽynnet} ẏ cỽn ẏ llathrei \al{cochet} ẏ clusteu}%
@@ -778,20 +778,20 @@ Conversely, overcategorising variables would lead to false negative results. Obv
 Let us apply these ideas on convergent modernisation to the relationship between \gls{ll27} and \gls{ctd22}. Section~\ref{sec:chisqapplied} shows that representation of lenition in \gls{ll27} correlates to a statistically significant degree with representation in \gls{ctd22}. Let us now hypothesise that the correlation we see here is because \gls{ll27} and \gls{ctd22} independently modernise contact lenition and free lenition in similar respective rates, and that representation of lenition is not caused by common inheritance. We may test this hypothesis by comparing these manuscripts, using instances of contact lenition only, or by using instances of free lenition only. The contingency tables are given in Table~\ref{tab:obsll27ctd22freecontact}.
 
 \begin{table}[h]
+  \caption{Observed values for the relationship between  \acrshort{ll27} and \acrshort{ctd22}, subdivided by type of lenition.}
+  \label{tab:obsll27ctd22freecontact}
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/obsll27ctd22contact.tex}
     \caption{Contact lenition.}
     \label{tab:contactlentab}
+    \input{rfigures/figure/obsll27ctd22contact.tex}
   \end{subtable}%
   \begin{subtable}[b]{0.5\linewidth}
     \centering
-    \input{rfigures/figure/obsll27ctd22free.tex}
     \caption{Free lenition.}
     \label{tab:obsll27ctd22free}
+    \input{rfigures/figure/obsll27ctd22free.tex}
   \end{subtable}
-  \caption{Observed values for the relationship between  \acrshort{ll27} and \acrshort{ctd22}, subdivided by type of lenition.}
-  \label{tab:obsll27ctd22freecontact}
 \end{table}
 
  These contingency tables yield the following chi-square scores: \(\chi^2\) = \input{rfigures/figure/chisqll27ctd22contact.tex} for contact lenition, and \(\chi^2\) = \input{rfigures/figure/chisqll27ctd22free.tex} for free lenition. For contact lenition, the score is significant at \emph{p} < 0.05. These results  demonstrate that the statistically significant correspondence between \gls{ll27} and \gls{ctd22} argued for in Section~\ref{sec:chisqapplied} was not simply because contact lenition and free lenition were modernised similarly enough. 
