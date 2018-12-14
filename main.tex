@@ -1,5 +1,6 @@
 \documentclass[
 % draft,
+hidelinks,
 a4paper,
 12pt,
 twoside,
@@ -7,15 +8,17 @@ openright
 ]{memoir}
 \chapterstyle{thatcher}
 
-\setlrmargins{*}{*}{1.618033}
+\setlrmargins{*}{*}{1.333}
 \setlength{\textheight}{1.618033\textwidth}
 \setulmargins{*}{*}{1.618033}
+
 
 \pagestyle{headings}
 \nouppercaseheads
 
 \setsecnumdepth{subsection}
 \renewcommand\labelenumi{(\theenumi)}
+\renewcommand*{\cftappendixname}{Appendix\space} % Puts `Appendix' in the ToC
 
 \usepackage{hyperref}
 \usepackage{bookmark}
@@ -121,7 +124,7 @@ BoldItalicFont=Junicode-BoldItalic.ttf,
 \usepackage{calc}
 \usepackage{etoolbox}
 
-\usepackage[color=orange!40!white!40!yellow!20,linecolor=gray,textsize=footnotesize]{todonotes}
+% \usepackage[color=orange!40!white!40!yellow!20,linecolor=gray,textsize=footnotesize]{todonotes}
 \usepackage[normalem]{ulem} %underlining
 
 \usepackage{graphicx} % For images

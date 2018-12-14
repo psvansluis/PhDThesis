@@ -313,9 +313,9 @@ euler.dewi.free <- euler(dewi.free[,5:7], shape="ellipse")
 euler.dewi.free 
 
 
-euler.dewi.free %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
+euler.dewi.free %>% plot(fill=c("#EEEEEE","#EEEEEE", "#EEEEEE"),
                          fills=.25,
-                         cex=.8,
+                         cex=.5,
                          #labels="plain",
                          quantities=TRUE,
                          #legend=list(space="bottom",columns=3,alpha=1)
@@ -326,10 +326,10 @@ euler.dewi.free %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
 colnames(dewi.cont)[5:7] <- glsnames
 euler.dewi.cont <- euler(dewi.cont[,5:7], shape="ellipse")
 euler.dewi.cont
-euler.dewi.cont %>% plot(fill=c("#33EEEE","#EE33EE", "#EEEE33"),
+euler.dewi.cont %>% plot(fill=c("#EEEEEE","#EEEEEE", "#EEEEEE"),
                          fills=.25,
-                         cex=.8,
-                         labels=FALSE,#"plain",
+                         cex=.5,
+                         #labels=FALSE,#"plain",
                          quantities=TRUE,
                          #auto.key=FALSE,
                          #auto.key=list(space="bottom")

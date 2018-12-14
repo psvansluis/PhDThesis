@@ -13,9 +13,10 @@
 }
 \newcommand{\signed}{
   \begin{itemize}
-    \item[Signed] \dotfill (candidate)
-    \item[Date] \dotfill \hphantom{(candidate)}
-  \end{itemize}
+    \item[Signed]\tikz[remember picture,anchor=base,baseline=(current bounding box.base)]{\node(lsig){};} \dotfill \tikz[remember picture,anchor=base,baseline=(current bounding box.base)]{\node(rsig){};}(candidate)
+    \item[Date] \dotfill\today\dotfill \hphantom{(candidate)}
+    \end{itemize}
+    \tikz[overlay,remember picture]{\node[yshift=3mm] at ($(lsig)!0.5!(rsig)$){\includegraphics[height=5.5ex]{1fm/signature.eps}};}
 }
 This work has not previously been accepted in substance for any degree and is not being concurrently submitted in candidature for any degree.	
 \signed

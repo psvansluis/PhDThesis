@@ -171,7 +171,7 @@
     \hlkwd{guides}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{guide_legend}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"consonant"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\input{figure/firstresults-1.tikz}
+\input{figure/firstresults-1.tex}
 \begin{kframe}\begin{alltt}
 \hlcom{### Alternative with stacked bars; NB unweighed for rel. freq of p t c}
 \hlkwd{ggplot}\hlstd{(firstresults,}\hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=} \hlkwd{c}\hlstd{(Group.2),}\hlkwc{y}\hlstd{=}\hlkwd{as.numeric}\hlstd{(perc)}\hlopt{/}\hlnum{3}\hlstd{,}\hlkwc{fill}\hlstd{=cons))}\hlopt{+}
@@ -181,7 +181,7 @@
     \hlkwd{guides}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{guide_legend}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"consonant"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\input{figure/firstresults-2.tikz}
+\input{figure/firstresults-2.tex}
 
 \end{knitrout}
 
@@ -429,7 +429,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Ignoring unknown parameters: binwidth, bins, pad}}\end{kframe}
-\input{figure/bardewi1-1.tikz}
+\input{figure/bardewi1-1.tex}
 
 \end{knitrout}
 
@@ -454,7 +454,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Ignoring unknown parameters: binwidth, bins, pad}}\end{kframe}
-\input{figure/bardewi2-1.tikz}
+\input{figure/bardewi2-1.tex}
 
 \end{knitrout}
 
@@ -466,28 +466,28 @@
 \end{alltt}
 \begin{verbatim}
 ##                                      original fitted residuals regionError
-## \\gls{j119}                                 2  2.001    -0.001           0
-## \\gls{ll27}                                 7  7.002    -0.002           0
+## \\gls{j119}                                 2  1.885     0.115           0
+## \\gls{ll27}                                 7  6.599     0.401           0
 ## \\gls{ctd22}                                0  0.000     0.000           0
 ## \\gls{j119}&\\gls{ll27}                     0  0.002    -0.002           0
 ## \\gls{j119}&\\gls{ctd22}                    0  0.001    -0.001           0
-## \\gls{ll27}&\\gls{ctd22}                    4  4.001    -0.001           0
-## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}        8  8.003    -0.003           0
+## \\gls{ll27}&\\gls{ctd22}                    4  3.771     0.229           0
+## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}        8  7.541     0.459           0
 ## 
 ## diagError: 0 
 ## stress:    0
 \end{verbatim}
 \begin{alltt}
-\hlstd{euler.dewi.free} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#33EEEE"}\hlstd{,}\hlstr{"#EE33EE"}\hlstd{,} \hlstr{"#EEEE33"}\hlstd{),}
+\hlstd{euler.dewi.free} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#EEEEEE"}\hlstd{,}\hlstr{"#EEEEEE"}\hlstd{,} \hlstr{"#EEEEEE"}\hlstd{),}
                          \hlkwc{fills}\hlstd{=}\hlnum{.25}\hlstd{,}
-                         \hlkwc{cex}\hlstd{=}\hlnum{.8}\hlstd{,}
+                         \hlkwc{cex}\hlstd{=}\hlnum{.5}\hlstd{,}
                          \hlcom{#labels="plain",}
                          \hlkwc{quantities}\hlstd{=}\hlnum{TRUE}\hlstd{,}
                          \hlcom{#legend=list(space="bottom",columns=3,alpha=1)}
                          \hlstd{)}
 \end{alltt}
 \end{kframe}
-\input{figure/vennfree-1.tikz}
+\input{figure/vennfree-1.tex}
 
 \end{knitrout}
 
@@ -500,29 +500,29 @@
 \end{alltt}
 \begin{verbatim}
 ##                                      original fitted residuals regionError
-## \\gls{j119}                                 1  0.998     0.002           0
-## \\gls{ll27}                                 3  2.995     0.005           0
-## \\gls{ctd22}                                8  7.987     0.013           0
-## \\gls{j119}&\\gls{ll27}                     2  1.997     0.003           0
+## \\gls{j119}                                 1  1.000     0.000           0
+## \\gls{ll27}                                 3  3.000     0.000           0
+## \\gls{ctd22}                                8  8.000     0.000           0
+## \\gls{j119}&\\gls{ll27}                     2  2.000     0.000           0
 ## \\gls{j119}&\\gls{ctd22}                    0  0.000     0.000           0
-## \\gls{ll27}&\\gls{ctd22}                   13 12.979     0.021           0
-## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}       65 64.896     0.104           0
+## \\gls{ll27}&\\gls{ctd22}                   13 12.999     0.001           0
+## \\gls{j119}&\\gls{ll27}&\\gls{ctd22}       65 64.996     0.004           0
 ## 
 ## diagError: 0 
 ## stress:    0
 \end{verbatim}
 \begin{alltt}
-\hlstd{euler.dewi.cont} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#33EEEE"}\hlstd{,}\hlstr{"#EE33EE"}\hlstd{,} \hlstr{"#EEEE33"}\hlstd{),}
+\hlstd{euler.dewi.cont} \hlopt{%>%} \hlkwd{plot}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#EEEEEE"}\hlstd{,}\hlstr{"#EEEEEE"}\hlstd{,} \hlstr{"#EEEEEE"}\hlstd{),}
                          \hlkwc{fills}\hlstd{=}\hlnum{.25}\hlstd{,}
-                         \hlkwc{cex}\hlstd{=}\hlnum{.8}\hlstd{,}
-                         \hlkwc{labels}\hlstd{=}\hlnum{FALSE}\hlstd{,}\hlcom{#"plain",}
+                         \hlkwc{cex}\hlstd{=}\hlnum{.5}\hlstd{,}
+                         \hlcom{#labels=FALSE,#"plain",}
                          \hlkwc{quantities}\hlstd{=}\hlnum{TRUE}\hlstd{,}
                          \hlcom{#auto.key=FALSE,}
                          \hlcom{#auto.key=list(space="bottom")}
                          \hlstd{)}
 \end{alltt}
 \end{kframe}
-\input{figure/venncont-1.tikz}
+\input{figure/venncont-1.tex}
 
 \end{knitrout}
 \begin{knitrout}
@@ -552,7 +552,7 @@
     \hlkwd{facet_grid}\hlstd{(}\hlopt{~}\hlstd{lenition)}
 \end{alltt}
 \end{kframe}
-\input{figure/dist-1.tikz}
+\input{figure/dist-1.tex}
 
 \end{knitrout}
 Yates' Correction for Continuity:
