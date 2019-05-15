@@ -253,3 +253,6 @@ rfigures/gg.txt
 rfigures/figures[woven].tex
 misc/**
 *.docx
+main.textl-glg
+main.textl-glo
+main.textl-gls
