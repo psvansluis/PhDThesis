@@ -1,10 +1,10 @@
 \chapter{Conclusion --- phonology}
 \label{cha:conclusion-phonology}
 
-The aim of Part~\ref{part:phonology-phonetics} was to establish the phonological variables that served to maintain a phonemic three-way distinction between \xT, \lT, and \xD\ in Welsh. In Chapter~\ref{cha:introduction-phonology} I argued that such a distinction must be posited, and introduced earlier scholarship on this three-way distinction. The earlier scholarship generally agrees that a three-way stop series must be reconstructed for some of the earlier stages of Brittonic. What is not agreed upon is which phonological variables kept this three-way stop distinction apart or whether the distinction ever survived into the stage where Brittonic lenition was phonemic. It is also not agreed upon when this three-way stop distinction collapsed into the two-way stop distinction found in \gls{mow}. The chapter ends with the hypothesis that \xT\ was originally long and aspirated, \lT\ was short and aspirated, and \xD\ was long and unaspirated. The following chapters explored this hypothesis; their findings are summarised here.
+The aim of Part~\ref{part:phonology-phonetics} was to establish the phonological variables that served to maintain a phonemic three-way distinction between \xT, \lT, and \xD\ in Welsh. Chapter~\ref{cha:introduction-phonology} argued that such a distinction must be posited, and introduced earlier scholarship on this three-way distinction. The earlier scholarship generally agrees that a three-way stop series must be reconstructed for some of the earlier stages of Brittonic. What is not agreed upon is which phonological variables kept this three-way stop distinction apart or whether the distinction ever survived into the stage where Brittonic lenition was phonemic. It is also not agreed upon when this three-way stop distinction collapsed into the two-way stop distinction found in \gls{mow}. The chapter ended with the hypothesis that \xT\ was originally long and aspirated, \lT\ was short and aspirated, and \xD\ was long and unaspirated. Chapters~\ref{oldwelsh} and \ref{oldwelsh} explored this hypothesis further; their findings are summarised here.
 
 Chapter~\ref{oldwelsh} considered \gls{ow} orthography. Generally speaking, \gls{ow} orthography follows pre-lenition phonology, \ie \gls{T} is represented with \ow{p, t, c} irrespectively of whether it represents \lT\ or \xT, and the same goes for \gls{D} and \ow{b, d, g}. In Chapter~\ref{oldwelsh} I gathered the exceptions to this rule, \ie instances where the orthograpy of a stop consonant differs from its etymological value in \gls{ow}. These exceptional spellings occur in two classes: instances where etymological  \gls{D} is written with \ow{p, t, c}, and where etymological \gls{T} is written with \ow{b, d, g}.
-Etymological \gls{D} is consistently written as \ow{p, t, c} when it represents a word-medial voiced geminate. This confirms the hypothesis by \textcite{martinet_celtic_1952} that voiced geminates merged with lenited voiceless stops in an early stage due to the rarity of the former class\footnote{See Section~\ref{sec:martinet}}. Because it is the voiced geminates which were rare and the lenited voiceless stops which were common, I proposed that voiced geminates merged to the value of lenited voiceless stops, and not vice versa.
+Etymological \gls{D} is consistently written as \ow{p, t, c} when it represents a word-medial voiced geminate. This confirms the hypothesis by \textcite{martinet_celtic_1952} that voiced geminates merged with lenited voiceless stops in an early stage due to the rarity of the former class\footnote{See Section~\ref{sec:martinet}}. Because the voiced geminates  were rare and the lenited voiceless stops were common, I proposed that voiced geminates merged to the value of lenited voiceless stops, and not vice versa.
 
 When etymological \gls{T} is written with \ow{b, d, g}, this is frequently done in the vicinity of \gls{rescon}s, \ie \ow{m, n, l, r}. Having established that word-medial \xD\ and \lT\ had already merged in \gls{ow}, the instances of \ow{b, d, g} representing stops cannot constitute different phonemes. I proposed that this inconsistency with which the same phonemes are written in word-medial position may be understood in analogy with word-initial contrasts. That is, word-initial \lT\ and \xD\ differed from one another; yet word-medial \gls{D} was the result of a merger between the two, and this medial \gls{D} usually stood phonetically closer to initial \lT, but sometimes closer to initial \xD. Whenever word-medial \gls{D} stood phonetically closer to \xD\ than to \lT, it had a higher chance of being written with \ow{b, d, g} than otherwise. \Gls{rescon}s are known cross-linguistically to swallow the aspiration of adjacent consonants (See Section~\ref{sec:from-brittonic-welsh} and \textcite{koch_*cothairche_1990}). Thus, assuming that word-initial \lT\ was aspirated, while \xD\ was unaspirated, and assuming that word-medial \gls{D} was usually pronounced as \lT, adjacent \gls{rescon}s and their swallowing effect provided a context within which medial \gls{D} became comparatively more similar to \xD\ and less similar to \lT.
 
@@ -24,27 +24,35 @@ The  chronology of lenition of stops from \gls{pic} to \gls{mow} is illustrated 
     \node[right= 2.5cm of topl](pcxt){\gls{hash}\xT};
     \node[right= 5cm of topl](pclt){\gls{hash}\lT};
     \node[right= 7.5cm of topl](pcxd){\gls{hash}\xD};
-    \node[below= 1cm of topl,align=left,anchor=west](1l){%
+    \node[below= 1cm of topl,align=left,anchor=west](0l){%
+      Pre-\gls{apoc}\\phonemes};
+    \node(pct)  at ($(pcxt)!0.5!(pclt)$){};%%dummynode
+    \node(0t) at (0l-|pct){{[}p t k]};
+    \node(0d) at (0l-|pcxd){{[b d ɡ]}};
+    \node[below= 3cm of topl,align=left,anchor=west](1l){%
       Phonetic\\lenition};
     \node(1xt) at (1l-|pcxt){{[}pː tː kː]};
     \node(1lt) at (1l-|pclt){{[}p t k]};
     \node(1xd) at (1l-|pcxd){{[bː dː ɡː]}};
-    \node[below=3cm of topl,anchor=west](2l){%
+    \node[below=5cm of topl,anchor=west](2l){%
       Apocope};
     \node(2xt) at (2l-|pcxt){/pː tː kː/};
     \node(2lt) at (2l-|pclt){/p t k/};
     \node(2xd) at (2l-|pcxd){/bː dː ɡː/};
-    \node[below=5cm of topl,align=left,anchor=west](3l){%
+    \node[below=7cm of topl,align=left,anchor=west](3l){%
       Redundant\\voicing\\of \lT};
     \node(3xt) at (3l-|pcxt){/pː tː kː/};
     \node(3lt) at (3l-|pclt){/b d ɡ/};
     \node(3xd) at (3l-|pcxd){/bː dː ɡː/};
-    \node[below=7cm of topl,align=left,anchor=west](4l){%
+    \node[below=9cm of topl,align=left,anchor=west](4l){%
       Loss of \\phonemic \\length};
     \node(4t) at (4l-|pcxt){/p t k/};
     \node(3d)  at ($(3lt)!0.5!(3xd)$){};%%dummynode
     \node(4d) at (4l-|3d){/b d ɡ/};
     %%% ARROWS
+    \draw[->] (0t) -- (1xt);
+    \draw[->] (0t) -- (1lt);
+    \draw[->] (0d) -- (1xd);
     \foreach \x in {xt,lt,xd}{%
       \draw[->] (1\x) -- (2\x);
       \draw[->] (2\x) -- (3\x);
@@ -53,19 +61,20 @@ The  chronology of lenition of stops from \gls{pic} to \gls{mow} is illustrated 
     \draw[->] (3lt) -- (4d);
     \draw[->] (3xd) -- (4d);
     %%% OPPOSITIONS
+    \draw[<->,dashed, bend left = 50] (0t) to node[midway,font=\footnotesize,above]{±voice} (0d);
     \draw[<->,dashed, bend left = 50]
-    (2xt) to node[midway,above]{±length} (2lt);
+    (2xt) to node[midway,font=\footnotesize,above]{±length} (2lt);
     \draw[<->,dashed, bend left = 50]
-    (2lt) to node[midway,above]{±\gls{vot}\vphantom{g}} (2xd);
+    (2lt) to node[midway,font=\footnotesize,above]{±\gls{vot}\vphantom{g}} (2xd);
     \draw[<->,dashed, bend left = 50]
-    (3xt) to node[midway,above]{±\gls{vot}\vphantom{g}} (3lt);
+    (3xt) to node[midway,font=\footnotesize,above]{±\gls{vot}\vphantom{g}} (3lt);
     \draw[<->,dashed, bend left = 50]
-    (3lt) to node[midway,above]{±length} (3xd);
+    (3lt) to node[midway,font=\footnotesize,above]{±length} (3xd);
     \draw[<->,dashed, bend left = 50]
-    (4t) to node[midway,above]{±\gls{vot}\vphantom{g}} (4d);
+    (4t) to node[midway,font=\footnotesize,above]{±\gls{vot}\vphantom{g}} (4d);
     %%% EXPLANATION
     \node[%
-    below=9cm of topl,
+    below=10.5cm of topl,
     font=\footnotesize,
     align=left,
     text width=8cm,
@@ -87,7 +96,7 @@ The date of \gls{apoc} is argued by \textcite[§~182]{jackson_language_1953} to 
 
 One reason to assume redundant voicing followed \gls{apoc} is the evidence given in Chapter~\ref{oldwelsh}, in which I argued that word-medial \gls{D} and word-initial \lT\ were still aspirated in \gls{ow}, well after \gls{apoc}. Conversely, the \oi{Coirthech}-stratum of loanwords from Brittonic into Goidelic provides evidence from the fifth century, shortly before \gls{apoc}, that word-medial \lT\ was no more voiced than \xT\footnote{It is harder to infer anything from the \oi{Pádraig}-stratum of loanwords from Brittonic to Goidelic: after Goidelic \lT\ became fricatives, a short aspirated Brittonic \lT\ no longer had an obvious Goidelic counterpart; it is thus unclear what would happen if such a sound were borrowed by Goidelic speakers.}. 
 
-Redundant voicing or lack thereof is difficult to observe precisely because it is redundant. Still, there are some developments preceding the merger of \lT\ with \xD\ where redundant voicing may be observed. For example, even the earliest manuscripts containing \mw[]{Brut y Brenhinedd} discussed in Chapter~\ref{cha:indep-comp-mwbr} contain instances where \gls{morphophonlen} was petrified written with \mw{b, d, g}. In these manuscripts, lenited \mw[with]{can} is written as \mw[with]{y gan} even though lenition of \mw{c} is not otherwise represented.
+Redundant voicing or lack thereof is difficult to observe precisely because it is redundant. Still, there are some developments preceding the merger of \lT\ with \xD\ where redundant voicing may be observed. For example, even the earliest manuscripts containing \mw[]{Brut y Brenhinedd} discussed in Chapter~\ref{cha:indep-comp-mwbr} contain instances of initial \mw{b, d, g} where \gls{morphophonlen} was petrified. In these manuscripts, lenited \mw[with]{can} is written as \mw[with]{y gan} even though lenition of \mw{c} is not otherwise represented.
 
 When \gls{morphophonlen} was petrified, length distinctions must have been lost just as \textcite{falchun_systeme_1951} observes for Le Bourg Blanc Breton\footnote{See Section~\ref{sec:falchun}.}. Then, if \gls{petr} descending from \gls{morphophonlen}\footnote{As opposed to clitic reduction.} was to yield \gmw{b, d, g}, this must have entailed fossilisation of redundant voicing. This implies that redundant voicing operated for enough time to yield these spellings with \mw{b, d, g} in these instances of \gls{petr} before consonantal length was lost more generally. On the other hand, manuscripts \gls{sA} and \gls{sC}, the earliest law texts discussed in Chapter~\ref{cha:welsh-laws}, do have instances of \mw[with]{y kan}. This may mean that these manuscripts still contain an orthographical stratum preceding redundant voicing, but it may also mean that lenition in this particular construction was simply not petrified yet in this stratum.
 
@@ -95,7 +104,7 @@ The first instances where \gls{morphophonlen} is written with \mw{b, d, g} is th
 
 Another pointer to the date of redundant voicing is the fact that voicing of \lT\ is ultimately shared between all Brittonic dialects. It would therefore be attractive to posit a sound law of redundant voicing before the Brittonic dialects split up. This split is hard to date precisely. It may be dated from the earliest Brittonic migrations to the end of the \gls{ow} period, when the differences between the Brittonic dialects first became pronounced.
 
-These considerations allow for some triangulation, but the date of redundant voicing as a sound law remains imprecise except that it must have been active within the \gls{ow} period  by the twelfth century. This uncertainty is  unsurprising, because this voicing rule operated as a synchronic rule fairly late in the phonological computation: iIt must have followed sandhi rules in the phonological computation, given how a \gls{doubconclus} of \gls{D}+\lT\ yields \xT, and it was initially redundant with short consonant length. There is no reason for an orthographical system to develop a notation for such a redundant feature.
+These considerations allow for some triangulation, but the date of redundant voicing as a sound law remains imprecise except that it must have been active within the \gls{ow} period  by the twelfth century. This uncertainty is  unsurprising, because this voicing rule operated as a synchronic rule fairly late in the phonological computation: It must have followed sandhi rules in the phonological computation, given how a \gls{doubconclus} of \gls{D}+\lT\ yields \xT, and it was initially redundant with short consonant length. There is no reason for an orthographical system to develop a notation for such a redundant feature.
 
 % \begin{itemize}
 % \item I borrow Carlyle's term for the voicing of short consonants; 
