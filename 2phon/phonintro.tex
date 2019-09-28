@@ -330,11 +330,11 @@ Yet evidence to the contrary must be considered. \Textcite{carlyle_syllabic_1988
     \node[right= 2.5cm of topl](pcxt){\gls{hash}\xT};
     \node[right= 5cm of topl](pclt){\gls{hash}\lT};
     \node[right= 7.5cm of topl](pcxd){\gls{hash}\xD};
-    \node[below= 1cm of topl,align=left,anchor=west](0l){%
+    \node[below= 1.25cm of topl,align=left,anchor=west](0l){%
       Pre-\gls{apoc}\\phonemes};
     \node(pct)  at ($(pcxt)!0.5!(pclt)$){};%%dummynode
-    \node(0t) at (0l-|pct){{[}p t k]};
-    \node(0d) at (0l-|pcxd){{[b d ɡ]}};
+    \node(0t) at (0l-|pct){{/}p t k/};
+    \node(0d) at (0l-|pcxd){{/b d ɡ/}};
     \node[below= 3cm of topl,align=left,anchor=west](1l){%
       Phonetic\\lenition};
     \node(1xt) at (1l-|pcxt){{[}pː tː kː]};
@@ -359,11 +359,11 @@ Yet evidence to the contrary must be considered. \Textcite{carlyle_syllabic_1988
       \draw[->] (2\x) -- (3\x);
     }
     %%% OPPOSITIONS
-    \draw[<->,dashed, bend left = 50] (0t) to node[midway,font=\footnotesize,above]{±voice} (0d);
-    \draw[<->,dashed, bend left = 50] (2xt) to node[midway,font=\footnotesize,above]{±length} (2lt);
-    \draw[<->,dashed, bend left = 50] (2lt) to node[midway,font=\footnotesize,above]{±voice\vphantom{g}} (2xd);
-    \draw[<->,dashed, bend left = 50] (3xt) to node[midway,font=\footnotesize,above]{±voice\vphantom{g}} (3lt);
-    \draw[<->,dashed, bend left = 50] (3lt) to node[midway,font=\footnotesize,above]{±length} (3xd);
+    \draw[<->,dashed, bend left = 30] (0t) to node[midway,font=\footnotesize,above]{±voice} (0d);
+    \draw[<->,dashed, bend left = 30] (2xt) to node[midway,font=\footnotesize,above]{±length} (2lt);
+    \draw[<->,dashed, bend left = 30] (2lt) to node[midway,font=\footnotesize,above]{±voice\vphantom{g}} (2xd);
+    \draw[<->,dashed, bend left = 30] (3xt) to node[midway,font=\footnotesize,above]{±voice\vphantom{g}} (3lt);
+    \draw[<->,dashed, bend left = 30] (3lt) to node[midway,font=\footnotesize,above]{±length} (3xd);
     %%% EXPLANATION
     \node[%
     below=8.5cm of topl,
